@@ -18,7 +18,7 @@ int max (int num1, int num2) {
  * offset (INCLUSIVE) and offset + size (EXCLUSIVE)
  */
 int isInRange(int coord, int offset, int size) {
-  if ((offset <= coord) && (coord < (offset + size))) {
+  if ((offset < coord) && (coord < (offset + size))) {
     return 1 ;// if coord is in range, return 1
   }
   else {
