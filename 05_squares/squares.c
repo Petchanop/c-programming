@@ -53,8 +53,8 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
 
     //count from 0 to w. Call the number you count with x
   int y,x;
-  for ( y = 0; y <= h; y += 1){
-    for ( x  = 0; x <= w; x += 1){
+  for ( y = 0; y < h; y += 1){
+    for ( x  = 0; x < w; x += 1){
       if (((isInRange(x,x_offset,size2)) && (isAtBorder(y,y_offset,(size2-1)))) ||
 	  ((isInRange(y,y_offset,size2)) && (isAtBorder(x,x_offset,(size2-1))))){
            printf("*");
