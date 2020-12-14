@@ -9,17 +9,17 @@ struct _retire_info{
 typedef struct _retire_info retire_info ;
   
 
-void retirement(int startAge,double initial,retire_info r,retire_info s) {
+void retirement(int startAge, double initial,  retire_info working,  retire_info retired) {
   double accReturns ;
   int i,j;
-  for (i = startAge  ; i < startAge + r.months ; i += 1) {
+  for (i = startAge  ; i < startAge + working.months ; i += 1) {
     printf("Age %3d month %2d you have $%.2lf\n",i/12 ,(i % 12),initial);
-    accReturns = initial + (initial * r.rate_of_return) + r.contribution;
+    accReturns = initial + (initial * working.rate_of_return) + working.contribution;
     initial = accReturns;
   }
-  for (j = startAge+r.months  ; j < startAge+r.months+s.months  ; j += 1) {
+  for (j = startAge+working.months  ; j < startAge+working.months+retired.months  ; j += 1) {
     printf("Age %3d month %2d you have $%.2lf\n",j/12 ,(j % 12),initial);
-    accReturns = initial + (initial * s.rate_of_return) + s.contribution;
+    accReturns = initial + (initial * retired.rate_of_return) + retired.contribution;
     initial = accReturns;
   }
 }
