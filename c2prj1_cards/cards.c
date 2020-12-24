@@ -21,7 +21,8 @@ const char * ranking_to_string(hand_ranking_t r) {
   case  TWO_PAIR:return "TWO_PAIR";
   case  PAIR:return "PAIR";
   case  NOTHING:return "NOTHING";
-  }}
+  }
+  return 0;}
 
 char value_letter(card_t c){
 
@@ -92,5 +93,6 @@ card_t card_from_num(unsigned c) {
 }
   
 int main(void){
+  print_card();
   return 0;
 }
