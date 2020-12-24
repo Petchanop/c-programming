@@ -58,7 +58,7 @@ char suit_letter(card_t c) {
 void print_card(card_t c) {
  
   printf("%c%c\n",suit_letter(c),value_letter(c));
-  return 0;}
+  }
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
@@ -93,6 +93,19 @@ card_t card_from_num(unsigned c) {
 }
   
 int main(void){
-  print_card();
-  return 0;
+  card_t c1;
+  c1.value = 14;
+  c1.suit = 2;  
+  print_card(c1);
+
+  card_t c2;
+  c3.value = 5;
+  c2.suit = 1;
+  print_card(c2);
+
+  card_t c3;
+  c3.value = 11;
+  c3.suit = 3;
+  print_card(c3);
+  return EXIT_SUCCESS;
 }
