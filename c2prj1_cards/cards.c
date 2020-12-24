@@ -99,7 +99,7 @@ int main(void){
   print_card(c1);
 
   card_t c2;
-  c3.value = 5;
+  c2.value = 5;
   c2.suit = 1;
   print_card(c2);
 
