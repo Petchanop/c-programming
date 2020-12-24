@@ -1,13 +1,9 @@
-Grading at Thu Dec 24 16:12:50 UTC 2020
+Grading at Thu Dec 24 16:18:34 UTC 2020
 Compiling cards.c
 cards.c: In function ‘ranking_to_string’:
 cards.c:24:3: error: control reaches end of non-void function [-Werror=return-type]
    }}
    ^
-cards.c: In function ‘card_from_num’:
-cards.c:92:5: error: control reaches end of non-void function [-Werror=return-type]
-     }}
-     ^
 cc1: all warnings being treated as errors
 Could not compile your card.c!
 
