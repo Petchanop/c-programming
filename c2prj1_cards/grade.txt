@@ -1,6 +1,16 @@
-Grading at Thu Dec 24 16:59:18 UTC 2020
+Grading at Thu Dec 24 17:19:05 UTC 2020
 Compiling cards.c
-Testing card_from_letters
-Failed
+In file included from cards.c:2:0:
+cards.c: In function ‘assert_card_valid’:
+cards.c:8:14: error: comparison between pointer and integer [-Werror]
+   assert("2" <= c.value && c.value <= "14");
+              ^
+cards.c:8:14: error: comparison with string literal results in unspecified behavior [-Werror=address]
+cards.c:8:36: error: comparison between pointer and integer [-Werror]
+   assert("2" <= c.value && c.value <= "14");
+                                    ^
+cards.c:8:36: error: comparison with string literal results in unspecified behavior [-Werror=address]
+cc1: all warnings being treated as errors
+Could not compile your card.c!
 
 Overall Grade: FAILED
