@@ -1,10 +1,9 @@
-Grading at Thu Dec 24 16:43:47 UTC 2020
+Grading at Thu Dec 24 16:45:55 UTC 2020
 Compiling cards.c
-cards.c: In function ‘main’:
-cards.c:102:3: error: ‘c3’ undeclared (first use in this function)
-   c3.value = 5;
-   ^
-cards.c:102:3: note: each undeclared identifier is reported only once for each function it appears in
+tester.o: In function `main':
+tester.c:(.text+0x7e3): multiple definition of `main'
+/tmp/cchqyoTe.o:cards.c:(.text+0x2de): first defined here
+collect2: error: ld returned 1 exit status
 Could not compile your card.c!
 
 Overall Grade: FAILED
