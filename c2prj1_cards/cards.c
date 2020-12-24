@@ -5,7 +5,7 @@
 
 
 void assert_card_valid(card_t c) {
-  assert("2" <= c.value && c.value <= "14");
+  assert(2 <= c.value && c.value <= 14);
   assert(SPADES == c.suit || c.suit == CLUBS
 	 || c.suit == DIAMONDS || c.suit == HEARTS );
 }
