@@ -25,34 +25,35 @@ const char * ranking_to_string(hand_ranking_t r) {
   return 0;}
 
 char value_letter(card_t c){
-
-  if (2 <=  c.value && c.value  <= 9){
-    printf("%d",c.value) ;
-
+  switch(c.value) {
+  case 2 : return '2'; break;
+  case 3 : return '3'; break;
+  case 4 : return '4'; break;
+  case 5 : return '5'; break;
+  case 6 : return '6'; break;
+  case 7 : return '7'; break;
+  case 8 : return '8'; break;
+  case 9 : return '9'; break;
+  case 10 : return '0'; break;
+  case VALUE_JACK : return 'J'; break;
+  case VALUE_QUEEN : return 'Q'; break;
+  case VALUE_KING : return 'K'; break;
+  case VALUE_ACE : return 'A'; break;
+  default : return '?'; break;
   }
-  else{
-    switch (c.value){
-    case VALUE_ACE: printf("A");break;
-    case VALUE_KING: printf("K");break;
-    case VALUE_QUEEN: printf("Q");break;
-    case VALUE_JACK: printf("J");break;
-    case 10:  printf("0");break;
-    default: printf("?");break;
-    }}
-  return 0; }
+}
 
 
 
 char suit_letter(card_t c) {
 
-  switch (c.suit){
-  case CLUBS: printf("c");break;
-  case DIAMONDS: printf("d");break;
-  case HEARTS: printf("h");break;
-  case SPADES: printf("s");break;
-  default: printf("?");break;
+  switch(c.suit) {
+  case SPADES : return 's'; break;
+  case HEARTS : return 'h'; break;
+  case DIAMONDS : return 'd'; break;
+  case CLUBS : return 'c'; break;
+  default : return '?'; break;
   }
-  return 0;
 }
 
 void print_card(card_t c) {
