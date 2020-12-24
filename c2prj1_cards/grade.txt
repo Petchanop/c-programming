@@ -1,8 +1,8 @@
-Grading at Thu Dec 24 16:54:14 UTC 2020
+Grading at Thu Dec 24 16:55:44 UTC 2020
 Compiling cards.c
 tester.o: In function `main':
 tester.c:(.text+0x7e3): multiple definition of `main'
-/tmp/ccI0TChl.o:cards.c:(.text+0x2de): first defined here
+/tmp/ccwMDsid.o:cards.c:(.text+0x2de): first defined here
 collect2: error: ld returned 1 exit status
 Could not compile your card.c!
 
