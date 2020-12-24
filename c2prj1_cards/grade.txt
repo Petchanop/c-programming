@@ -1,10 +1,12 @@
-Grading at Thu Dec 24 16:18:34 UTC 2020
+Grading at Thu Dec 24 16:23:46 UTC 2020
 Compiling cards.c
-cards.c: In function ‘ranking_to_string’:
-cards.c:24:3: error: control reaches end of non-void function [-Werror=return-type]
-   }}
+cards.c: In function ‘main’:
+cards.c:96:3: error: too few arguments to function ‘print_card’
+   print_card();
    ^
-cc1: all warnings being treated as errors
+cards.c:58:6: note: declared here
+ void print_card(card_t c) {
+      ^
 Could not compile your card.c!
 
 Overall Grade: FAILED
