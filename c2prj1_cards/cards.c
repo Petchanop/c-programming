@@ -87,7 +87,10 @@ card_t card_from_num(unsigned c) {
       if (38 < c && c < 52){
 	temp.value = c - 37;
       }
-
+    }
       return temp;
-    }}
+}
   
+int main(void){
+  return 0;
+}
