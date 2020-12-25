@@ -7,3 +7,4 @@ Ac 2c 4c 6h 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
 Ac 2c 4c 5d 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
 Ac 2c 4c 5c 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
 Ac Ah Ad 2c 9s 3c 2d; 2h 3h 5h 3s 4c 4d As 
+Ks Qs Js 0s 3s 9s 2s; 2c 5c 0c 9c 2d kh 9h
