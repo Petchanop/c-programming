@@ -8,4 +8,5 @@ Ac 2c 4c 5d 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
 Ac 2c 4c 5c 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
 Ac Ah Ad 2c 9s 3c 2d; 2h 3h 5h 3s 4c 4d As 
 Ks Qs Js 0s 3s 9s 2s; Ks Qs Js 0s 3s 9s 2s
-
+2s 0h 5h 0c 2d Kd 9s; 2c 5c 0s 9c 3d Kh 9h 
+Ac 2s 4c 6h As 3c 2c; Ad 2h 4d 2d 0h 3d Kd 
