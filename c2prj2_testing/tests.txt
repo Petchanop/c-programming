@@ -1,0 +1,9 @@
+2s 2h 5h 0c 9d Kd 9s; 2c 5h 0c 9c 2d Kh 9h
+2s 2h 5h 0c 9d 0d 9s; 2c 5c 0c 9c 2d 0h 9h
+Ac Ah Ad 2c 2s 2d 3c; 2h 3h 3d 3s 4c 4d As
+Ac 2h Ad 2c 2s 2d 3c; 4h 3h 3d 4s 4c 4d 2s
+Ac 2h Ad 2c Ks 3d Ah; 4h 3h 2d 4s 4c 2d As
+Ac 2c 4c 6h 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
+Ac 2c 4c 5d 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
+Ac 2c 4c 5c 0s 3c Kc; Ad 2d 4d 6d 0h 3d Kd
+Ac Ah Ad 2c 9s 3c 2d; 2h 3h 5h 3s 4c 4d As 
