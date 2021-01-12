@@ -1,9 +1,7 @@
-Grading at Tue Jan 12 09:40:35 UTC 2021
+Grading at Tue Jan 12 09:48:09 UTC 2021
 Attempting to compile test.c
 The code did not compile
-Line_2_did_not_match
-Line_3_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected.
+Your file matched the expected output
+Your output matched what we expected
 
 Overall Grade: FAILED
