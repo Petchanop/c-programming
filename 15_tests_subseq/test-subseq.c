@@ -13,13 +13,10 @@ int main(){
   int array7[]={};
   int array8[]={-1,0};
   int array9[]={4,5,-4,-3,-2,-1,1};
-  int *arrayar[]={array1,array2,array3,array4,array5,array6,array7,array8,array9};
-  int arraylen[]={5,6,5,5,5,4,0,2,7};
-  int arrayseq[]={4,2,1,3,2,1,0,1,5};
-  for (int i=0; i<9; i+1){
-    if (maxSeq(arrayar[i],arraylen[i])!= arrayseq[i]){
-      return EXIT_FAILURE;
-    }
-  }
-    return EXIT_SUCCESS;
+  if (maxSeq(array1,5) != 4){return EXIT_FAILURE;}
+  if (maxSeq(array2,6) != 2){return EXIT_FAILURE;}
+  if (maxSeq(array9,7) != 5){return EXIT_FAILURE;}
+  if (maxSeq(array7,0) != 0){return EXIT_FAILURE;}
+  if (maxSeq(array3,5) != 1){return EXIT_FAILURE;}
+  return EXIT_SUCCESS;
 }
