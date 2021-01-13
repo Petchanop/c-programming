@@ -20,5 +20,6 @@ int main(){
     if (maxSeq(arrayar[i],arraylen[i])!= arrayseq[i]){
       return EXIT_FAILURE;
     }
+  }
     return EXIT_SUCCESS;
-  }}
+}
