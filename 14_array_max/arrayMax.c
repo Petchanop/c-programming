@@ -2,9 +2,21 @@
 #include <stdlib.h>
 
 int * arrayMax(int * array, int n) {
-  return NULL;
+  if (n == 0){
+      return NULL;
 }
-
+  int *q = array;
+  int *p = &array[0];
+  double max = array[0];
+  for (int i = 0; i < n; i++){
+    if (q[i] > max){
+      max = q[i];
+      *p = max;
+    }
+  }
+  return (int*)p ;
+}
+  
 void doTest(int * array, int n) {
   printf("arrayMax(");
   if (array == NULL) {
