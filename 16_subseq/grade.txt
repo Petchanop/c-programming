@@ -1,10 +1,8 @@
-Grading at Thu Jan 14 09:23:32 UTC 2021
+Grading at Thu Jan 14 09:25:32 UTC 2021
 Attempting to compile maxSeq.c 
-Linking your object file with our test main
-/tmp/ccQ6E0Bz.o: In function `main':
-temp2.c:(.text+0xed): multiple definition of `main'
-maxSeq.o:maxSeq.c:(.text+0x9f): first defined here
-collect2: error: ld returned 1 exit status
-Could not link with test main
+maxSeq.c:28:3: error: expected identifier or ‘(’ before ‘}’ token
+   }
+   ^
+The code did not compile!
 
 Overall Grade: F
