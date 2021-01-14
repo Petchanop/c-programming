@@ -19,11 +19,12 @@ size_t maxSeq(int * array, size_t n){
 	   }
 	    }
 	 else{
-	   max_seq = 0;
+	   max_seq = 1;
 	     }}
        return temp_seq ;
     }}
-		 
+
+
 
 	 
    
