@@ -24,7 +24,6 @@ size_t maxSeq(int * array, size_t n){
        return temp_seq ;
     }}
 		 
-int main(void){
-	 return EXIT_SUCCESS;
+
 	 }
    
