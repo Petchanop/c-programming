@@ -13,7 +13,6 @@ void reverse(char * str) {
     i--;
     j++;
   }
-  str = restr;
 }
 
 int main(void) {
