@@ -3,7 +3,15 @@
 #include <string.h>
 
 void reverse(char * str) {
-  //WRITE ME!
+  int  i = strlen(str)-1;
+  int j = 0;
+  while  (i > j ) {
+    char x = str[i];
+    str[i] = str[j];
+    str[j] = x;
+    i--;
+    j++;
+  }
 }
 
 int main(void) {
