@@ -4,19 +4,19 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  const card_t * const * vp1ptr = vp1;
-  const card_t * const * vp2ptr = vp2;
-  if ((*vp1ptr)->value > (*vp2ptr)->value){
-    return 0;
+  const card_t * vp1ptr = (card_t *)vp1;
+  const card_t * vp2ptr = (card_t *)vp2;
+  if (vp1ptr->value > vp2ptr->value){
+    return -1;
   }
-  if ((*vp1ptr)->value < (*vp2ptr)->value){
+  if (vp1ptr->value < vp2ptr->value){
     return 1;
   }
-  if ((*vp1ptr)->value == (*vp2ptr)->value){
-    if ((*vp1ptr)->suit > (*vp2ptr)->suit){
-      return 0;
+  if (vp1ptr->value == vp2ptr->value){
+    if (vp1ptr->suit > vp2ptr->suit){
+      return -1;
     }
-    if ((*vp1ptr)->suit <= (*vp2ptr)->suit){
+    if (vp1ptr->suit < vp2ptr->suit){
       return 1;
     }
    }
