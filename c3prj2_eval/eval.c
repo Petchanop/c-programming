@@ -4,19 +4,19 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  const card_t * vp1ptr = (card_t *)vp1;
-  const card_t * vp2ptr = (card_t *)vp2;
-  if (vp1ptr->value > vp2ptr->value){
+  const card_t * const * vp1ptr = vp1;
+  const card_t * const * vp2ptr = vp2;
+  if ((*vp1ptr)->value > (*vp2ptr)->value){
     return -1;
   }
-  if (vp1ptr->value < vp2ptr->value){
+  if ((*vp1ptr)->value < (*vp2ptr)->value){
     return 1;
   }
-  if (vp1ptr->value == vp2ptr->value){
-    if (vp1ptr->suit > vp2ptr->suit){
+  if ((*vp1ptr)->value == (*vp2ptr)->value){
+    if ((*vp1ptr)->suit > (*vp2ptr)->suit){
       return -1;
     }
-    if (vp1ptr->suit < vp2ptr->suit){
+    if ((*vp1ptr)->suit < (*vp2ptr)->suit){
       return 1;
     }
    }
@@ -172,14 +172,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   rank1 = evaluate_hand (hand1);
   rank2 = evaluate_hand (hand2);
 
-  if(rank1.ranking > rank2.ranking) return 1;
-  if(rank1.ranking < rank2.ranking) return -1;
-  for (size_t i = 0; i < 5; i++) {
-
-    if (rank1.cards[i] > rank2.cards[i]) return 1;
-    if (rank1.cards[i] < rank2.cards[i]) return -1;
-  }
-
+  if(rank1.ranking > rank2.ranking){ return 1;}
+  if(rank1.ranking < rank2.ranking){ return -1;}
+  if(rank1.ranking == rank2.ranking){ return 0;}
+ 
 
   return 0;
  }
