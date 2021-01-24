@@ -159,7 +159,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     if (i+k == 5){
     return ans;
 }
-  }}
+  }return ans;}
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
