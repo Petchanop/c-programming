@@ -1,4 +1,4 @@
-Grading at Sun Jan 24 20:28:10 UTC 2021
+Grading at Sun Jan 24 20:41:19 UTC 2021
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -7,550 +7,550 @@ cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
 gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
 Testcase 1: Trying hands with nothing
 Valgrind returned an error status
-==2926== Memcheck, a memory error detector
-==2926== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2926== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2926== Command: ./test-eval inp.1.txt
-==2926== Parent PID: 2925
-==2926== 
-==2926== Use of uninitialised value of size 8
-==2926==    at 0x400C02: print_hand (deck.c:8)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926== 
-==2926== Conditional jump or move depends on uninitialised value(s)
-==2926==    at 0x402BB9: suit_letter (cards.c:50)
-==2926==    by 0x402C07: print_card (cards.c:61)
-==2926==    by 0x400C14: print_hand (deck.c:9)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926== 
-==2926== Conditional jump or move depends on uninitialised value(s)
-==2926==    at 0x402BBE: suit_letter (cards.c:50)
-==2926==    by 0x402C07: print_card (cards.c:61)
-==2926==    by 0x400C14: print_hand (deck.c:9)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926== 
-==2926== Conditional jump or move depends on uninitialised value(s)
-==2926==    at 0x402B3B: value_letter (cards.c:28)
-==2926==    by 0x402C16: print_card (cards.c:61)
-==2926==    by 0x400C14: print_hand (deck.c:9)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926== 
-==2926== Invalid read of size 8
-==2926==    at 0x400C02: print_hand (deck.c:8)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
-==2926== 
-==2926== 
-==2926== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2926==  Access not within mapped region at address 0x400001102
-==2926==    at 0x400C02: print_hand (deck.c:8)
-==2926==    by 0x402740: describe_hand (test-eval.c:74)
-==2926==    by 0x402920: main (test-eval.c:116)
-==2926==  If you believe this happened as a result of a stack
-==2926==  overflow in your program's main thread (unlikely but
-==2926==  possible), you can try to increase the size of the
-==2926==  main thread stack using the --main-stacksize= flag.
-==2926==  The main thread stack size used in this run was 8388608.
-==2926== 
-==2926== HEAP SUMMARY:
-==2926==     in use at exit: 896 bytes in 18 blocks
-==2926==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
-==2926== 
-==2926== LEAK SUMMARY:
-==2926==    definitely lost: 0 bytes in 0 blocks
-==2926==    indirectly lost: 0 bytes in 0 blocks
-==2926==      possibly lost: 0 bytes in 0 blocks
-==2926==    still reachable: 896 bytes in 18 blocks
-==2926==         suppressed: 0 bytes in 0 blocks
-==2926== Rerun with --leak-check=full to see details of leaked memory
-==2926== 
-==2926== For counts of detected and suppressed errors, rerun with: -v
-==2926== Use --track-origins=yes to see where uninitialised values come from
-==2926== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==3173== Memcheck, a memory error detector
+==3173== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3173== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3173== Command: ./test-eval inp.1.txt
+==3173== Parent PID: 3172
+==3173== 
+==3173== Use of uninitialised value of size 8
+==3173==    at 0x400C02: print_hand (deck.c:8)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173== 
+==3173== Conditional jump or move depends on uninitialised value(s)
+==3173==    at 0x402BA0: suit_letter (cards.c:50)
+==3173==    by 0x402BEE: print_card (cards.c:61)
+==3173==    by 0x400C14: print_hand (deck.c:9)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173== 
+==3173== Conditional jump or move depends on uninitialised value(s)
+==3173==    at 0x402BA5: suit_letter (cards.c:50)
+==3173==    by 0x402BEE: print_card (cards.c:61)
+==3173==    by 0x400C14: print_hand (deck.c:9)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173== 
+==3173== Conditional jump or move depends on uninitialised value(s)
+==3173==    at 0x402B22: value_letter (cards.c:28)
+==3173==    by 0x402BFD: print_card (cards.c:61)
+==3173==    by 0x400C14: print_hand (deck.c:9)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173== 
+==3173== Invalid read of size 8
+==3173==    at 0x400C02: print_hand (deck.c:8)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
+==3173== 
+==3173== 
+==3173== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3173==  Access not within mapped region at address 0x400001102
+==3173==    at 0x400C02: print_hand (deck.c:8)
+==3173==    by 0x402727: describe_hand (test-eval.c:74)
+==3173==    by 0x402907: main (test-eval.c:116)
+==3173==  If you believe this happened as a result of a stack
+==3173==  overflow in your program's main thread (unlikely but
+==3173==  possible), you can try to increase the size of the
+==3173==  main thread stack using the --main-stacksize= flag.
+==3173==  The main thread stack size used in this run was 8388608.
+==3173== 
+==3173== HEAP SUMMARY:
+==3173==     in use at exit: 896 bytes in 18 blocks
+==3173==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
+==3173== 
+==3173== LEAK SUMMARY:
+==3173==    definitely lost: 0 bytes in 0 blocks
+==3173==    indirectly lost: 0 bytes in 0 blocks
+==3173==      possibly lost: 0 bytes in 0 blocks
+==3173==    still reachable: 896 bytes in 18 blocks
+==3173==         suppressed: 0 bytes in 0 blocks
+==3173== Rerun with --leak-check=full to see details of leaked memory
+==3173== 
+==3173== For counts of detected and suppressed errors, rerun with: -v
+==3173== Use --track-origins=yes to see where uninitialised values come from
+==3173== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==2931== Memcheck, a memory error detector
-==2931== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2931== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2931== Command: ./test-eval inp.2.txt
-==2931== Parent PID: 2930
-==2931== 
-==2931== Use of uninitialised value of size 8
-==2931==    at 0x400C02: print_hand (deck.c:8)
-==2931==    by 0x402740: describe_hand (test-eval.c:74)
-==2931==    by 0x402920: main (test-eval.c:116)
-==2931== 
-==2931== Invalid read of size 8
-==2931==    at 0x400C02: print_hand (deck.c:8)
-==2931==    by 0x402740: describe_hand (test-eval.c:74)
-==2931==    by 0x402920: main (test-eval.c:116)
-==2931==  Address 0x5206c70 is 0 bytes inside a block of size 24 free'd
-==2931==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2931==    by 0x401F3A: evaluate_hand (eval.c:285)
-==2931==    by 0x4026F5: describe_hand (test-eval.c:68)
-==2931==    by 0x402920: main (test-eval.c:116)
-==2931==  Block was alloc'd at
-==2931==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2931==    by 0x401367: get_match_counts (eval-c4.c:70)
-==2931==    by 0x401EB8: evaluate_hand (eval.c:280)
-==2931==    by 0x4026F5: describe_hand (test-eval.c:68)
-==2931==    by 0x402920: main (test-eval.c:116)
-==2931== 
-==2931== 
-==2931== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2931==  Access not within mapped region at address 0x0
-==2931==    at 0x400C02: print_hand (deck.c:8)
-==2931==    by 0x402740: describe_hand (test-eval.c:74)
-==2931==    by 0x402920: main (test-eval.c:116)
-==2931==  If you believe this happened as a result of a stack
-==2931==  overflow in your program's main thread (unlikely but
-==2931==  possible), you can try to increase the size of the
-==2931==  main thread stack using the --main-stacksize= flag.
-==2931==  The main thread stack size used in this run was 8388608.
-==2931== 
-==2931== HEAP SUMMARY:
-==2931==     in use at exit: 880 bytes in 17 blocks
-==2931==   total heap usage: 30 allocs, 13 frees, 9,320 bytes allocated
-==2931== 
-==2931== LEAK SUMMARY:
-==2931==    definitely lost: 0 bytes in 0 blocks
-==2931==    indirectly lost: 0 bytes in 0 blocks
-==2931==      possibly lost: 0 bytes in 0 blocks
-==2931==    still reachable: 880 bytes in 17 blocks
-==2931==         suppressed: 0 bytes in 0 blocks
-==2931== Rerun with --leak-check=full to see details of leaked memory
-==2931== 
-==2931== For counts of detected and suppressed errors, rerun with: -v
-==2931== Use --track-origins=yes to see where uninitialised values come from
-==2931== ERROR SUMMARY: 5 errors from 2 contexts (suppressed: 0 from 0)
+==3178== Memcheck, a memory error detector
+==3178== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3178== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3178== Command: ./test-eval inp.2.txt
+==3178== Parent PID: 3177
+==3178== 
+==3178== Use of uninitialised value of size 8
+==3178==    at 0x400C02: print_hand (deck.c:8)
+==3178==    by 0x402727: describe_hand (test-eval.c:74)
+==3178==    by 0x402907: main (test-eval.c:116)
+==3178== 
+==3178== Invalid read of size 8
+==3178==    at 0x400C02: print_hand (deck.c:8)
+==3178==    by 0x402727: describe_hand (test-eval.c:74)
+==3178==    by 0x402907: main (test-eval.c:116)
+==3178==  Address 0x5206c70 is 0 bytes inside a block of size 24 free'd
+==3178==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3178==    by 0x401F21: evaluate_hand (eval.c:287)
+==3178==    by 0x4026DC: describe_hand (test-eval.c:68)
+==3178==    by 0x402907: main (test-eval.c:116)
+==3178==  Block was alloc'd at
+==3178==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3178==    by 0x401367: get_match_counts (eval-c4.c:70)
+==3178==    by 0x401E9F: evaluate_hand (eval.c:282)
+==3178==    by 0x4026DC: describe_hand (test-eval.c:68)
+==3178==    by 0x402907: main (test-eval.c:116)
+==3178== 
+==3178== 
+==3178== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3178==  Access not within mapped region at address 0x0
+==3178==    at 0x400C02: print_hand (deck.c:8)
+==3178==    by 0x402727: describe_hand (test-eval.c:74)
+==3178==    by 0x402907: main (test-eval.c:116)
+==3178==  If you believe this happened as a result of a stack
+==3178==  overflow in your program's main thread (unlikely but
+==3178==  possible), you can try to increase the size of the
+==3178==  main thread stack using the --main-stacksize= flag.
+==3178==  The main thread stack size used in this run was 8388608.
+==3178== 
+==3178== HEAP SUMMARY:
+==3178==     in use at exit: 880 bytes in 17 blocks
+==3178==   total heap usage: 30 allocs, 13 frees, 9,320 bytes allocated
+==3178== 
+==3178== LEAK SUMMARY:
+==3178==    definitely lost: 0 bytes in 0 blocks
+==3178==    indirectly lost: 0 bytes in 0 blocks
+==3178==      possibly lost: 0 bytes in 0 blocks
+==3178==    still reachable: 880 bytes in 17 blocks
+==3178==         suppressed: 0 bytes in 0 blocks
+==3178== Rerun with --leak-check=full to see details of leaked memory
+==3178== 
+==3178== For counts of detected and suppressed errors, rerun with: -v
+==3178== Use --track-origins=yes to see where uninitialised values come from
+==3178== ERROR SUMMARY: 5 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Your file matched the expected output
  - Testcase passed
 Testcase 4: Trying hands with 3 of a kind
 Valgrind returned an error status
-==2948== Memcheck, a memory error detector
-==2948== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2948== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2948== Command: ./test-eval inp.4.txt
-==2948== Parent PID: 2947
-==2948== 
-==2948== Use of uninitialised value of size 8
-==2948==    at 0x400C02: print_hand (deck.c:8)
-==2948==    by 0x402740: describe_hand (test-eval.c:74)
-==2948==    by 0x402920: main (test-eval.c:116)
-==2948== 
-==2948== Invalid read of size 8
-==2948==    at 0x400C02: print_hand (deck.c:8)
-==2948==    by 0x402740: describe_hand (test-eval.c:74)
-==2948==    by 0x402920: main (test-eval.c:116)
-==2948==  Address 0x5206d30 is 0 bytes inside a block of size 24 free'd
-==2948==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2948==    by 0x401F3A: evaluate_hand (eval.c:285)
-==2948==    by 0x4026F5: describe_hand (test-eval.c:68)
-==2948==    by 0x402920: main (test-eval.c:116)
-==2948==  Block was alloc'd at
-==2948==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2948==    by 0x401367: get_match_counts (eval-c4.c:70)
-==2948==    by 0x401EB8: evaluate_hand (eval.c:280)
-==2948==    by 0x4026F5: describe_hand (test-eval.c:68)
-==2948==    by 0x402920: main (test-eval.c:116)
-==2948== 
-==2948== 
-==2948== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2948==  Access not within mapped region at address 0x0
-==2948==    at 0x400C02: print_hand (deck.c:8)
-==2948==    by 0x402740: describe_hand (test-eval.c:74)
-==2948==    by 0x402920: main (test-eval.c:116)
-==2948==  If you believe this happened as a result of a stack
-==2948==  overflow in your program's main thread (unlikely but
-==2948==  possible), you can try to increase the size of the
-==2948==  main thread stack using the --main-stacksize= flag.
-==2948==  The main thread stack size used in this run was 8388608.
-==2948== 
-==2948== HEAP SUMMARY:
-==2948==     in use at exit: 896 bytes in 18 blocks
-==2948==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
-==2948== 
-==2948== LEAK SUMMARY:
-==2948==    definitely lost: 0 bytes in 0 blocks
-==2948==    indirectly lost: 0 bytes in 0 blocks
-==2948==      possibly lost: 0 bytes in 0 blocks
-==2948==    still reachable: 896 bytes in 18 blocks
-==2948==         suppressed: 0 bytes in 0 blocks
-==2948== Rerun with --leak-check=full to see details of leaked memory
-==2948== 
-==2948== For counts of detected and suppressed errors, rerun with: -v
-==2948== Use --track-origins=yes to see where uninitialised values come from
-==2948== ERROR SUMMARY: 4 errors from 2 contexts (suppressed: 0 from 0)
+==3195== Memcheck, a memory error detector
+==3195== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3195== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3195== Command: ./test-eval inp.4.txt
+==3195== Parent PID: 3194
+==3195== 
+==3195== Use of uninitialised value of size 8
+==3195==    at 0x400C02: print_hand (deck.c:8)
+==3195==    by 0x402727: describe_hand (test-eval.c:74)
+==3195==    by 0x402907: main (test-eval.c:116)
+==3195== 
+==3195== Invalid read of size 8
+==3195==    at 0x400C02: print_hand (deck.c:8)
+==3195==    by 0x402727: describe_hand (test-eval.c:74)
+==3195==    by 0x402907: main (test-eval.c:116)
+==3195==  Address 0x5206d30 is 0 bytes inside a block of size 24 free'd
+==3195==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3195==    by 0x401F21: evaluate_hand (eval.c:287)
+==3195==    by 0x4026DC: describe_hand (test-eval.c:68)
+==3195==    by 0x402907: main (test-eval.c:116)
+==3195==  Block was alloc'd at
+==3195==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3195==    by 0x401367: get_match_counts (eval-c4.c:70)
+==3195==    by 0x401E9F: evaluate_hand (eval.c:282)
+==3195==    by 0x4026DC: describe_hand (test-eval.c:68)
+==3195==    by 0x402907: main (test-eval.c:116)
+==3195== 
+==3195== 
+==3195== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3195==  Access not within mapped region at address 0x0
+==3195==    at 0x400C02: print_hand (deck.c:8)
+==3195==    by 0x402727: describe_hand (test-eval.c:74)
+==3195==    by 0x402907: main (test-eval.c:116)
+==3195==  If you believe this happened as a result of a stack
+==3195==  overflow in your program's main thread (unlikely but
+==3195==  possible), you can try to increase the size of the
+==3195==  main thread stack using the --main-stacksize= flag.
+==3195==  The main thread stack size used in this run was 8388608.
+==3195== 
+==3195== HEAP SUMMARY:
+==3195==     in use at exit: 896 bytes in 18 blocks
+==3195==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
+==3195== 
+==3195== LEAK SUMMARY:
+==3195==    definitely lost: 0 bytes in 0 blocks
+==3195==    indirectly lost: 0 bytes in 0 blocks
+==3195==      possibly lost: 0 bytes in 0 blocks
+==3195==    still reachable: 896 bytes in 18 blocks
+==3195==         suppressed: 0 bytes in 0 blocks
+==3195== Rerun with --leak-check=full to see details of leaked memory
+==3195== 
+==3195== For counts of detected and suppressed errors, rerun with: -v
+==3195== Use --track-origins=yes to see where uninitialised values come from
+==3195== ERROR SUMMARY: 4 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 5: Trying hands with straights
 Valgrind returned an error status
-==2953== Memcheck, a memory error detector
-==2953== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2953== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2953== Command: ./test-eval inp.5.txt
-==2953== Parent PID: 2952
-==2953== 
-==2953== Use of uninitialised value of size 8
-==2953==    at 0x400C02: print_hand (deck.c:8)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953== 
-==2953== Conditional jump or move depends on uninitialised value(s)
-==2953==    at 0x402BB9: suit_letter (cards.c:50)
-==2953==    by 0x402C07: print_card (cards.c:61)
-==2953==    by 0x400C14: print_hand (deck.c:9)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953== 
-==2953== Conditional jump or move depends on uninitialised value(s)
-==2953==    at 0x402BBE: suit_letter (cards.c:50)
-==2953==    by 0x402C07: print_card (cards.c:61)
-==2953==    by 0x400C14: print_hand (deck.c:9)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953== 
-==2953== Conditional jump or move depends on uninitialised value(s)
-==2953==    at 0x402B3B: value_letter (cards.c:28)
-==2953==    by 0x402C16: print_card (cards.c:61)
-==2953==    by 0x400C14: print_hand (deck.c:9)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953== 
-==2953== Invalid read of size 8
-==2953==    at 0x400C02: print_hand (deck.c:8)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
-==2953== 
-==2953== 
-==2953== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2953==  Access not within mapped region at address 0x400001102
-==2953==    at 0x400C02: print_hand (deck.c:8)
-==2953==    by 0x402740: describe_hand (test-eval.c:74)
-==2953==    by 0x402920: main (test-eval.c:116)
-==2953==  If you believe this happened as a result of a stack
-==2953==  overflow in your program's main thread (unlikely but
-==2953==  possible), you can try to increase the size of the
-==2953==  main thread stack using the --main-stacksize= flag.
-==2953==  The main thread stack size used in this run was 8388608.
-==2953== 
-==2953== HEAP SUMMARY:
-==2953==     in use at exit: 864 bytes in 16 blocks
-==2953==   total heap usage: 78 allocs, 62 frees, 10,080 bytes allocated
-==2953== 
-==2953== LEAK SUMMARY:
-==2953==    definitely lost: 0 bytes in 0 blocks
-==2953==    indirectly lost: 0 bytes in 0 blocks
-==2953==      possibly lost: 0 bytes in 0 blocks
-==2953==    still reachable: 864 bytes in 16 blocks
-==2953==         suppressed: 0 bytes in 0 blocks
-==2953== Rerun with --leak-check=full to see details of leaked memory
-==2953== 
-==2953== For counts of detected and suppressed errors, rerun with: -v
-==2953== Use --track-origins=yes to see where uninitialised values come from
-==2953== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==3200== Memcheck, a memory error detector
+==3200== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3200== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3200== Command: ./test-eval inp.5.txt
+==3200== Parent PID: 3199
+==3200== 
+==3200== Use of uninitialised value of size 8
+==3200==    at 0x400C02: print_hand (deck.c:8)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200== 
+==3200== Conditional jump or move depends on uninitialised value(s)
+==3200==    at 0x402BA0: suit_letter (cards.c:50)
+==3200==    by 0x402BEE: print_card (cards.c:61)
+==3200==    by 0x400C14: print_hand (deck.c:9)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200== 
+==3200== Conditional jump or move depends on uninitialised value(s)
+==3200==    at 0x402BA5: suit_letter (cards.c:50)
+==3200==    by 0x402BEE: print_card (cards.c:61)
+==3200==    by 0x400C14: print_hand (deck.c:9)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200== 
+==3200== Conditional jump or move depends on uninitialised value(s)
+==3200==    at 0x402B22: value_letter (cards.c:28)
+==3200==    by 0x402BFD: print_card (cards.c:61)
+==3200==    by 0x400C14: print_hand (deck.c:9)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200== 
+==3200== Invalid read of size 8
+==3200==    at 0x400C02: print_hand (deck.c:8)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
+==3200== 
+==3200== 
+==3200== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3200==  Access not within mapped region at address 0x400001102
+==3200==    at 0x400C02: print_hand (deck.c:8)
+==3200==    by 0x402727: describe_hand (test-eval.c:74)
+==3200==    by 0x402907: main (test-eval.c:116)
+==3200==  If you believe this happened as a result of a stack
+==3200==  overflow in your program's main thread (unlikely but
+==3200==  possible), you can try to increase the size of the
+==3200==  main thread stack using the --main-stacksize= flag.
+==3200==  The main thread stack size used in this run was 8388608.
+==3200== 
+==3200== HEAP SUMMARY:
+==3200==     in use at exit: 864 bytes in 16 blocks
+==3200==   total heap usage: 78 allocs, 62 frees, 10,080 bytes allocated
+==3200== 
+==3200== LEAK SUMMARY:
+==3200==    definitely lost: 0 bytes in 0 blocks
+==3200==    indirectly lost: 0 bytes in 0 blocks
+==3200==      possibly lost: 0 bytes in 0 blocks
+==3200==    still reachable: 864 bytes in 16 blocks
+==3200==         suppressed: 0 bytes in 0 blocks
+==3200== Rerun with --leak-check=full to see details of leaked memory
+==3200== 
+==3200== For counts of detected and suppressed errors, rerun with: -v
+==3200== Use --track-origins=yes to see where uninitialised values come from
+==3200== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
 Testcase 6: Trying hands with flushes
 Valgrind returned an error status
-==2958== Memcheck, a memory error detector
-==2958== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2958== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2958== Command: ./test-eval inp.6.txt
-==2958== Parent PID: 2957
-==2958== 
-==2958== Use of uninitialised value of size 8
-==2958==    at 0x400C02: print_hand (deck.c:8)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958== 
-==2958== Conditional jump or move depends on uninitialised value(s)
-==2958==    at 0x402BB9: suit_letter (cards.c:50)
-==2958==    by 0x402C07: print_card (cards.c:61)
-==2958==    by 0x400C14: print_hand (deck.c:9)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958== 
-==2958== Conditional jump or move depends on uninitialised value(s)
-==2958==    at 0x402BBE: suit_letter (cards.c:50)
-==2958==    by 0x402C07: print_card (cards.c:61)
-==2958==    by 0x400C14: print_hand (deck.c:9)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958== 
-==2958== Conditional jump or move depends on uninitialised value(s)
-==2958==    at 0x402B3B: value_letter (cards.c:28)
-==2958==    by 0x402C16: print_card (cards.c:61)
-==2958==    by 0x400C14: print_hand (deck.c:9)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958== 
-==2958== Invalid read of size 8
-==2958==    at 0x400C02: print_hand (deck.c:8)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
-==2958== 
-==2958== 
-==2958== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2958==  Access not within mapped region at address 0x400001102
-==2958==    at 0x400C02: print_hand (deck.c:8)
-==2958==    by 0x402740: describe_hand (test-eval.c:74)
-==2958==    by 0x402920: main (test-eval.c:116)
-==2958==  If you believe this happened as a result of a stack
-==2958==  overflow in your program's main thread (unlikely but
-==2958==  possible), you can try to increase the size of the
-==2958==  main thread stack using the --main-stacksize= flag.
-==2958==  The main thread stack size used in this run was 8388608.
-==2958== 
-==2958== HEAP SUMMARY:
-==2958==     in use at exit: 896 bytes in 18 blocks
-==2958==   total heap usage: 90 allocs, 72 frees, 10,448 bytes allocated
-==2958== 
-==2958== LEAK SUMMARY:
-==2958==    definitely lost: 0 bytes in 0 blocks
-==2958==    indirectly lost: 0 bytes in 0 blocks
-==2958==      possibly lost: 0 bytes in 0 blocks
-==2958==    still reachable: 896 bytes in 18 blocks
-==2958==         suppressed: 0 bytes in 0 blocks
-==2958== Rerun with --leak-check=full to see details of leaked memory
-==2958== 
-==2958== For counts of detected and suppressed errors, rerun with: -v
-==2958== Use --track-origins=yes to see where uninitialised values come from
-==2958== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==3205== Memcheck, a memory error detector
+==3205== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3205== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3205== Command: ./test-eval inp.6.txt
+==3205== Parent PID: 3204
+==3205== 
+==3205== Use of uninitialised value of size 8
+==3205==    at 0x400C02: print_hand (deck.c:8)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205== 
+==3205== Conditional jump or move depends on uninitialised value(s)
+==3205==    at 0x402BA0: suit_letter (cards.c:50)
+==3205==    by 0x402BEE: print_card (cards.c:61)
+==3205==    by 0x400C14: print_hand (deck.c:9)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205== 
+==3205== Conditional jump or move depends on uninitialised value(s)
+==3205==    at 0x402BA5: suit_letter (cards.c:50)
+==3205==    by 0x402BEE: print_card (cards.c:61)
+==3205==    by 0x400C14: print_hand (deck.c:9)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205== 
+==3205== Conditional jump or move depends on uninitialised value(s)
+==3205==    at 0x402B22: value_letter (cards.c:28)
+==3205==    by 0x402BFD: print_card (cards.c:61)
+==3205==    by 0x400C14: print_hand (deck.c:9)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205== 
+==3205== Invalid read of size 8
+==3205==    at 0x400C02: print_hand (deck.c:8)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
+==3205== 
+==3205== 
+==3205== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3205==  Access not within mapped region at address 0x400001102
+==3205==    at 0x400C02: print_hand (deck.c:8)
+==3205==    by 0x402727: describe_hand (test-eval.c:74)
+==3205==    by 0x402907: main (test-eval.c:116)
+==3205==  If you believe this happened as a result of a stack
+==3205==  overflow in your program's main thread (unlikely but
+==3205==  possible), you can try to increase the size of the
+==3205==  main thread stack using the --main-stacksize= flag.
+==3205==  The main thread stack size used in this run was 8388608.
+==3205== 
+==3205== HEAP SUMMARY:
+==3205==     in use at exit: 896 bytes in 18 blocks
+==3205==   total heap usage: 90 allocs, 72 frees, 10,448 bytes allocated
+==3205== 
+==3205== LEAK SUMMARY:
+==3205==    definitely lost: 0 bytes in 0 blocks
+==3205==    indirectly lost: 0 bytes in 0 blocks
+==3205==      possibly lost: 0 bytes in 0 blocks
+==3205==    still reachable: 896 bytes in 18 blocks
+==3205==         suppressed: 0 bytes in 0 blocks
+==3205== Rerun with --leak-check=full to see details of leaked memory
+==3205== 
+==3205== For counts of detected and suppressed errors, rerun with: -v
+==3205== Use --track-origins=yes to see where uninitialised values come from
+==3205== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
 Testcase 7: Trying hands with full houses
 Valgrind returned an error status
-==2963== Memcheck, a memory error detector
-==2963== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2963== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2963== Command: ./test-eval inp.7.txt
-==2963== Parent PID: 2962
-==2963== 
-==2963== Invalid read of size 8
-==2963==    at 0x401472: card_ptr_comp (eval.c:11)
-==2963==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E7369E: qsort_r (msort.c:297)
-==2963==    by 0x401A0C: compare_hands (eval.c:169)
-==2963==    by 0x402995: main (test-eval.c:124)
-==2963==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==2963==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2963==    by 0x400FDD: add_card_to (deck-c4.c:29)
-==2963==    by 0x4030FF: hand_from_string (input.c:49)
-==2963==    by 0x40297E: main (test-eval.c:123)
-==2963== 
-==2963== Invalid read of size 4
-==2963==    at 0x401475: card_ptr_comp (eval.c:11)
-==2963==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E7369E: qsort_r (msort.c:297)
-==2963==    by 0x401A0C: compare_hands (eval.c:169)
-==2963==    by 0x402995: main (test-eval.c:124)
-==2963==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2963== 
-==2963== 
-==2963== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2963==  Access not within mapped region at address 0x0
-==2963==    at 0x401475: card_ptr_comp (eval.c:11)
-==2963==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==2963==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==2963==    by 0x4E7369E: qsort_r (msort.c:297)
-==2963==    by 0x401A0C: compare_hands (eval.c:169)
-==2963==    by 0x402995: main (test-eval.c:124)
-==2963==  If you believe this happened as a result of a stack
-==2963==  overflow in your program's main thread (unlikely but
-==2963==  possible), you can try to increase the size of the
-==2963==  main thread stack using the --main-stacksize= flag.
-==2963==  The main thread stack size used in this run was 8388608.
-==2963== 
-==2963== HEAP SUMMARY:
-==2963==     in use at exit: 912 bytes in 19 blocks
-==2963==   total heap usage: 386 allocs, 367 frees, 16,504 bytes allocated
-==2963== 
-==2963== LEAK SUMMARY:
-==2963==    definitely lost: 0 bytes in 0 blocks
-==2963==    indirectly lost: 0 bytes in 0 blocks
-==2963==      possibly lost: 0 bytes in 0 blocks
-==2963==    still reachable: 912 bytes in 19 blocks
-==2963==         suppressed: 0 bytes in 0 blocks
-==2963== Rerun with --leak-check=full to see details of leaked memory
-==2963== 
-==2963== For counts of detected and suppressed errors, rerun with: -v
-==2963== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==3210== Memcheck, a memory error detector
+==3210== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3210== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3210== Command: ./test-eval inp.7.txt
+==3210== Parent PID: 3209
+==3210== 
+==3210== Invalid read of size 8
+==3210==    at 0x401472: card_ptr_comp (eval.c:11)
+==3210==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E7369E: qsort_r (msort.c:297)
+==3210==    by 0x4019F3: compare_hands (eval.c:171)
+==3210==    by 0x40297C: main (test-eval.c:124)
+==3210==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==3210==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3210==    by 0x400FDD: add_card_to (deck-c4.c:29)
+==3210==    by 0x4030E6: hand_from_string (input.c:49)
+==3210==    by 0x402965: main (test-eval.c:123)
+==3210== 
+==3210== Invalid read of size 4
+==3210==    at 0x401475: card_ptr_comp (eval.c:11)
+==3210==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E7369E: qsort_r (msort.c:297)
+==3210==    by 0x4019F3: compare_hands (eval.c:171)
+==3210==    by 0x40297C: main (test-eval.c:124)
+==3210==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3210== 
+==3210== 
+==3210== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3210==  Access not within mapped region at address 0x0
+==3210==    at 0x401475: card_ptr_comp (eval.c:11)
+==3210==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==3210==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==3210==    by 0x4E7369E: qsort_r (msort.c:297)
+==3210==    by 0x4019F3: compare_hands (eval.c:171)
+==3210==    by 0x40297C: main (test-eval.c:124)
+==3210==  If you believe this happened as a result of a stack
+==3210==  overflow in your program's main thread (unlikely but
+==3210==  possible), you can try to increase the size of the
+==3210==  main thread stack using the --main-stacksize= flag.
+==3210==  The main thread stack size used in this run was 8388608.
+==3210== 
+==3210== HEAP SUMMARY:
+==3210==     in use at exit: 912 bytes in 19 blocks
+==3210==   total heap usage: 386 allocs, 367 frees, 16,504 bytes allocated
+==3210== 
+==3210== LEAK SUMMARY:
+==3210==    definitely lost: 0 bytes in 0 blocks
+==3210==    indirectly lost: 0 bytes in 0 blocks
+==3210==      possibly lost: 0 bytes in 0 blocks
+==3210==    still reachable: 912 bytes in 19 blocks
+==3210==         suppressed: 0 bytes in 0 blocks
+==3210== Rerun with --leak-check=full to see details of leaked memory
+==3210== 
+==3210== For counts of detected and suppressed errors, rerun with: -v
+==3210== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 8: Trying hands with 4 of a kind
 Valgrind returned an error status
-==2968== Memcheck, a memory error detector
-==2968== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2968== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2968== Command: ./test-eval inp.8.txt
-==2968== Parent PID: 2967
-==2968== 
-==2968== Use of uninitialised value of size 8
-==2968==    at 0x400C02: print_hand (deck.c:8)
-==2968==    by 0x402740: describe_hand (test-eval.c:74)
-==2968==    by 0x402920: main (test-eval.c:116)
-==2968== 
-==2968== Invalid read of size 8
-==2968==    at 0x400C02: print_hand (deck.c:8)
-==2968==    by 0x402740: describe_hand (test-eval.c:74)
-==2968==    by 0x402920: main (test-eval.c:116)
-==2968==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2968== 
-==2968== 
-==2968== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2968==  Access not within mapped region at address 0x0
-==2968==    at 0x400C02: print_hand (deck.c:8)
-==2968==    by 0x402740: describe_hand (test-eval.c:74)
-==2968==    by 0x402920: main (test-eval.c:116)
-==2968==  If you believe this happened as a result of a stack
-==2968==  overflow in your program's main thread (unlikely but
-==2968==  possible), you can try to increase the size of the
-==2968==  main thread stack using the --main-stacksize= flag.
-==2968==  The main thread stack size used in this run was 8388608.
-==2968== 
-==2968== HEAP SUMMARY:
-==2968==     in use at exit: 896 bytes in 18 blocks
-==2968==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
-==2968== 
-==2968== LEAK SUMMARY:
-==2968==    definitely lost: 0 bytes in 0 blocks
-==2968==    indirectly lost: 0 bytes in 0 blocks
-==2968==      possibly lost: 0 bytes in 0 blocks
-==2968==    still reachable: 896 bytes in 18 blocks
-==2968==         suppressed: 0 bytes in 0 blocks
-==2968== Rerun with --leak-check=full to see details of leaked memory
-==2968== 
-==2968== For counts of detected and suppressed errors, rerun with: -v
-==2968== Use --track-origins=yes to see where uninitialised values come from
-==2968== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==3215== Memcheck, a memory error detector
+==3215== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3215== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3215== Command: ./test-eval inp.8.txt
+==3215== Parent PID: 3214
+==3215== 
+==3215== Use of uninitialised value of size 8
+==3215==    at 0x400C02: print_hand (deck.c:8)
+==3215==    by 0x402727: describe_hand (test-eval.c:74)
+==3215==    by 0x402907: main (test-eval.c:116)
+==3215== 
+==3215== Invalid read of size 8
+==3215==    at 0x400C02: print_hand (deck.c:8)
+==3215==    by 0x402727: describe_hand (test-eval.c:74)
+==3215==    by 0x402907: main (test-eval.c:116)
+==3215==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3215== 
+==3215== 
+==3215== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3215==  Access not within mapped region at address 0x0
+==3215==    at 0x400C02: print_hand (deck.c:8)
+==3215==    by 0x402727: describe_hand (test-eval.c:74)
+==3215==    by 0x402907: main (test-eval.c:116)
+==3215==  If you believe this happened as a result of a stack
+==3215==  overflow in your program's main thread (unlikely but
+==3215==  possible), you can try to increase the size of the
+==3215==  main thread stack using the --main-stacksize= flag.
+==3215==  The main thread stack size used in this run was 8388608.
+==3215== 
+==3215== HEAP SUMMARY:
+==3215==     in use at exit: 896 bytes in 18 blocks
+==3215==   total heap usage: 32 allocs, 14 frees, 9,376 bytes allocated
+==3215== 
+==3215== LEAK SUMMARY:
+==3215==    definitely lost: 0 bytes in 0 blocks
+==3215==    indirectly lost: 0 bytes in 0 blocks
+==3215==      possibly lost: 0 bytes in 0 blocks
+==3215==    still reachable: 896 bytes in 18 blocks
+==3215==         suppressed: 0 bytes in 0 blocks
+==3215== Rerun with --leak-check=full to see details of leaked memory
+==3215== 
+==3215== For counts of detected and suppressed errors, rerun with: -v
+==3215== Use --track-origins=yes to see where uninitialised values come from
+==3215== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 9: Trying hands with straight flushes
 Valgrind returned an error status
-==2973== Memcheck, a memory error detector
-==2973== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2973== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2973== Command: ./test-eval inp.9.txt
-==2973== Parent PID: 2972
-==2973== 
-==2973== Use of uninitialised value of size 8
-==2973==    at 0x400C02: print_hand (deck.c:8)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973== 
-==2973== Conditional jump or move depends on uninitialised value(s)
-==2973==    at 0x402BB9: suit_letter (cards.c:50)
-==2973==    by 0x402C07: print_card (cards.c:61)
-==2973==    by 0x400C14: print_hand (deck.c:9)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973== 
-==2973== Conditional jump or move depends on uninitialised value(s)
-==2973==    at 0x402BBE: suit_letter (cards.c:50)
-==2973==    by 0x402C07: print_card (cards.c:61)
-==2973==    by 0x400C14: print_hand (deck.c:9)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973== 
-==2973== Conditional jump or move depends on uninitialised value(s)
-==2973==    at 0x402B3B: value_letter (cards.c:28)
-==2973==    by 0x402C16: print_card (cards.c:61)
-==2973==    by 0x400C14: print_hand (deck.c:9)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973== 
-==2973== Invalid read of size 8
-==2973==    at 0x400C02: print_hand (deck.c:8)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
-==2973== 
-==2973== 
-==2973== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2973==  Access not within mapped region at address 0x400001102
-==2973==    at 0x400C02: print_hand (deck.c:8)
-==2973==    by 0x402740: describe_hand (test-eval.c:74)
-==2973==    by 0x402920: main (test-eval.c:116)
-==2973==  If you believe this happened as a result of a stack
-==2973==  overflow in your program's main thread (unlikely but
-==2973==  possible), you can try to increase the size of the
-==2973==  main thread stack using the --main-stacksize= flag.
-==2973==  The main thread stack size used in this run was 8388608.
-==2973== 
-==2973== HEAP SUMMARY:
-==2973==     in use at exit: 928 bytes in 20 blocks
-==2973==   total heap usage: 86 allocs, 66 frees, 10,336 bytes allocated
-==2973== 
-==2973== LEAK SUMMARY:
-==2973==    definitely lost: 0 bytes in 0 blocks
-==2973==    indirectly lost: 0 bytes in 0 blocks
-==2973==      possibly lost: 0 bytes in 0 blocks
-==2973==    still reachable: 928 bytes in 20 blocks
-==2973==         suppressed: 0 bytes in 0 blocks
-==2973== Rerun with --leak-check=full to see details of leaked memory
-==2973== 
-==2973== For counts of detected and suppressed errors, rerun with: -v
-==2973== Use --track-origins=yes to see where uninitialised values come from
-==2973== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==3220== Memcheck, a memory error detector
+==3220== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3220== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3220== Command: ./test-eval inp.9.txt
+==3220== Parent PID: 3219
+==3220== 
+==3220== Use of uninitialised value of size 8
+==3220==    at 0x400C02: print_hand (deck.c:8)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220== 
+==3220== Conditional jump or move depends on uninitialised value(s)
+==3220==    at 0x402BA0: suit_letter (cards.c:50)
+==3220==    by 0x402BEE: print_card (cards.c:61)
+==3220==    by 0x400C14: print_hand (deck.c:9)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220== 
+==3220== Conditional jump or move depends on uninitialised value(s)
+==3220==    at 0x402BA5: suit_letter (cards.c:50)
+==3220==    by 0x402BEE: print_card (cards.c:61)
+==3220==    by 0x400C14: print_hand (deck.c:9)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220== 
+==3220== Conditional jump or move depends on uninitialised value(s)
+==3220==    at 0x402B22: value_letter (cards.c:28)
+==3220==    by 0x402BFD: print_card (cards.c:61)
+==3220==    by 0x400C14: print_hand (deck.c:9)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220== 
+==3220== Invalid read of size 8
+==3220==    at 0x400C02: print_hand (deck.c:8)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220==  Address 0x400001102 is not stack'd, malloc'd or (recently) free'd
+==3220== 
+==3220== 
+==3220== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3220==  Access not within mapped region at address 0x400001102
+==3220==    at 0x400C02: print_hand (deck.c:8)
+==3220==    by 0x402727: describe_hand (test-eval.c:74)
+==3220==    by 0x402907: main (test-eval.c:116)
+==3220==  If you believe this happened as a result of a stack
+==3220==  overflow in your program's main thread (unlikely but
+==3220==  possible), you can try to increase the size of the
+==3220==  main thread stack using the --main-stacksize= flag.
+==3220==  The main thread stack size used in this run was 8388608.
+==3220== 
+==3220== HEAP SUMMARY:
+==3220==     in use at exit: 928 bytes in 20 blocks
+==3220==   total heap usage: 86 allocs, 66 frees, 10,336 bytes allocated
+==3220== 
+==3220== LEAK SUMMARY:
+==3220==    definitely lost: 0 bytes in 0 blocks
+==3220==    indirectly lost: 0 bytes in 0 blocks
+==3220==      possibly lost: 0 bytes in 0 blocks
+==3220==    still reachable: 928 bytes in 20 blocks
+==3220==         suppressed: 0 bytes in 0 blocks
+==3220== Rerun with --leak-check=full to see details of leaked memory
+==3220== 
+==3220== For counts of detected and suppressed errors, rerun with: -v
+==3220== Use --track-origins=yes to see where uninitialised values come from
+==3220== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
 Testcase 10: Trying each type of hand ranking
 Valgrind returned an error status
-==2978== Memcheck, a memory error detector
-==2978== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2978== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2978== Command: ./test-eval inp.10.txt
-==2978== Parent PID: 2977
-==2978== 
-==2978== Use of uninitialised value of size 8
-==2978==    at 0x400C02: print_hand (deck.c:8)
-==2978==    by 0x402740: describe_hand (test-eval.c:74)
-==2978==    by 0x402940: main (test-eval.c:119)
-==2978== 
-==2978== Invalid read of size 8
-==2978==    at 0x400C02: print_hand (deck.c:8)
-==2978==    by 0x402740: describe_hand (test-eval.c:74)
-==2978==    by 0x402940: main (test-eval.c:119)
-==2978==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2978== 
-==2978== 
-==2978== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2978==  Access not within mapped region at address 0x0
-==2978==    at 0x400C02: print_hand (deck.c:8)
-==2978==    by 0x402740: describe_hand (test-eval.c:74)
-==2978==    by 0x402940: main (test-eval.c:119)
-==2978==  If you believe this happened as a result of a stack
-==2978==  overflow in your program's main thread (unlikely but
-==2978==  possible), you can try to increase the size of the
-==2978==  main thread stack using the --main-stacksize= flag.
-==2978==  The main thread stack size used in this run was 8388608.
-==2978== 
-==2978== HEAP SUMMARY:
-==2978==     in use at exit: 896 bytes in 18 blocks
-==2978==   total heap usage: 34 allocs, 16 frees, 9,424 bytes allocated
-==2978== 
-==2978== LEAK SUMMARY:
-==2978==    definitely lost: 0 bytes in 0 blocks
-==2978==    indirectly lost: 0 bytes in 0 blocks
-==2978==      possibly lost: 0 bytes in 0 blocks
-==2978==    still reachable: 896 bytes in 18 blocks
-==2978==         suppressed: 0 bytes in 0 blocks
-==2978== Rerun with --leak-check=full to see details of leaked memory
-==2978== 
-==2978== For counts of detected and suppressed errors, rerun with: -v
-==2978== Use --track-origins=yes to see where uninitialised values come from
-==2978== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==3225== Memcheck, a memory error detector
+==3225== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3225== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3225== Command: ./test-eval inp.10.txt
+==3225== Parent PID: 3224
+==3225== 
+==3225== Use of uninitialised value of size 8
+==3225==    at 0x400C02: print_hand (deck.c:8)
+==3225==    by 0x402727: describe_hand (test-eval.c:74)
+==3225==    by 0x402927: main (test-eval.c:119)
+==3225== 
+==3225== Invalid read of size 8
+==3225==    at 0x400C02: print_hand (deck.c:8)
+==3225==    by 0x402727: describe_hand (test-eval.c:74)
+==3225==    by 0x402927: main (test-eval.c:119)
+==3225==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3225== 
+==3225== 
+==3225== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==3225==  Access not within mapped region at address 0x0
+==3225==    at 0x400C02: print_hand (deck.c:8)
+==3225==    by 0x402727: describe_hand (test-eval.c:74)
+==3225==    by 0x402927: main (test-eval.c:119)
+==3225==  If you believe this happened as a result of a stack
+==3225==  overflow in your program's main thread (unlikely but
+==3225==  possible), you can try to increase the size of the
+==3225==  main thread stack using the --main-stacksize= flag.
+==3225==  The main thread stack size used in this run was 8388608.
+==3225== 
+==3225== HEAP SUMMARY:
+==3225==     in use at exit: 896 bytes in 18 blocks
+==3225==   total heap usage: 34 allocs, 16 frees, 9,424 bytes allocated
+==3225== 
+==3225== LEAK SUMMARY:
+==3225==    definitely lost: 0 bytes in 0 blocks
+==3225==    indirectly lost: 0 bytes in 0 blocks
+==3225==      possibly lost: 0 bytes in 0 blocks
+==3225==    still reachable: 896 bytes in 18 blocks
+==3225==         suppressed: 0 bytes in 0 blocks
+==3225== Rerun with --leak-check=full to see details of leaked memory
+==3225== 
+==3225== For counts of detected and suppressed errors, rerun with: -v
+==3225== Use --track-origins=yes to see where uninitialised values come from
+==3225== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
