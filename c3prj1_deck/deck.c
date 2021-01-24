@@ -5,7 +5,7 @@
 
 void print_hand(deck_t * hand){
   card_t * p;
-  for (int i  = 0; i < hand->n_cards ; i++){
+  for (size_t i  = 0; i < hand->n_cards ; i++){
     p = hand->cards[i];
     print_card(* p);
     printf(" ");
