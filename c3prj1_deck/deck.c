@@ -4,7 +4,7 @@
 #include "deck.h"
 
 void print_hand(deck_t * hand){
-  assert(hand->n_cards < 5); 
+  assert(hand->n_cards < 7); 
   card_t * p;
   for (int i  = 0; i < hand->n_cards ; i++){
     p = hand->cards[i];
