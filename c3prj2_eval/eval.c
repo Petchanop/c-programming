@@ -156,7 +156,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     if (k<idx ||k > idx+n-1){
       ans.cards[i+k] = hand->cards[k];
       }
-    if (i+k == 5){
+    if (i+k == 4 ){
     return ans;
 }
   }return ans;}
