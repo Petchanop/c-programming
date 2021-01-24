@@ -144,21 +144,21 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  size_t idx) {
 
   hand_eval_t ans;
-  size_t i;
+  int i;
   ans.ranking = what;
   for (i = 0 ; i < n ;i++){
       ans.cards[i] = hand->cards[idx+i];
-      
-    }
+ }
   
-  size_t k ;
+  int k ;
   for  (k = 0 ; k < 7 ;k++ ){
+    if (i+k == 4 ){
+      return ans;
+    }
     if (k<idx ||k > idx+n-1){
       ans.cards[i+k] = hand->cards[k];
       }
-    if (i+k == 4 ){
-    return ans;
-}
+  
   }return ans;}
 
 
