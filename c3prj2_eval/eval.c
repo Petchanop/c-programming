@@ -144,17 +144,17 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  size_t idx) {
 
   hand_eval_t ans;
-  unsigned i;
+  size_t i;
   ans.ranking = what;
   for (i = 0 ; i < n ;i++){
       ans.cards[i] = hand->cards[idx+i];
       
     }
-  unsigned j = n ;
+  
   size_t k ;
-  for  (k = 0 ; j+k < 5 ;k++ ){
+  for  (k = 0 ; i+k < 7 ;k++ ){
     if (k<idx ||k > idx+n-1){
-      ans.cards[j+k] = hand->cards[k];
+      ans.cards[i+k] = hand->cards[k];
       }
   }
     return ans;
