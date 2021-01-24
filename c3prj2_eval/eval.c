@@ -143,7 +143,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  hand_ranking_t what,
 				  size_t idx) {
 
- 
+  assert(n<5); 
   hand_eval_t ans;
   size_t i;
   ans.ranking = what;
