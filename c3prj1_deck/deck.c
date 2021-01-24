@@ -4,11 +4,13 @@
 #include "deck.h"
 
 void print_hand(deck_t * hand){
+  assert(hand->n_cards < 5); 
+  card_t * p;
   for (int i  = 0; i < hand->n_cards ; i++){
-    card_t p = *(hand->cards[i]);
-    print_card(p);
+    p = hand->cards[i];
+    print_card(* p);
     printf(" ");
-     }
+  }
 }
 
 int deck_contains(deck_t * d, card_t c) {
