@@ -1,14 +1,15 @@
-Grading at Sun Jan 24 18:54:47 UTC 2021
+Grading at Sun Jan 24 20:56:23 UTC 2021
 Compiling deck.c
 Compiling cards.c
 Linking cards.o deck.o deck-c4.o and the grader's .o file
 Checking the output of all the functions other than shuffle
-Your file matched the expected output
- - Those functions seem to work!
+Your file did not match the expected ouput
+ - Those functions seem to have problems
 Checking your shuffle results with a 6 card hand...
-  Least common hand: 0.131800%
-  Most  common hand: 0.146250%
+  Least common hand: %
+  Most  common hand: %
   Perfectly even is: 0.138888%
- Excellent!
+ That doesn't seem terribly uniform.
+ Try to improve your shuffling algorithm and re-grade
 
-Overall Grade: A
+Overall Grade: F
