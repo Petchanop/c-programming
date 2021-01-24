@@ -1,14 +1,14 @@
-Grading at Sun Jan 24 21:03:41 UTC 2021
+Grading at Sun Jan 24 21:07:02 UTC 2021
 Compiling deck.c
-Compiling cards.c
-Linking cards.o deck.o deck-c4.o and the grader's .o file
-Checking the output of all the functions other than shuffle
-Your file matched the expected output
- - Those functions seem to work!
-Checking your shuffle results with a 6 card hand...
-  Least common hand: 0.131800%
-  Most  common hand: 0.146250%
-  Perfectly even is: 0.138888%
- Excellent!
+deck.c: In function ‘print_hand’:
+deck.c:10:16: error: incompatible type for argument 1 of ‘print_card’
+     print_card(p);
+                ^
+In file included from deck.h:4:0,
+                 from deck.c:4:
+cards.h:36:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void print_card(card_t c);
+      ^
+Could not compile your deck.c!
 
-Overall Grade: A
+Overall Grade: FAILED
