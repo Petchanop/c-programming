@@ -6,6 +6,8 @@
 int card_ptr_comp(const void * vp1, const void * vp2) {
   const card_t * const * vp1ptr = vp1;
   const card_t * const * vp2ptr = vp2;
+  assert(vp1ptr);
+  assert(vp2ptr);
   if ((*vp1ptr)->value > (*vp2ptr)->value){
     return -1;
   }
@@ -19,16 +21,16 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
     if ((*vp1ptr)->suit < (*vp2ptr)->suit){
       return 1;
     }
-   }
+  }
   return 0;
 }
-
+  
 suit_t flush_suit(deck_t * hand) {
   int count = 0;
   int temp = 0;
   int stemp = 0;
   int scount;
-  for (int i = 1 ; i < hand->n_cards  ; i++){
+  for (int i = 1 ; i < hand->n_cards ; i++){
     if (hand->cards[i-1]->suit == hand->cards[i-1]->suit){
         count +=1;
 	scount = hand->cards[i-1]->suit;
@@ -151,7 +153,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
       ans.cards[i] = hand->cards[k];
       k++;
     }
-  while   (i >= n && i < 5){
+  while   (i >= n && i < 5 ){
       if(j < idx || j > idx+n){
       ans.cards[i] = hand->cards[j];
       i++; }
@@ -164,20 +166,34 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
-  qsort ( hand1->cards, 7, sizeof(card_t), card_ptr_comp);
-  qsort ( hand2->cards, 7, sizeof(card_t), card_ptr_comp);
+  assert(hand1 && hand2);
 
-  hand_eval_t rank1, rank2;
+  qsort ( hand1->cards,hand1->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
+  qsort ( hand2->cards,hand1->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
 
-  rank1 = evaluate_hand (hand1);
-  rank2 = evaluate_hand (hand2);
+  hand_eval_t  rank1 = evaluate_hand (hand1);
+  hand_eval_t  rank2 = evaluate_hand (hand2);
 
   if(rank1.ranking > rank2.ranking){ return 1;}
   if(rank1.ranking < rank2.ranking){ return -1;}
-  if(rank1.ranking == rank2.ranking){ return 0;}
- 
-
-  return 0;
+  if(rank1.ranking == rank2.ranking){
+    int i;
+    card_t *p1;
+    card_t *p2;
+    for ( i = 0; i < 5; i++) {
+     
+     p1 =  rank1.cards[i];
+     p2 =  rank2.cards[i];
+      
+      if (p1->value > p2->value) {
+      return 1;
+    }
+      if (p1->value < p2->value) {
+      return -1;
+    }
+  }
+    }
+      return 0;
  }
 
 
