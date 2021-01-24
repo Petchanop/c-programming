@@ -69,7 +69,7 @@ unsigned get_largest_element(unsigned * arr, size_t n) {
  
 
 size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
-  for (int i = 0; i < n ; i++){
+  for (size_t i = 0; i < n ; i++){
     if (match_counts[i] == n_of_akind){
       return i;
     }
