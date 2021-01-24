@@ -152,7 +152,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     }
   unsigned j = n ;
   size_t k ;
-  for  (k = 0 ; k < 5;k++ ){
+  for  (k = 0 ; j+k < 5 ;k++ ){
     if (k<idx ||k > idx+n-1){
       ans.cards[j+k] = hand->cards[k];
       }
