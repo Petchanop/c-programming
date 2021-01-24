@@ -1,4 +1,4 @@
-Grading at Sun Jan 24 16:43:42 UTC 2021
+Grading at Sun Jan 24 18:54:47 UTC 2021
 Compiling deck.c
 Compiling cards.c
 Linking cards.o deck.o deck-c4.o and the grader's .o file
