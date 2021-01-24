@@ -152,7 +152,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
     }
   
   size_t k ;
-  for  (k = 0 ; i+k < 7 ;k++ ){
+  for  (k = 0 ; k < 7 ;k++ ){
     if (k<idx ||k > idx+n-1){
       ans.cards[i+k] = hand->cards[k];
       }
