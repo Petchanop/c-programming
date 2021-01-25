@@ -31,7 +31,7 @@ suit_t flush_suit(deck_t * hand) {
   int stemp = 0;
   int scount;
   for (int i = 1 ; i < hand->n_cards ; i++){
-    if (hand->cards[i-1]->suit == hand->cards[i-1]->suit){
+    if (hand->cards[i-1]->suit == hand->cards[i]->suit){
         count +=1;
 	scount = hand->cards[i-1]->suit;
     }
