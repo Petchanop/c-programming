@@ -27,32 +27,22 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   
 suit_t flush_suit(deck_t * hand) {
   int count = 0;
-  int temp = 0;
-  int stemp = 0;
   suit_t scount;
-  for (int i = 1 ; i < hand->n_cards ; i++){
-    if (hand->cards[i-1]->suit == hand->cards[i]->suit){
+  for (int i = 0 ; i < hand->n_cards ; i++){
+    for (int j = 0 ; j < hand->n_cards ; j ++){
+    if (hand->cards[i]->suit == hand->cards[j]->suit && i != j ){
         count +=1;
-	scount = hand->cards[i-1]->suit;
+	scount = hand->cards[i]->suit;
     }
-   else{
-     if ( count >= temp){
-       temp = count;
-       count = 0;
-       stemp = scount;
-     }
-     if (temp > count){
-       count = 0;
-       scount = 0;
-     }
-   }}
-  if (temp == 5){
-  return stemp ;
+    if (count == 4){
+      return scount;
+    }
   }
-  else{
-    return NUM_SUITS;
+    count = 0;
+  }  
+   return NUM_SUITS;
   }
-}
+
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
   unsigned max = arr[0];
