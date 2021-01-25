@@ -6,8 +6,6 @@
 int card_ptr_comp(const void * vp1, const void * vp2) {
   const card_t * const * vp1ptr = vp1;
   const card_t * const * vp2ptr = vp2;
-  assert(vp1ptr);
-  assert(vp2ptr);
   if ((*vp1ptr)->value > (*vp2ptr)->value){
     return -1;
   }
@@ -16,10 +14,10 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   }
   if ((*vp1ptr)->value == (*vp2ptr)->value){
     if ((*vp1ptr)->suit > (*vp2ptr)->suit){
-      return 1;
+      return -1;
     }
     if ((*vp1ptr)->suit < (*vp2ptr)->suit){
-      return -1;
+      return 1;
     }
   }
   return 0;
@@ -173,7 +171,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   assert(hand1 && hand2);
 
   qsort ( hand1->cards,hand1->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
-  qsort ( hand2->cards,hand1->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
+  qsort ( hand2->cards,hand2->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
 
   hand_eval_t  rank1 = evaluate_hand (hand1);
   hand_eval_t  rank2 = evaluate_hand (hand2);
