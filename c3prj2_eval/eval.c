@@ -16,10 +16,10 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   }
   if ((*vp1ptr)->value == (*vp2ptr)->value){
     if ((*vp1ptr)->suit > (*vp2ptr)->suit){
-      return -1;
+      return 1;
     }
     if ((*vp1ptr)->suit < (*vp2ptr)->suit){
-      return 1;
+      return -1;
     }
   }
   return 0;
