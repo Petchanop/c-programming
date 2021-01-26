@@ -168,10 +168,10 @@ return ans;}
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
-  assert(hand1 && hand2);
+ 
 
   qsort ( hand1->cards,hand1->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
-  qsort ( hand2->cards,hand2->n_cards, sizeof(hand1->cards[0]), card_ptr_comp);
+  qsort ( hand2->cards,hand2->n_cards, sizeof(hand2->cards[0]), card_ptr_comp);
 
   hand_eval_t  rank1 = evaluate_hand (hand1);
   hand_eval_t  rank2 = evaluate_hand (hand2);
