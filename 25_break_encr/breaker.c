@@ -30,23 +30,16 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  if (key == 0){
-    fprintf(stderr, "Possibly empty file!\n");
-    return EXIT_FAILURE;
-  }
-  else{
   int de =  26-( key + 4) ;
   return de;
   }
-}
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr,"Usage: encrypt key inputFileName\n");
+    fprintf(stderr,"not enough arguments\n");
     return EXIT_FAILURE;
   }
-  else{  
-     FILE * f = fopen(argv[1], "r");
+  FILE * f = fopen(argv[1], "r");
   if (f == NULL) {
     perror("Could not open file");
     return EXIT_FAILURE;
@@ -57,6 +50,5 @@ int main(int argc, char ** argv) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
   }
-  }
-  return EXIT_SUCCESS;
+   return EXIT_SUCCESS;
 }
