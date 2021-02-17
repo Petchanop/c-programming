@@ -42,15 +42,7 @@ int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
   int de = 26-(key - 4) ;
-  if (de < 26 && de >= 1){
-    return de;
-  }
-  if (de == 26){
-    de = 0;
-    return de;
-  }
-  return EXIT_SUCCESS;
-}
+  return de;
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
