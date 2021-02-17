@@ -34,7 +34,7 @@ int freqcount(FILE * f,int * count){
   }
   else{
     fprintf(stderr,"not enough words\n");
-    return k;
+    return EXIT_FAILUREk;
   }
 }
 
