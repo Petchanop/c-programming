@@ -60,10 +60,7 @@ int main(int argc, char ** argv) {
   if (ans < 26 ){
     fprintf(stdout,"%d\n",ans);
   }
-  if (ans == 26){
-    ans = 0;
-    fprintf(stdout,"%d\n",ans);
-  }
+  
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
