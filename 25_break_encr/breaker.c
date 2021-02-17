@@ -35,7 +35,11 @@ int breaker(FILE * f){
 }
 
 int main(int argc, char ** argv) {
-  if (argc == 2) {
+  if (argc != 2) {
+    fprintf(stderr,"Usage: encrypt key inputFileName\n");
+    return EXIT_FAILURE;
+  }
+  else{  
      FILE * f = fopen(argv[1], "r");
   if (f == NULL) {
     perror("Could not open file");
