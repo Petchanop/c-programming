@@ -6,7 +6,7 @@
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
-  while (((c = fgetc(f)) != EOF) && n < 110) {
+  while (((c = fgetc(f)) != EOF) && n < 100) {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
@@ -30,7 +30,7 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  int de =  26-( key + 4) ;
+  int de =  26 -( key + 4) ;
   return de;
   }
 
@@ -45,7 +45,10 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = breaker(f);
-  fprintf(stdout,"%d\n",ans);
+  if( ans < 26 && ans > 0){
+  printf("%d\n",ans);
+  return EXIT_SUCCESS;
+  }
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
