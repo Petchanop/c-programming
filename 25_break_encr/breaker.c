@@ -29,7 +29,7 @@ int freqcount(FILE * f,int * count){
     }
     i++;
   }
-  if (j > 3){
+  if (j > 2){
     return k;
   }
   else{
