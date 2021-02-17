@@ -1,7 +1,7 @@
-Grading at Wed Feb 17 21:58:26 UTC 2021
+Grading at Wed Feb 17 22:00:23 UTC 2021
 Attempting to compile breaker.c 
 gcc -o breaker -pedantic -std=gnu99 -Wall -Werror breaker.c
-testcase1 failed, your program didn't indicate this is a failure case
+testcase1 passed
 #################################################
 testcase2:
 testcase2 failed
