@@ -24,11 +24,11 @@ int freqcount(FILE * f,int * count){
   return max;
 }
 
-void breaker(FILE * f){
+int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
   int de = 26 - (key + ("e" - "a")) ;
-  printf("%d\n",de);
+  return de;
 }
 
 int main(int argc, char ** argv) {
@@ -42,7 +42,8 @@ int main(int argc, char ** argv) {
     perror("Could not open file");
     return EXIT_FAILURE;
   }
-  breaker(f);
+  int ans = breaker(f);
+  printf("%d\n",ans);
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
