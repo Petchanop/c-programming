@@ -22,7 +22,7 @@ int freqcount(FILE * f,int * count){
     }
     i++;
   }
-  return i;
+  return k;
 }
 
 int breaker(FILE * f){
