@@ -58,7 +58,7 @@ int main(int argc, char ** argv) {
   }
   int ans = breaker(f);
   if (ans < 26 && ans >= 1){
-    fprintf(stdout"%d\n",ans);
+    fprintf(stdout,"%d\n",ans);
   }
   if (ans == 26){
     ans = 0;
