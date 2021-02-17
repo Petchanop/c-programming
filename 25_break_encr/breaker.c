@@ -11,9 +11,9 @@ int freqcount(FILE * f,int * count){
       c = tolower(c);
       c -= 'a';
       count[c] += 1;
-      n++ ;
     }
-  }
+      n++ ;
+     }
   int max = 0;
   int i = 0 ;
   int k ;
