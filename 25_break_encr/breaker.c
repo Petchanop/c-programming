@@ -14,20 +14,21 @@ int freqcount(FILE * f,int * count){
   }
   int max = 0;
   int i = 0 ;
+  int k;
     while (i < 26){
     if (count[i] > max){
       max = count[i];
-
+      k = i;
     }
     i++;
   }
-  return max;
+  return i;
 }
 
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  int de = 26 - ((key + ("e" - "a"))%26) ;
+  int de = key + 4 ;
   return de;
 }
 
