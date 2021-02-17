@@ -34,8 +34,10 @@ int breaker(FILE * f){
     fprintf(stderr, "Possibly empty file!\n");
     return EXIT_FAILURE;
   }
+  else{
   int de =  26-( key + 4) ;
   return de;
+  }
 }
 
 int main(int argc, char ** argv) {
