@@ -43,6 +43,7 @@ int breaker(FILE * f){
   int key = freqcount(f,count);
   int de = 26-(key - 4) ;
   return de;
+}
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
