@@ -44,7 +44,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = breaker(f);
-  printf("%d\n",ans);
+  printf(stdout,"%d\n",ans);
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
