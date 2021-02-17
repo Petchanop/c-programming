@@ -58,11 +58,11 @@ int main(int argc, char ** argv) {
   }
   int ans = breaker(f);
   if (ans < 26 && ans >= 1){
-    printf("%d\n",ans);
+    fprintf(stdout"%d\n",ans);
   }
   if (ans == 26){
     ans = 0;
-    printf("%d\n",ans);
+    fprintf(stdout,"%d\n",ans);
   }
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
