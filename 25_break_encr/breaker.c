@@ -41,7 +41,7 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  int de = 26-(key - 4) ;
+  int de = 26 - (key - 4) ;
   return de;
 }
 
@@ -57,7 +57,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = breaker(f);
-  if (ans < 26 && ans >= 1){
+  if (ans < 26 ){
     fprintf(stdout,"%d\n",ans);
   }
   if (ans == 26){
