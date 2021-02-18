@@ -49,7 +49,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = breaker(f);
-  if (ans > 0){
+  if (ans >= 0){
     fprintf(stdout,"%d\n",ans);
   }
   if (ans < 0){
