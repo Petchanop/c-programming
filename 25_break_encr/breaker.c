@@ -8,7 +8,7 @@ int freqcount(FILE * f,int * count){
   while ((c = fgetc(f)) != EOF)  {
     if (isalpha(c)) {
       c = tolower(c);
-      c -= "a";
+      c -= 'a';
       count[c] += 1;
       }
    }
@@ -34,7 +34,7 @@ int breaker(FILE * f){
     fprintf(stderr, "Possibly empty file!\n");
     return EXIT_FAILURE;
   }
-  int de = key + 97 - "e" ;
+  int de = (26-(key-4))%26 ;
   return de;
 }
 
