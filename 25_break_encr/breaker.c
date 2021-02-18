@@ -5,11 +5,13 @@
 
 int freqcount(FILE * f,int * count){
   int c;
-  while ((c = fgetc(f)) != EOF)  {
+  int n = 0;
+  while (((c = fgetc(f)) != EOF) && n <= 100)  {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
       count[c] += 1;
+      n++;
     }
    }
   int max = 0;
@@ -28,7 +30,10 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  int de = 26-(key - 4) ;
+  if (key == 0){
+    return key;
+  }
+  int de = (26-(key - 4))%26 ;
   return de;
 }
 
