@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = freqcount(f);
-  print("%d\n",ans);
+  printf("%d\n",ans);
 
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
