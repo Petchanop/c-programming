@@ -1,4 +1,4 @@
-Grading at Thu Feb 18 15:21:25 UTC 2021
+Grading at Thu Feb 18 15:24:10 UTC 2021
 Attempting to compile breaker.c 
 gcc -o breaker -pedantic -std=gnu99 -Wall -Werror breaker.c
 testcase1 passed
@@ -7,7 +7,7 @@ testcase2:
 testcase2 failed
 #################################################
 testcase3:
-testcase3 passed
+testcase3 failed
 #################################################
 testcase4:
 testcase4 failed
