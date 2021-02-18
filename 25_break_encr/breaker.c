@@ -17,6 +17,7 @@ int freqcount(FILE * f){
   int max = 0;
   int i ;
   int k ;
+  int de = 0;
   for  (i = 0 ; i < 26 ;i++ ){
     if (count[i] > max){
       max = count[i];
