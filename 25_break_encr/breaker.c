@@ -27,16 +27,18 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  if (key == 0){
-    return key;
-  }
   if (key < 0){
     fprintf(stderr, "Possibly empty file!\n");
     return EXIT_FAILURE;
   }
-  int de = (26-(key-4))%26 ;
+  if (key < 4){
+    int de = (26+(key-4))%26;
+    return de;
+  }
+  int de = (26-(key - 4))%26 ;
   return de;
 }
+ 
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
