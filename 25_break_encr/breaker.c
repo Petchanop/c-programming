@@ -13,15 +13,14 @@ int freqcount(FILE * f,int * count){
       }
    }
   int max = 0;
-  int i = 0 ;
+  int i ;
   int k ;
-  while (i < 26){
+  for  (i = 0 ; i < 26 ;i++ ){
      if (count[i] > max){
 	max = count[i];
 	k = i;
       }
-       i++;
-  }
+     }
   return k;
 }
 
