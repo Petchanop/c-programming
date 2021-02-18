@@ -6,14 +6,13 @@
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
-  while (((c = fgetc(f)) != EOF) && n < 110) {
+  while ((c = fgetc(f)) != EOF)  {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
       count[c] += 1;
     }
-      n++ ;
-     }
+   }
   int max = 0;
   int i = 0 ;
   int k ;
