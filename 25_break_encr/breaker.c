@@ -5,7 +5,7 @@
 void filetobig(int * s){
   fprintf(stderr,"File is too big\n");
   for (int i = 1 ; i < 26 ; i++){
-    printf("%d\n",count[i]);
+    printf("%d\n",s[i]);
   }
   exit(EXIT_FAILURE);
 }
