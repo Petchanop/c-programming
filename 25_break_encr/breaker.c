@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+void filetobig(int * s){
+  fprintf(stderr,"File is too big\n");
+  for (int i = 1 ; i < 26 ; i++){
+    printf("%d\n",count[i]);
+  }
+  exit(EXIT_FAILURE);
+}
+
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
@@ -27,13 +35,6 @@ int freqcount(FILE * f,int * count){
   }
   return k;
 }
-void filetobig(int * s){
-    fprintf(stderr,"File is too big\n");
-    for (int i = 1 ; i < 26 ; i++){
-      printf("%d\n",count[i]);
-    }
-    exit(EXIT_FAILURE);
-   }
 
 int breaker(FILE * f){
   int count[26] = {0};
