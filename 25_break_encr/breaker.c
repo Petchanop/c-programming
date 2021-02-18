@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int filetobig(int * s){
-  fprintf(stderr,"File is too big\n");
-  printf("%d\n",s[5]);
-  }
-  exit(EXIT_FAILURE);
-}
-
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
@@ -30,7 +23,8 @@ int freqcount(FILE * f,int * count){
       }
      }
   if ( n > 529000){
-    return filetobig(count);
+    printf("%d\n",count[1]);
+    return EXIT_FAILURE;
   }
   return k;
 }
