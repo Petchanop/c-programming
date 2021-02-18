@@ -49,6 +49,10 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   int ans = breaker(f);
+  if (ans < 0){
+    perror("file is empty");
+    return EXIT_FAILURE;
+  }
   fprintf(stdout,"%d\n",ans);
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
