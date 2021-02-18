@@ -46,7 +46,7 @@ int breaker(FILE * f){
   int key = freqcount(f,count);
   if (key < 0){
     fprintf(stderr, "Possibly empty file!\n");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   int de;
   if (key < 4){
