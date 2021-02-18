@@ -37,12 +37,8 @@ int breaker(FILE * f){
   if (key < 4){
     de = (26-(4-key))%26;
   }
-  if ( key < 26){
-    de = (26-(key - 4))%26 ;
-  }
   else{
-    fprintf(stderr,"Failure\n");
-    exit(EXIT_FAILURE);
+    de = (26-(key - 4))%26 ;
   }
   return de;
 }
