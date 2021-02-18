@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
-
 
 int freqcount(FILE * f,int * count){
   int c;
@@ -13,10 +11,7 @@ int freqcount(FILE * f,int * count){
       c -= 'a';
       count[c] += 1;
       n++;
-      if ( n > 529000){
-	fprintf(stderr,"File is too big\n");
-	exit(EXIT_FAILURE);
-       }
+      }
    }
   int max = 0;
   int i ;
