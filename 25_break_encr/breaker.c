@@ -3,6 +3,18 @@
 #include <ctype.h>
 #include <string.h>
 
+int checkkey(int key,int de){
+  key += de;
+  key %= 26;
+  if (key == 4){
+    return de;
+  }
+  else{
+    fprintf(stderr,"key is not e\n");
+    exit  EXIT_FAILURE;
+  }
+}
+
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
@@ -32,12 +44,14 @@ int breaker(FILE * f){
     fprintf(stderr, "Possibly empty file!\n");
     return EXIT_FAILURE;
   }
+  int de;
   if (key < 4){
-    int de = (26+(key-4))%26;
-    return de;
+    de = (26+(key-4))%26;
   }
-  int de = (26-(key - 4))%26 ;
-  return de;
+  else{
+    de = (26-(key - 4))%26 ;
+  }
+  return checkkey(key,de);
 }
  
 
