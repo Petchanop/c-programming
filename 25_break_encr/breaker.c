@@ -41,7 +41,7 @@ int freqcount(FILE * f,int * count){
 int breaker(FILE * f){
   int count[26] = {0};
   int key = freqcount(f,count);
-  int de = 26-(key-(("e"-"a")%26)) ;
+  int de = 26-(key - 4) ;
   return de;
 }
 
