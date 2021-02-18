@@ -1,4 +1,4 @@
-#include <stdio.h>
+\0;276;0c#include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -7,12 +7,16 @@
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
-  while (((c = fgetc(f)) != EOF) && n <= 1000) {
+  while (((c = fgetc(f)) != EOF)) {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
       count[c] += 1;
-      n++; }
+      n++;
+      if ( n > 529000){
+	fprintf(stderr,"File is too big\n");
+	exit(EXIT_FAILURE);
+       }
    }
   int max = 0;
   int i ;
