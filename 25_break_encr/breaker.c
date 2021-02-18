@@ -16,7 +16,7 @@ int checkkey(int key,int de){
     fprintf(stderr,"key is not e\n");
     exit(EXIT_FAILURE);
   }
-  return de;
+  return 26-de;
 }
 
 int freqcount(FILE * f,int * count){
@@ -46,7 +46,7 @@ int breaker(FILE * f){
   int key = freqcount(f,count);
   if (key < 0){
     fprintf(stderr, "Possibly empty file!\n");
-    exit(EXIT_FAILURE);
+    return EXIT_FAILURE;
   }
   int de;
   if (key < 4){
