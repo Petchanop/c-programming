@@ -35,10 +35,10 @@ int breaker(FILE * f){
   }
   int de;
   if (key < 4){
-    de = (26-(4-key))%26;
+    de = (26-(4-key));
   }
   else{
-    de = (26-(key - 4))%26 ;
+    de = (26-(key - 4)) ;
   }
   return de;
 }
