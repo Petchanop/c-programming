@@ -3,21 +3,6 @@
 #include <ctype.h>
 #include <string.h>
 
-int checkkey(int key,int de){
-  int e;
-
-  if (key >= 4){
-    e = key-(26-de);
-  }
-  if (key < 4){
-    e = key+(26-de) ;
-  }
-  if (e != 4){
-    fprintf(stderr,"key is not e\n");
-    exit(EXIT_FAILURE);
-  }
-  return 26-de;
-}
 
 int freqcount(FILE * f,int * count){
   int c;
@@ -55,7 +40,7 @@ int breaker(FILE * f){
   else{
     de = (26-(key - 4))%26 ;
   }
-  return checkkey(key,de);
+  return de;
 }
  
 
