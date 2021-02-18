@@ -37,7 +37,7 @@ int breaker(FILE * f){
   if (key < 4){
     de = (26-(4-key))%26;
   }
-  if (key >= 4 && key < 26){
+  if ( key < 26){
     de = (26-(key - 4))%26 ;
   }
   else{
