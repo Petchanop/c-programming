@@ -17,25 +17,14 @@ int freqcount(FILE * f,int * count){
   int max = 0;
   int i = 0 ;
   int k ;
-  int j = 0;
-  //int index;
   while (i < 26){
-    if (count[i] > 0){
-      j += 1;
-      if (count[i] > max){
+     if (count[i] > max){
 	max = count[i];
 	k = i;
       }
-    }
-    i++;
+       i++;
   }
-  if (j > 2){
-    return k;
-  }
-  else{
-    fprintf(stderr,"not enough words\n");
-    return EXIT_FAILURE;
-  }
+  return k;
 }
 
 int breaker(FILE * f){
