@@ -13,10 +13,6 @@ int freqcount(FILE * f,int * count){
       n++;
       }
    }
-  if ( n > 529000){
-    fprintf(stderr,"File is too big\n");
-    exit(EXIT_FAILURE);
-  }
   int max = 0;
   int i ;
   int k ;
@@ -26,8 +22,18 @@ int freqcount(FILE * f,int * count){
 	k = i;
       }
      }
+  if ( n > 529000){
+    return filetobig(count);
+  }
   return k;
 }
+void filetobig(int * s){
+    fprintf(stderr,"File is too big\n");
+    for (int i = 1 ; i < 26 ; i++){
+      printf("%d\n",count[i]);
+    }
+    exit(EXIT_FAILURE);
+   }
 
 int breaker(FILE * f){
   int count[26] = {0};
