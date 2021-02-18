@@ -8,7 +8,7 @@ int freqcount(FILE * f,int * count){
   while ((c = fgetc(f)) != EOF)  {
     if (isalpha(c)) {
       c = tolower(c);
-      c -= 97;
+      c -= "a";
       count[c] += 1;
       }
    }
@@ -30,13 +30,17 @@ int breaker(FILE * f){
   if (key == 0){
     return key;
   }
-  int de = (26-(key - 4))%26 ;
+  if (key < 0){
+    fprintf(stderr, "Possibly empty file!\n");
+    return EXIT_FAILURE;
+  }
+  int de = key + 97 - "e" ;
   return de;
 }
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr,"Usage: encrypt key inputFileName\n");
+    fprintf(stderr,"not enough arguments\n");
     return EXIT_FAILURE;
   }
 
