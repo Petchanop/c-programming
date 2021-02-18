@@ -23,7 +23,7 @@ int freqcount(FILE * f,int * count){
       }
      }
   if ( n > 529000){
-    printf("%d\n",count[8]);
+    printf("%d\n",count[9]);
     return EXIT_FAILURE;
   }
   return k;
