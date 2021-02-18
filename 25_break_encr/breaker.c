@@ -11,7 +11,7 @@ int checkkey(int key,int de){
   }
   else{
     fprintf(stderr,"key is not e\n");
-    exit  EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 }
 
