@@ -8,7 +8,7 @@ int freqcount(FILE * f,int * count){
   while ((c = fgetc(f)) != EOF)  {
     if (isalpha(c)) {
       c = tolower(c);
-      c -= 'a';
+      c -= 97;
       count[c] += 1;
       }
    }
