@@ -25,11 +25,11 @@ int freqcount(FILE * f){
     }
   }
 
-   if (k < 'e'-'a'){
-     de = (26 - ('e'-'a'))+k;
+   if (k < 4){
+     de = (26 - 4))+k;
  }
    else{
-     de = k-('e'-'a') ;
+     de = k-4 ;
  }
 return de;
 }
