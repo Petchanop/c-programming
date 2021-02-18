@@ -26,7 +26,7 @@ int freqcount(FILE * f){
   }
 
    if (k < 4){
-     de = (26 - 4))+k;
+     de = (26 - 4)+k;
  }
    else{
      de = k-4 ;
