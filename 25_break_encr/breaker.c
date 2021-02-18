@@ -33,7 +33,7 @@ int breaker(FILE * f){
   if (key == 0){
     return key;
   }
-  int de = (26+(key - 4))%26 ;
+  int de = (26-(key - 4))%26 ;
   return de;
 }
 
