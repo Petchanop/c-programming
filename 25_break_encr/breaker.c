@@ -5,7 +5,7 @@
 
 int freqcount(FILE * f,int * count){
   int c;
-  while (((c = fgetc(f)) != EOF) && c <= 5) {
+  while ((c = fgetc(f)) != EOF)  {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
