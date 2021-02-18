@@ -4,21 +4,25 @@
 #include <string.h>
 
 int checkkey(int key,int de){
-  key += de;
-  key %= 26;
-  if (key == 4){
-    return de;
+  int e;
+
+  if (key >= 4){
+    e = key-(26-de);
   }
-  else{
+  if (key < 4){
+    e = key+(26-de) ;
+  }
+  if (e != 4){
     fprintf(stderr,"key is not e\n");
     exit(EXIT_FAILURE);
   }
+  return de;
 }
 
 int freqcount(FILE * f,int * count){
   int c;
   int n = 0;
-  while (((c = fgetc(f)) != EOF) && n <= 100) {
+  while (((c = fgetc(f)) != EOF) && n <= 1000) {
     if (isalpha(c)) {
       c = tolower(c);
       c -= 'a';
