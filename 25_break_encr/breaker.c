@@ -50,7 +50,7 @@ int main(int argc, char ** argv) {
   }
   int ans = breaker(f);
   fprintf(stdout,"%d\n",ans);
-  }
+  
   if (fclose(f) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
