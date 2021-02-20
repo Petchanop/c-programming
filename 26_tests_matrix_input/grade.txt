@@ -1,4 +1,4 @@
-Grading at Sat Feb 20 16:44:23 UTC 2021
+Grading at Sat Feb 20 16:49:33 UTC 2021
 Checking rotateMatrix1
 Your tests identified the problem with rotateMatrix1
 Checking rotateMatrix2
@@ -10,6 +10,11 @@ Your tests identified the problem with rotateMatrix4
 Checking rotateMatrix5
 Your tests identified the problem with rotateMatrix5
 Checking rotateMatrix6
-***Your tests failed to show that rotateMatrix6 was broken!
+Your tests identified the problem with rotateMatrix6
+Checking rotateMatrix7
+Your tests identified the problem with rotateMatrix7
+Checking rotateMatrix8
+Your tests identified the problem with rotateMatrix8
+Your tests identified problems with all broken programs
 
-Overall Grade: FAILED
+Overall Grade: PASSED
