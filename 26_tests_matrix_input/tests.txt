@@ -3,3 +3,4 @@ arg1 arg2
 empty.txt
 tests1.txt
 tests4.txt
+tests6.txt
