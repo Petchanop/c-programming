@@ -1,4 +1,4 @@
-Grading at Sat Feb 20 16:28:19 UTC 2021
+Grading at Sat Feb 20 16:31:16 UTC 2021
 Checking rotateMatrix1
 Your tests identified the problem with rotateMatrix1
 Checking rotateMatrix2
@@ -6,6 +6,10 @@ Your tests identified the problem with rotateMatrix2
 Checking rotateMatrix3
 Your tests identified the problem with rotateMatrix3
 Checking rotateMatrix4
-***Your tests failed to show that rotateMatrix4 was broken!
+Your tests identified the problem with rotateMatrix4
+Checking rotateMatrix5
+Your tests identified the problem with rotateMatrix5
+Checking rotateMatrix6
+***Your tests failed to show that rotateMatrix6 was broken!
 
 Overall Grade: FAILED
