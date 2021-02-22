@@ -52,13 +52,13 @@ int main(int argc, char ** argv) {
       i++;
       j = 0;
       if (c != '\n'){
-	fprintf(stderr,"Line Too Long!");
+	fprintf(stderr,"Line Too Long!\n");
 	exit(EXIT_FAILURE);
       }
     }
     else{
       if (c == '\n'){
-	fprintf(stderr,"Less column");
+	fprintf(stderr,"Less column\n");
 	exit(EXIT_FAILURE);
       }
       matrix[i][j] = c;
@@ -69,7 +69,7 @@ int main(int argc, char ** argv) {
 
   fclose(f);
 
-  if (i < 9){
+  if (i < 10){
     fprintf(stderr,"Few lines\n");
     exit(EXIT_FAILURE);
   }
