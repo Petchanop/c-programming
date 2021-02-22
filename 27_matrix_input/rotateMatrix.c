@@ -3,6 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define LINE_SIZE 10
+
 void rotate(char matrix[10][10]){
   int j = 9;
   int k = 0;
@@ -10,12 +12,12 @@ void rotate(char matrix[10][10]){
     for (int i = k , l = 0 ; i < j ;i++, l++){
       char a = matrix[k][i];
       char b = matrix[i][j];
-      char c = matrix[j-l][j-l];
+      char c = matrix[j][j-l];
       char d = matrix[j-l][k];
       matrix[k][i] = d;
       matrix[i][j] = a;
-      matrix[j-l][j-i] = b;
-      matrix[j-i][k] = c;
+      matrix[j][j-l] = b;
+      matrix[j-l][k] = c;
     }
     k++;
     j--; }
@@ -23,7 +25,7 @@ void rotate(char matrix[10][10]){
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr,"should takes 1 arguments\n");
+    fprintf(stderr,"Invalid arguments\n");
     return EXIT_FAILURE;
   }
 
@@ -32,30 +34,45 @@ int main(int argc, char ** argv) {
     perror("Could not open file");
     return EXIT_FAILURE;
   }
-  char  matrix[10][10];
-  int c;
-  int i = 0;
-
-  while ((c = (char)fgetc(f))!= EOF){
-    i++;
+  int c = fgetc(f);
+  if(c == EOF){
+    fprintf(stderr,"Usage: Empty File\n");
+    return EXIT_FAILURE;
   }
+  char  matrix[10][10];
+  int i = 0;
+  int j = 0;
+  while (c != EOF){
+
+    if (i > 9){
+      fprintf(stderr,"Too many rows\n");
+      exit(EXIT_FAILURE);
+    }
+    if (j == 10){
+      i++;
+      j = 0;
+      if (c != '\n'){
+	fprintf(stderr,"Line Too Long!");
+	exit(EXIT_FAILURE);
+      }
+    }
+    else{
+      if (c == '\n'){
+	fprintf(stderr,"Less column");
+	exit(EXIT_FAILURE);
+      }
+      matrix[i][j] = c;
+      j++;
+    }
+    c = fgetc(f);
+  }
+
+  fclose(f);
+
   if (i < 9){
     fprintf(stderr,"Few lines\n");
     exit(EXIT_FAILURE);
   }
-  if (i > 9){
-    fprintf(stderr,"lines too long\n");
-    exit(EXIT_FAILURE);
-  }
-  for (int i = 0; i < 10; i++){
-    for (int  j = 0; j < 10; j++){
-      c = fgetc(f);
-      if (c == '\n') c = fgetc(f);
-      matrix[i][j] = c;
-    }
-  }
-
-
   rotate(matrix);
   for(int i=0; i<10; i++){
     for(int j=0; j<10; j++){
@@ -63,12 +80,5 @@ int main(int argc, char ** argv) {
     }
     printf("\n");
   }
-
-
-  if (fclose(f) != 0) {
-    perror("Failed to close the input file!");
-    return EXIT_FAILURE;
-  }
-
   return EXIT_SUCCESS;
 }
