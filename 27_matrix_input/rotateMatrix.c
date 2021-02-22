@@ -3,8 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-#define LINE_SIZE 10
-
 void rotate(char matrix[10][10]){
   int j = 9;
   int k = 0;
@@ -25,7 +23,7 @@ void rotate(char matrix[10][10]){
 
 int main(int argc, char ** argv) {
   if (argc != 2) {
-    fprintf(stderr,"Usage: encrypt key inputFileName\n");
+    fprintf(stderr,"should takes 1 arguments\n");
     return EXIT_FAILURE;
   }
 
@@ -37,10 +35,8 @@ int main(int argc, char ** argv) {
   char  matrix[10][10];
   int c;
   int i = 0;
+
   while ((c = (char)fgetc(f))!= EOF){
-    for (int r=0;r<10;r++){
-      matrix[i][r] = c;
-    }
     i++;
   }
   if (i < 9){
@@ -48,10 +44,16 @@ int main(int argc, char ** argv) {
     exit(EXIT_FAILURE);
   }
   if (i > 9){
-    fprintf(stderr,"lines tpp long\n");
+    fprintf(stderr,"lines too long\n");
     exit(EXIT_FAILURE);
   }
-
+  for (int i = 0; i < 10; i++){
+    for (int  j = 0; j < 10; j++){
+      c = fgetc(f);
+      if (c == '\n') c = fgetc(f);
+      matrix[i][j] = c;
+    }
+  }
 
 
   rotate(matrix);
