@@ -5,9 +5,10 @@
 
 void encrypt(FILE * f, int key, FILE * outfile){
   char * line;
+  char * ptr;
   size_t sz;
   while (getline(&line,&sz, f) >= 0) {
-    char * ptr = line;
+     ptr = line;
     while (*ptr != '\0') {
       int c = *ptr;
       if (isalpha(c)) {
@@ -20,6 +21,7 @@ void encrypt(FILE * f, int key, FILE * outfile){
       *ptr = c;
       ptr++;
     }
+    
     fprintf(outfile, "%s", line);
   }
 }
@@ -40,7 +42,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   //outfileNAme is argv[2] + ".txt", so add 4 to its length.
-  char * outFileName = malloc((strlen(argv[2]) + 4) * sizeof(*outFileName));
+  char * outFileName =  malloc(sizeof(*outFileName));
   strcpy(outFileName, argv[2]);
   strcat(outFileName, ".enc");
   FILE * outFile = fopen(outFileName, "w");
