@@ -1,16 +1,22 @@
-Grading at Tue Feb 23 10:31:53 UTC 2021
+Grading at Tue Feb 23 10:32:52 UTC 2021
 Attempting to compile encrypt.c
-encrypt.c: In function ‘main’:
-encrypt.c:45:47: error: invalid operands to binary * (have ‘char *’ and ‘long unsigned int’)
-   char * outFileName =  malloc(strlen(argv[2] * sizeof(*outFileName));
-                                               ^
-encrypt.c:45:70: error: expected ‘)’ before ‘;’ token
-   char * outFileName =  malloc(strlen(argv[2] * sizeof(*outFileName));
-                                                                      ^
-encrypt.c:60:1: error: expected ‘,’ or ‘;’ before ‘}’ token
- }
- ^
-encrypt.c:60:1: error: expected declaration or statement at end of input
-The code did not compile!
+testcase1:
+valgrind reported memory errors
+#################################################
+testcase2:
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+#################################################
+testcase3:
+valgrind reported memory errors
+#################################################
+testcase4:
+valgrind reported memory errors
+#################################################
+testcase5:
+valgrind reported memory errors
+#################################################
+testcase6:
+valgrind reported memory errors
 
 Overall Grade: F
