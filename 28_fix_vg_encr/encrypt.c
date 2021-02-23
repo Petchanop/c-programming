@@ -8,8 +8,7 @@ void encrypt(FILE * f, int key, FILE * outfile){
   char * ptr;
   size_t sz;
   while (getline(&line,&sz, f) >= 0) {
-    ptr = realloc(ptr,(strlen(line)+1) * sizeof(*ptr));
-     ptr = line;
+    ptr = line;
     while (*ptr != '\0') {
       int c = *ptr;
       if (isalpha(c)) {
@@ -20,11 +19,12 @@ void encrypt(FILE * f, int key, FILE * outfile){
 	c += 'a';
       }
       *ptr = c;
+      free(ptr);
       ptr++;
     }
-    
+    ptr = realloc(ptr,sizeof(*ptr));
     fprintf(outfile, "%s", line);
-  }
+   }
 }
 
 int main(int argc, char ** argv) {
@@ -48,6 +48,7 @@ int main(int argc, char ** argv) {
   strcat(outFileName, ".enc");
   FILE * outFile = fopen(outFileName, "w");
   encrypt(f,key, outFile);
+  free(outFileName);
   if (fclose(outFile) != 0) {
     perror("Failed to close the input file!");
     return EXIT_FAILURE;
