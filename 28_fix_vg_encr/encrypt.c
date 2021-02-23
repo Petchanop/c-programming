@@ -8,6 +8,7 @@ void encrypt(FILE * f, int key, FILE * outfile){
   char * ptr;
   size_t sz;
   while (getline(&line,&sz, f) >= 0) {
+    ptr = realloc(ptr,(strlen(line)+1) * sizeof(*ptr));
      ptr = line;
     while (*ptr != '\0') {
       int c = *ptr;
