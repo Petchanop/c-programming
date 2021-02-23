@@ -3,14 +3,13 @@
 #include <ctype.h>
 #include <string.h>
 
-void encrypt(FILE * f, int key, FILE * outfile){
-  char * line = NULL;
-  char * ptr = NULL;
+void encrypt(FILE * f, int key,FILE * outfile){
+  char * line = NULL ;
+  char * ptr ;
   size_t sz;
   while (getline(&line,&sz, f) >= 0) {
-    ptr = realloc(ptr,sizeof(* ptr));
-    ptr = line;
-    while (*ptr != '\0') {
+     ptr = line;
+    while (*ptr != 0) {
       int c = *ptr;
       if (isalpha(c)) {
 	c = tolower(c);
@@ -21,12 +20,12 @@ void encrypt(FILE * f, int key, FILE * outfile){
       }
       *ptr = c;
        ptr++;
-    }
-   fprintf(outfile, "%s", line);
+           }
+    fprintf(outfile, "%s", line);
    }
-  free(ptr);
-  free(line);
- }
+   free(line);
+  ;
+   }
 
 int main(int argc, char ** argv) {
   if (argc != 3) {
@@ -47,7 +46,7 @@ int main(int argc, char ** argv) {
   char *  outFileName =  malloc((strlen(argv[2])+5) * sizeof(*outFileName));
   strcpy(outFileName, argv[2]);
   strcat(outFileName, ".enc");
-  FILE * outFile = fopen(outFileName, "w");
+  FILE * outFile = fopen(outFileName, "w");  
   encrypt(f,key, outFile);
   free(outFileName);
   if (fclose(outFile) != 0) {
