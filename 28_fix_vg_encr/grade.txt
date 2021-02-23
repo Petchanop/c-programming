@@ -1,4 +1,4 @@
-Grading at Tue Feb 23 11:30:38 UTC 2021
+Grading at Tue Feb 23 12:08:33 UTC 2021
 Attempting to compile encrypt.c
 testcase1:
 valgrind reported memory errors
