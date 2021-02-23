@@ -4,10 +4,11 @@
 #include <string.h>
 
 void encrypt(FILE * f, int key, FILE * outfile){
-  char * line;
-  char * ptr;
+  char * line = NULL;
+  char * ptr = NULL;
   size_t sz;
   while (getline(&line,&sz, f) >= 0) {
+    ptr = realloc(ptr,sizeof(* ptr));
     ptr = line;
     while (*ptr != '\0') {
       int c = *ptr;
@@ -19,13 +20,13 @@ void encrypt(FILE * f, int key, FILE * outfile){
 	c += 'a';
       }
       *ptr = c;
-      free(ptr);
-      ptr++;
+       ptr++;
     }
-    ptr = realloc(ptr,sizeof(*ptr));
-    fprintf(outfile, "%s", line);
+   fprintf(outfile, "%s", line);
    }
-}
+  free(ptr);
+  free(line);
+ }
 
 int main(int argc, char ** argv) {
   if (argc != 3) {
