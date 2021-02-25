@@ -34,15 +34,34 @@ void printSort(FILE * f){
     free(line[j]);
     j++;
   }
+  free(line);
  }
 
 
 int main(int argc, char ** argv) {
   if (argc == 1){
-    printSort(stdin);
+    char ** line = NULL;
+    char * input = NULL;
+    size_t sz;
+    size_t i = 0;
+    while (getline(&input,&sz, stdin) >= 0) {
+      line = realloc(line,(i+1)*sizeof(*line));
+      line[i] = input;
+      input = NULL;
+      i++;
+    }
+    
+    free(input);
+    sortData(line,i);
+    for ( size_t j = 0 ; j < i ; j++){
+      printf("%s",line[j]);
+      free(line[j]);
+    }
+    free(line);
   }
+  
   if (argc > 1){
-    for (int i = 2 ; i < argc ; i++){
+    for (int i = 1 ; i < argc ; i++){
       FILE * f = fopen(argv[i],"r");
       int c = fgetc(f);
       if(c == EOF){
@@ -54,7 +73,7 @@ int main(int argc, char ** argv) {
 	return EXIT_FAILURE;
       }
       printSort(f);
-     free(f);
+     fclose(f);
     }
   }
   return EXIT_SUCCESS;
