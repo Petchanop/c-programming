@@ -44,11 +44,16 @@ int main(int argc, char ** argv) {
   if (argc > 1){
     for (int i = 2 ; i < argc ; i++){
       FILE * f = fopen(argv[i],"r");
-      printSort(f);
+      int c = fgetc(f);
+      if(c == EOF){
+	fprintf(stderr,"Usage: Empty File\n");
+	return EXIT_FAILURE;
+      }
       if (f == NULL) {
 	perror("Could not open file");
 	return EXIT_FAILURE;
       }
+      printSort(f);
      free(f);
     }
   }
