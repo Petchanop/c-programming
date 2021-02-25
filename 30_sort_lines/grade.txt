@@ -1,4 +1,4 @@
-Grading at Thu Feb 25 16:07:41 UTC 2021
+Grading at Thu Feb 25 16:42:56 UTC 2021
 Attempting to compile sortLines.c
 #################################################
 testcase1:
@@ -13,6 +13,6 @@ testcase3:
 Your output is incorrect
 #################################################
 testcase4:
-valgrind reported memory errors
+Your output is incorrect
 
 Overall Grade: F
