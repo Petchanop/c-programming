@@ -63,16 +63,16 @@ int main(int argc, char ** argv) {
   if (argc > 1){
     for (int i = 1 ; i < argc ; i++){
       FILE * f = fopen(argv[i],"r");
+      if (f == NULL) {
+	perror("Could not open file");
+	return EXIT_FAILURE;
+      }
       int c = fgetc(f);
       if(c == EOF){
 	fprintf(stderr,"Usage: Empty File\n");
 	return EXIT_FAILURE;
       }
-      if (f == NULL) {
-	perror("Could not open file");
-	return EXIT_FAILURE;
-      }
-      printSort(f);
+     printSort(f);
      fclose(f);
     }
   }
