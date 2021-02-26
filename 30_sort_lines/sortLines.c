@@ -19,7 +19,7 @@ void printSort(FILE * f){
   char ** line = NULL;
   char * input = NULL;
   size_t sz = 0;
-  int i = 0;
+  size_t i = 0;
   while (getline(&input,&sz, f) >= 0) {
     line = realloc(line,(i+1)*sizeof(*line));
     line[i] = input;
@@ -28,13 +28,11 @@ void printSort(FILE * f){
   }
   free(input);
   sortData(line,i);
-  int j =  0 ;
-  while (j < i ){
-    fprintf(stdout,"%s",line[j]);
+ for ( size_t j = 0 ; j < i ; j++){
+    printf("%s",line[j]);
     free(line[j]);
-    j++;
   }
-  free(line);
+   free(line);
  }
 
 
@@ -47,7 +45,6 @@ int main(int argc, char ** argv) {
     while (getline(&input,&sz, stdin) >= 0) {
       line = realloc(line,(i+1)*sizeof(*line));
       line[i] = input;
-      input = NULL;
       i++;
     }
     
@@ -67,12 +64,8 @@ int main(int argc, char ** argv) {
 	perror("Could not open file");
 	return EXIT_FAILURE;
       }
-      int c = fgetc(f);
-      if(c == EOF){
-	fprintf(stderr,"Usage: Empty File\n");
-	return EXIT_FAILURE;
-      }
-     printSort(f);
+      printSort(f);
+      printf("%s","\n");
      fclose(f);
     }
   }
