@@ -45,9 +45,9 @@ int main(int argc, char ** argv) {
     while (getline(&input,&sz, stdin) >= 0) {
       line = realloc(line,(i+1)*sizeof(*line));
       line[i] = input;
+      input = NULL;
       i++;
     }
-    
     free(input);
     sortData(line,i);
     for ( size_t j = 0 ; j < i ; j++){
