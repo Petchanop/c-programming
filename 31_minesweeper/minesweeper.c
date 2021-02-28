@@ -57,7 +57,9 @@ board_t * makeBoard(int w, int h, int numMines) {
       b->board[y][x] = UNKNOWN;
     }
   }
-  addRandomMine(b);
+  for (int n = 0 ; n < numMines ; n ++){
+    addRandomMine(b);
+}
   return b;
 
   // return NULL;
@@ -116,23 +118,29 @@ int countMines(board_t * b, int x, int y) {
   //WRITE ME!
   int px,bx;
   int py,by;
-  int count;
+  int count = 0;
   if ( x == 0 ){
     px = 0;
+    bx = 1;
   }
     if (x > 0 && x < (b->width)-1){
       px = -1;
+      bx = 1;
     }
     if (x == (b->width)-1){
+      px = -1;
       bx = 0;
     }
     if ( y == 0 ){
       py = 0;
+      by = 1;
     }
-      if (y > 0 && x < (b->height)-1){
+      if (y > 0 && y < (b->height)-1){
 	py = -1;
+	by = 1;
       }
       if (y == (b->height)-1){
+	py = -1;
 	by = 0;
       }
       for (int dy = py; dy <=by ; dy++) {
@@ -169,25 +177,24 @@ int click (board_t * b, int x, int y) {
 
 int checkWin(board_t * b) {
   //WRITE ME!
-  int countkn = 0;
   for (int y = 0 ; y < b->height ; y++ ){
     for (int x = 0 ; x < b->width ; x++){
-      if (b->board[y][x] == KNOWN_MINE){
-	countkn += 1;
-      }
+      if (b->board[y][x] == UNKNOWN){
+	return 0;
+       }
     }
   }
-  if (countkn == b->totalMines ){
-    return 1;
-  }
-  return 0;
+  return 1;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+  for (int y = 0 ; y < b->height ; y++){
+  free(b->board[y]);
+  }
   free(b->board);
-  free(b);    
-}
+  free(b);
+ }
 
 int readInt(char ** linep, size_t * lineszp) {
   if (getline (linep, lineszp, stdin) == -1) {
