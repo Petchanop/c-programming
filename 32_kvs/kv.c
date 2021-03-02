@@ -10,8 +10,9 @@ kvpair_t * makekvpair(char * f){
   int k = 0;
   while (key != NULL) {
     if (k == 0){
+      key = strtok(key,"\n");
       pairs->key = key;
-
+     
     }
     if (k > 0){
       char * value = strtok(key,"\n");
