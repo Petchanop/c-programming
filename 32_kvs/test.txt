@@ -4,15 +4,3 @@ orange=orange
 grapes=purple
 carrot=orange
 eggplant=purple
-
-Jean Luc Picard=Captain
-Will Riker=Commander
-Beverly Crusher=Commander
-Data=Lt. Commander
-Geordi LaForge=Lt. Commander
-Worf=Lt. Commander
-Deanna Troi=Commander
-
-blah=blah
-apple=red=fruit
-blah=blah=moreblah
