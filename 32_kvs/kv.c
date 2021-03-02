@@ -14,7 +14,8 @@ kvpair_t * makekvpair(char * f){
 
     }
     if (k > 0){
-      pairs->value = key;
+      char * value = strtok(key,"\n");
+      pairs->value = value;
 
     }
     key = strtok(NULL,"=");
@@ -71,5 +72,5 @@ char * lookupValue(kvarray_t * pairs, const char * key) {
       return  curr->value ;
     }
   }
-  return NULL;     
+   return "<unknown>";    
 }
