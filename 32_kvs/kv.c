@@ -19,6 +19,8 @@ kvpair_t * makekvpair(char * f){
     key = strtok(NULL,"=");
     k++;
   }
+  strncat(pair->key,"\0",1);
+  strncat(pair->value,"\0",1);
    return pair;
 }
 
