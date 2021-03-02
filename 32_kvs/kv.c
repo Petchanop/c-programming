@@ -3,25 +3,25 @@
 #include <string.h>
 #include "kv.h"
 
-
 kvpair_t * makekvpair(char * f){
-  kvpair_t * pair = malloc((size_t) sizeof(*pair));
+  kvpair_t * pairs;
+  pairs = malloc((size_t) sizeof(*pairs));
+  char * key = strtok(f,"=");
   int k = 0;
-  char * key;
-  key = strtok(f,"=");
   while (key != NULL) {
     if (k == 0){
-      pair->key = key;
+      pairs->key = key;
+
     }
-    if (k == 1){
-      pair->value = key;
+    if (k > 0){
+      pairs->value = key;
+
     }
     key = strtok(NULL,"=");
+
     k++;
   }
-  strncat(pair->key,"\0",1);
-  strncat(pair->value,"\0",1);
-   return pair;
+  return pairs;
 }
 
 kvarray_t * readKVs(const char * fname) {
@@ -59,6 +59,7 @@ void printKVs(kvarray_t * pairs) {
   //WRITE ME
   for (int i = 0 ; i < pairs->keyn ; i++){
     printf("%s\n",pairs->names[i]->key);
+    printf("%s\n",pairs->names[i]->value);
   }             
 }
 
