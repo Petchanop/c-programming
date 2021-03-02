@@ -72,5 +72,5 @@ char * lookupValue(kvarray_t * pairs, const char * key) {
       return  curr->value ;
     }
   }
-   return "<unknown>";    
+   return NULL;    
 }
