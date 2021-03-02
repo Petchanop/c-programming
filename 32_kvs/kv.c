@@ -59,8 +59,7 @@ void printKVs(kvarray_t * pairs) {
   //WRITE ME
   for (int i = 0 ; i < pairs->keyn ; i++){
     printf("%s\n",pairs->names[i]->key);
-    printf("%s\n",pairs->names[i]->value);
-  }             
+    }             
 }
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
