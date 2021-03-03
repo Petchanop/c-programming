@@ -10,7 +10,6 @@ kvpair_t * makekvpair(char * f){
   int k = 0;
   while (key != NULL) {
     if (k == 0){
-      key = strtok(key,"\n");
       pairs->key = key;
      
     }
@@ -60,7 +59,7 @@ void freeKVs(kvarray_t * pairs) {
 void printKVs(kvarray_t * pairs) {
   //WRITE ME
   for (int i = 0 ; i < pairs->keyn ; i++){
-    printf("%s\n",pairs->names[i]->key);
+    printf("key = '%s' value = '%s'\n",pairs->names[i]->key,pairs->names[i]->value);
     }             
 }
 
