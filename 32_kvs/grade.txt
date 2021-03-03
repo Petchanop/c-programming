@@ -1,15 +1,17 @@
-Grading at Tue Mar  2 23:51:28 UTC 2021
+Grading at Wed Mar  3 08:41:15 UTC 2021
 Attempting to compile:
 #################################################
 testcase1:
-valgrind reported memory errors
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
-valgrind reported memory errors
+Your output is incorrect
 #################################################
 testcase3:
 Your output is correct
   - Valgrind was clean (no errors, no memory leaks)
 valgrind was clean
 
-Overall Grade: F
+Overall Grade: D
