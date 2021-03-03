@@ -6,12 +6,13 @@
 kvpair_t * makekvpair(char * str){
   char * value1 = strchr(str,'=');
   size_t len = strlen(str)-strlen(value1);
-  char * key = malloc((len+1)*sizeof(*key));
+  char * key = malloc(len+1);
   strncpy(key,str,len);
   key[len] = '\0';
   value1 ++;
-  value1[strlen(value1)-1] = '\0';
-  kvpair_t * pair = malloc((size_t) sizeof(*pair));
+  char* n=strchr(value1,'\n');
+  if(n != NULL) *n='\0';
+  kvpair_t * pair = malloc( sizeof(*pair));
   pair->key = key;
   pair->value = value1;
   return pair;
