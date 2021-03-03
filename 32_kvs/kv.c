@@ -5,15 +5,12 @@
 
 kvpair_t * makekvpair(char * str){
   char * value1 = strchr(str,'=');
-  size_t len = strlen(str)-strlen(value1);
-  char * key = malloc(len+1);
-  strncpy(key,str,len);
-  key[len] = '\0';
-  value1 ++;
+  *value1='\0';
+   value1 ++;
   char* n=strchr(value1,'\n');
   if(n != NULL) *n='\0';
   kvpair_t * pair = malloc( sizeof(*pair));
-  pair->key = key;
+  pair->key = str;
   pair->value = value1;
   return pair;
 }
@@ -33,7 +30,7 @@ kvarray_t * readKVs(const char * fname) {
     read->names[read->keyn] = pairs;
     input = NULL;
     read->keyn++;
-  }
+     }
   free(input);
   fclose(f);
   return read;
