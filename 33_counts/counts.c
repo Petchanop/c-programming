@@ -52,7 +52,7 @@ void printCounts(counts_t * c, FILE * outFile) {
       unknown = c->values[i]->count;
     }
 }
-   fprintf(stdout,"<unknown> : %d\n",unknown);
+   fprintf(stdout,"<unknown>: %d\n",unknown);
   fclose(outFile); 
 }
 
