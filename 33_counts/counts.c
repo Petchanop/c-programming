@@ -49,11 +49,11 @@ void printCounts(counts_t * c, FILE * outFile) {
     if (c->values[i]->name != NULL){
     fprintf(stdout,"%s: %d\n",c->values[i]->name,c->values[i]->count);
   }
-     else{
-   unknown = i;
-   }
+    if (c->values[i]->name == NULL){
+      unknown = c->values[i]->count;
+    }
 }
-   fprintf(stdout,"<unknown> : %d\n",c->values[unknown]->count);
+   fprintf(stdout,"<unknown> : %d\n",unknown);
   fclose(outFile); 
 }
 
