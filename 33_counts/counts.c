@@ -21,21 +21,20 @@ counts_t * createCounts(void) {
 
 void addCount(counts_t * c, const char * name) {
   //WRITE ME
-  one_count_t  * add = NULL;
-  add = addOneCount(name);
   int j = 0;
   if (c->values != NULL){
     for (int i = 0 ; i < c->size ; i++){
-      if (c->values[i]->name == add->name){
+      if (c->values[i]->name == name){
 	c->values[i]->count++;
-	free(addOneCount(name));
-      }
+       }
       else{
 	j++;
       }
     }
   }
   if (j == c->size){
+    one_count_t  * add = NULL;
+    add = addOneCount(name);   
     c->values = realloc(c->values,(c->size+1)*sizeof(*c->values));
     c->values[c->size] = add;
     c->size++;
