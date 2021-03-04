@@ -28,7 +28,7 @@ void addCount(counts_t * c, const char * name) {
     for (int i = 0 ; i < c->size ; i++){
       if (c->values[i]->name == add->name){
 	c->values[i]->count++;
-	free(add);
+	free(addOneCount(name));
       }
       else{
 	j++;
