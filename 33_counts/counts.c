@@ -46,13 +46,13 @@ void printCounts(counts_t * c, FILE * outFile) {
   int unknown = 0;
   for (int i = 0 ; i < c->size ; i++){
     if (c->values[i]->name != NULL){
-    fprintf(stdout,"%s: %d\n",c->values[i]->name,c->values[i]->count);
+    printf("%s: %d\n",c->values[i]->name,c->values[i]->count);
   }
     if (c->values[i]->name == NULL){
       unknown = c->values[i]->count;
     }
 }
-   fprintf(stdout,"<unknown>: %d\n",unknown);
+   printf("<unknown> : %d\n",unknown);
   fclose(outFile); 
 }
 
