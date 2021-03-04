@@ -16,15 +16,20 @@ counts_t * createCounts(void) {
   counts_t * names = malloc(sizeof(*names));
   names->values = NULL;
   names->size = 0;
+  names->unknown = 0;
  return names;
 }
 
 void addCount(counts_t * c, const char * name) {
   //WRITE ME
   int j = 0;
+  if (name == NULL){
+    c->unknown++;
+  }
+  else{
   if (c->values != NULL){
     for (int i = 0 ; i < c->size ; i++){
-      if (c->values[i]->name == name){
+      if (!strcmp(c->values[i]->name,name)){
 	c->values[i]->count++;
        }
       else{
@@ -39,20 +44,17 @@ void addCount(counts_t * c, const char * name) {
     c->values[c->size] = add;
     c->size++;
     }
+  }
 }
 
 void printCounts(counts_t * c, FILE * outFile) {
   //WRITE ME
-  int unknown = 0;
   for (int i = 0 ; i < c->size ; i++){
     if (c->values[i]->name != NULL){
     printf("%s: %d\n",c->values[i]->name,c->values[i]->count);
   }
-    if (c->values[i]->name == NULL){
-      unknown = c->values[i]->count;
-    }
-}
-   printf("<unknown> : %d\n",unknown);
+ }
+   printf("<unknown> : %d\n",c->unknown);
   fclose(outFile); 
 }
 
