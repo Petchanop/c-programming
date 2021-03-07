@@ -1,9 +1,10 @@
-Grading at Sun Mar  7 16:54:18 UTC 2021
+Grading at Sun Mar  7 16:56:12 UTC 2021
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
-deck.c:11:3: error: expected ‘;’ before ‘deck’
-   deck->cards[deck->n_cards] = ptrc;
-   ^
+deck.c:9:15: error: ‘ptrc’ is used uninitialized in this function [-Werror=uninitialized]
+   ptrc->value = c.value;
+               ^
+cc1: all warnings being treated as errors
 Compilation of deck.c failed
 
 Overall Grade: F
