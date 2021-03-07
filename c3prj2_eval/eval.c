@@ -122,7 +122,6 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
 }
 
 
-
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   if (hand==NULL)
     return 0;
@@ -205,11 +204,25 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
-
+unsigned * get_match_counts(deck_t * hand){
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
-
+       qsort(hand->cards,hand->n_cards, sizeof(hand->cards[0]), card_ptr_comp);
+unsigned * arr[5];
+ int count = 1;
+for (int i = 0 ; i < hand->n_cards; i++){
+  for (int j = 0 ; j < hand->n_cards ; j++){
+    if (i != j){
+      if (hand->cards[i]->value == hand->cards[j]->value){
+	count += 1 ;
+      }
+    }
+  }
+  arr[i] = count;
+  count = 1;
+ }
+return arr;
+}
 
 //This function copies a straight starting at index "ind" from deck "from".
 //This copies "count" cards (typically 5).
