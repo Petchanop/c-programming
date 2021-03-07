@@ -39,8 +39,10 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   build->cards = NULL;
   build->n_cards = 0;
   for (int j = 0 ; j < n_hands ; j++){
-      add_card_to(build,hands->cards[j]);
+    for (int i = 0 ; i < hands[j]->n_cards ; i++){
+      add_card_to(build,hands[j]->cards[i]);
       }
+  }
   return make_deck_exclude(build);
 }
   
