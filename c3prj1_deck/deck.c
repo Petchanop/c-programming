@@ -41,8 +41,7 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   for (int j = 0 ; j < n_hands ; j++){
     build = make_deck_exclude(hands[j]);
    }
-   build = make_deck_exclude(build); 
-   return build;
+    return build;
 }
   
 void free_deck(deck_t * deck){
