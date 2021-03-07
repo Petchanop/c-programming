@@ -35,11 +35,14 @@ return ex;
 }
         
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
-   for (int j = 0 ; j < n_hands ; j++){
-    deck_t * build = make_deck_exclude(hands[j]);
+  deck_t * build = malloc(sizeof(*build));
+  build->cards = NULL;
+  build->n_cards = 0;
+  for (int j = 0 ; j < n_hands ; j++){
+    build = make_deck_exclude(hands[j]);
    }
-   deck_t * remain = make_deck_exclude(build); 
-     return remain;
+   build = make_deck_exclude(build); 
+   return build;
 }
   
 void free_deck(deck_t * deck){
