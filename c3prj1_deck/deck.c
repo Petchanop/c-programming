@@ -8,8 +8,8 @@ void add_card_to(deck_t * deck, card_t c){
   card_t * ptr = malloc(sizeof(*ptr));
 			ptr->value = c.value;
 			ptr->suit = c.suit;
-  deck->cards[deck->n_cards] = ptr;
-  
+			(deck->cards)[deck->n_cards] = ptr;
+     
 }
 
 card_t * add_empty_card(deck_t * deck){
