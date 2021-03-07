@@ -5,12 +5,12 @@
 
 void add_card_to(deck_t * deck, card_t c){
   deck->cards = realloc(deck->cards,(deck->n_cards+1)*sizeof(*deck->cards));
-  card_t * ptrc = *c;
+  card_t * ptrc = &c;
   deck->cards[deck->n_cards] = ptrc;
 }
 
 card_t * add_empty_card(deck_t * deck){
-           card_t * empty;
+           card_t  empty;
 	   empty->value = 0;
 	   empty->suit = 0;
 add_card_to(deck,empty);
