@@ -1,12 +1,101 @@
-Grading at Sun Mar  7 21:54:55 UTC 2021
+Grading at Sun Mar  7 21:56:41 UTC 2021
 Compiling deck.c -> deck.o
-deck.c: In function ‘build_remaining_deck’:
-deck.c:43:25: error: incompatible type for argument 2 of ‘add_card_to’
-       add_card_to(build,hands[j]->cards[i]);
-                         ^
-deck.c:6:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
- void add_card_to(deck_t * deck, card_t c){
-      ^
-Compilation of deck.c failed
+Compiling eval.c -> eval.o
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+Testing free_deck(deck_t *)
+- Test passed
+Testing add_card_to(deck_t *, card_t)
+- Test passed
+Testing add_empty_card(deck_t *)
+Valgrind reported errors:
+==8099== Memcheck, a memory error detector
+==8099== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8099== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8099== Command: ./tester aec
+==8099== Parent PID: 8098
+==8099== 
+==8099== Invalid read of size 8
+==8099==    at 0x401D51: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x4038BE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8099==  Address 0x520dab0 is 0 bytes after a block of size 32 alloc'd
+==8099==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8099==    by 0x401CAE: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x401D3A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x4038BE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8099== 
+==8099== Invalid read of size 8
+==8099==    at 0x401D51: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x403913: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8099==  Address 0x520def0 is 0 bytes after a block of size 400 alloc'd
+==8099==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8099==    by 0x401CAE: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x401D3A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x403913: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==8099==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8099== 
+==8099== 
+==8099== HEAP SUMMARY:
+==8099==     in use at exit: 0 bytes in 0 blocks
+==8099==   total heap usage: 2,120 allocs, 2,120 frees, 50,688 bytes allocated
+==8099== 
+==8099== All heap blocks were freed -- no leaks are possible
+==8099== 
+==8099== For counts of detected and suppressed errors, rerun with: -v
+==8099== ERROR SUMMARY: 30 errors from 2 contexts (suppressed: 0 from 0)
+Testing make_deck_exclude(deck_t *)
+- Test passed
+Testing build_remaining_deck(deck_t **, size_t)
+Testing with 1 hand
+Testing with 2 hands
+Testing with 3 hands
+Testing with 4 hands
+Testing with 5 hands
+Testing with 6 hands
+- Test passed
+Testing get_match_count(deck_t *)
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==8109== Memcheck, a memory error detector
+==8109== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8109== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8109== Command: ./tester gmc
+==8109== Parent PID: 8108
+==8109== 
+==8109== Invalid write of size 4
+==8109==    at 0x401416: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==8109==    by 0x402DE9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==8109==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8109==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==8109== 
+==8109== 
+==8109== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==8109==  Access not within mapped region at address 0x0
+==8109==    at 0x401416: get_match_counts (in /graderhome/work/c4prj1_deck/tester)
+==8109==    by 0x402DE9: check_get_match_count (in /graderhome/work/c4prj1_deck/tester)
+==8109==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==8109==  If you believe this happened as a result of a stack
+==8109==  overflow in your program's main thread (unlikely but
+==8109==  possible), you can try to increase the size of the
+==8109==  main thread stack using the --main-stacksize= flag.
+==8109==  The main thread stack size used in this run was 8388608.
+==8109== 
+==8109== HEAP SUMMARY:
+==8109==     in use at exit: 68 bytes in 7 blocks
+==8109==   total heap usage: 7 allocs, 0 frees, 68 bytes allocated
+==8109== 
+==8109== LEAK SUMMARY:
+==8109==    definitely lost: 4 bytes in 1 blocks
+==8109==    indirectly lost: 0 bytes in 0 blocks
+==8109==      possibly lost: 0 bytes in 0 blocks
+==8109==    still reachable: 64 bytes in 6 blocks
+==8109==         suppressed: 0 bytes in 0 blocks
+==8109== Rerun with --leak-check=full to see details of leaked memory
+==8109== 
+==8109== For counts of detected and suppressed errors, rerun with: -v
+==8109== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 
-Overall Grade: F
+Overall Grade: C
