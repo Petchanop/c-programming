@@ -5,7 +5,8 @@
 
 void add_card_to(deck_t * deck, card_t c){
   deck->cards = realloc(deck->cards,(deck->n_cards+1)*sizeof(*deck->cards));
-  deck->cards[deck->n_cards] = &c;
+  deck->cards[deck->n_cards]->value = &c.value;
+  deck->cards[deck->n_cards]->suit = &c.suit;
 
 }
 
