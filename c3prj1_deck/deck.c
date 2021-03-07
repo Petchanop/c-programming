@@ -21,7 +21,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   deck_t * ex = malloc(sizeof(*ex));
 for (int i = 0 ; i < 52;i++){
   card_t add = card_from_num(i);
-  if (deck_contains(excluded_cards,add)){
+  if (!deck_contains(excluded_cards,add)){
      add_card_to(ex,add);
   }
  }
