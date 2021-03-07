@@ -1,14 +1,9 @@
-Grading at Sun Jan 24 21:09:59 UTC 2021
+Grading at Sun Mar  7 21:51:54 UTC 2021
 Compiling deck.c
-Compiling cards.c
-Linking cards.o deck.o deck-c4.o and the grader's .o file
-Checking the output of all the functions other than shuffle
-Your file matched the expected output
- - Those functions seem to work!
-Checking your shuffle results with a 6 card hand...
-  Least common hand: 0.131800%
-  Most  common hand: 0.146250%
-  Perfectly even is: 0.138888%
- Excellent!
+deck.c: In function ‘build_remaining_deck’:
+deck.c:42:30: error: request for member ‘cards’ in something not a structure or union
+       add_card_to(build,hands->cards[j]);
+                              ^
+Could not compile your deck.c!
 
-Overall Grade: A
+Overall Grade: FAILED
