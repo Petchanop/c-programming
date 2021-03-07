@@ -1,4 +1,4 @@
-Grading at Sun Mar  7 15:48:31 UTC 2021
+Grading at Sun Mar  7 15:58:08 UTC 2021
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
