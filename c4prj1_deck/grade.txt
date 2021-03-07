@@ -1,8 +1,8 @@
-Grading at Sun Mar  7 12:26:46 UTC 2021
+Grading at Sun Mar  7 12:34:55 UTC 2021
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
-deck.c:8:19: error: incompatible types when initializing type ‘card_t * {aka struct card_tag *}’ using type ‘card_t {aka struct card_tag}’
-   card_t * ptrc = c;
+deck.c:8:19: error: invalid type argument of unary ‘*’ (have ‘card_t {aka struct card_tag}’)
+   card_t * ptrc = *c;
                    ^
 deck.c: In function ‘add_empty_card’:
 deck.c:16:18: error: incompatible type for argument 2 of ‘add_card_to’
