@@ -5,8 +5,11 @@
 
 void add_card_to(deck_t * deck, card_t c){
   deck->cards = realloc(deck->cards,(deck->n_cards+1)*sizeof(*deck->cards));
-  deck->cards[deck->n_cards] = &c;
-  print_hand(deck);
+  card_t * ptr = malloc(sizeof(*ptr);
+			ptr->value = c.value;
+			ptr->suit = c.suit;
+  deck->cards[deck->n_cards] = ptr;
+  
 }
 
 card_t * add_empty_card(deck_t * deck){
