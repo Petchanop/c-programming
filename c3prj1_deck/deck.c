@@ -9,6 +9,7 @@ void add_card_to(deck_t * deck, card_t c){
 			ptr->value = c.value;
 			ptr->suit = c.suit;
 			deck->cards[deck->n_cards] = ptr;
+			deck->n_cards++;
 			    
 }
 
