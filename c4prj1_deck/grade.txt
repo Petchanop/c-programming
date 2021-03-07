@@ -1,9 +1,6 @@
-Grading at Sun Mar  7 20:12:36 UTC 2021
+Grading at Sun Mar  7 20:13:33 UTC 2021
 Compiling deck.c -> deck.o
 deck.c: In function ‘build_remaining_deck’:
-deck.c:38:20: error: expected expression before ‘=’ token
-   deck_t * build = = malloc(sizeof(*build));
-                    ^
 deck.c:39:3: error: ‘ex’ undeclared (first use in this function)
    ex->cards = NULL;
    ^
