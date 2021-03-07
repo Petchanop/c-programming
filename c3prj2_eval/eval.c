@@ -208,7 +208,7 @@ unsigned * get_match_counts(deck_t * hand){
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
        qsort(hand->cards,hand->n_cards, sizeof(hand->cards[0]), card_ptr_comp);
-unsigned * arr[5];
+       unsigned * arr;
  int count = 1;
 for (int i = 0 ; i < hand->n_cards; i++){
   for (int j = 0 ; j < hand->n_cards ; j++){
