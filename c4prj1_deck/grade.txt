@@ -1,11 +1,8 @@
-Grading at Sun Mar  7 17:19:46 UTC 2021
+Grading at Sun Mar  7 17:21:26 UTC 2021
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
-deck.c:8:19: error: incompatible types when initializing type ‘card_t * {aka struct card_tag *}’ using type ‘card_t {aka struct card_tag}’
-   card_t * ptrc = c;
-                   ^
-deck.c:9:30: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
-   deck->cards[deck->n_cards] = *ptrc;
+deck.c:8:30: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
+   deck->cards[deck->n_cards] = c;
                               ^
 Compilation of deck.c failed
 
