@@ -218,7 +218,7 @@ for (int i = 0 ; i < hand->n_cards; i++){
       }
     }
   }
-  arr[i] = count;
+  * arr[i] = count;
   count = 1;
  }
 return arr;
