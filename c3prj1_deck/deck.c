@@ -11,8 +11,8 @@ void add_card_to(deck_t * deck, card_t c){
 
 card_t * add_empty_card(deck_t * deck){
            card_t  empty;
-	   empty->value = 0;
-	   empty->suit = 0;
+	   empty.value = 0;
+	   empty.suit = 0;
 add_card_to(deck,empty);
 return empty;
 }       
