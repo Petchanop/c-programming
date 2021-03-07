@@ -1,10 +1,14 @@
-Grading at Sun Mar  7 16:02:15 UTC 2021
+Grading at Sun Mar  7 16:20:41 UTC 2021
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
-eval.c:221:3: error: invalid type argument of unary ‘*’ (have ‘unsigned int’)
-   * arr[i] = count;
-   ^
+eval.c:221:10: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+   arr[i] = &count;
+          ^
+eval.c:221:6: error: ‘arr’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   arr[i] = &count;
+      ^
+cc1: all warnings being treated as errors
 Compilation of eval.c failed
 
 Overall Grade: F
