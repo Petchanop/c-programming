@@ -14,7 +14,7 @@ card_t * add_empty_card(deck_t * deck){
 	   empty.value = 0;
 	   empty.suit = 0;
 add_card_to(deck,empty);
-return empty;
+return deck->cards[deck->n_cards];
 }       
 
 deck_t * make_deck_exclude(deck_t * excluded_cards){
