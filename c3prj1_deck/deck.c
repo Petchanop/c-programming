@@ -9,7 +9,7 @@ void add_card_to(deck_t * deck, card_t c){
 			ptr->value = c.value;
 			ptr->suit = c.suit;
 			deck->cards[deck->n_cards] = ptr;
-			print_card(*deck->cards[deck->n_cards]);    
+			    
 }
 
 card_t * add_empty_card(deck_t * deck){
@@ -37,6 +37,9 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
 }
   
 void free_deck(deck_t * deck){
+  for (int i = 0 ; i < deck->n_cards ; i++){
+    free(deck->cards[i]);
+  }
   free(deck->cards);
   free(deck);
 }
