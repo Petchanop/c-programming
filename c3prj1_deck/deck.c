@@ -5,11 +5,12 @@
 
 void add_card_to(deck_t * deck, card_t c){
   deck->cards = realloc(deck->cards,(deck->n_cards+1)*sizeof(*deck->cards));
-  deck->cards[deck->n_cards] = c;
+  card_t * ptrc = c;
+  deck->cards[deck->n_cards] = ptrc;
 }
 
 card_t * add_empty_card(deck_t * deck){
-           card_t empty;
+           card_t * empty;
 	   empty->value = 0;
 	   empty->suit = 0;
 add_card_to(deck,empty);
@@ -17,7 +18,7 @@ return empty;
 }       
 
 deck_t * make_deck_exclude(deck_t * excluded_cards){
-  dect_t * ex = malloc(sizeof(*ex));
+  deck_t * ex = malloc(sizeof(*ex));
 for (int i = 0 ; i < 52;i++){
   card_t add = card_from_num(i);
   if (deck_contains(excluded_cards,add)){
@@ -28,7 +29,7 @@ return ex;
 }
         
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
-     deck_t * build = make_deck_exclude(hands);
+     deck_t * build = make_deck_exclude(*hands);
      return build;
 }
   
