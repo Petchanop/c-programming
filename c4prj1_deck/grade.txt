@@ -1,0 +1,44 @@
+Grading at Sun Mar  7 12:18:10 UTC 2021
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_card_to’:
+deck.c:8:30: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
+   deck->cards[deck->n_cards] = c;
+                              ^
+deck.c: In function ‘add_empty_card’:
+deck.c:13:10: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
+     empty->value = 0;
+          ^
+deck.c:14:10: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
+     empty->suit = 0;
+          ^
+deck.c:16:8: error: incompatible types when returning type ‘card_t {aka struct card_tag}’ but ‘card_t * {aka struct card_tag *}’ was expected
+ return empty;
+        ^
+deck.c: In function ‘make_deck_exclude’:
+deck.c:20:3: error: unknown type name ‘dect_t’
+   dect_t * ex = malloc(sizeof(*ex));
+   ^
+deck.c:24:18: error: passing argument 1 of ‘add_card_to’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+      add_card_to(ex,add);
+                  ^
+deck.c:6:6: note: expected ‘deck_t * {aka struct deck_tag *}’ but argument is of type ‘int *’
+ void add_card_to(deck_t * deck, card_t c){
+      ^
+deck.c:27:8: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+ return ex;
+        ^
+deck.c: In function ‘build_remaining_deck’:
+deck.c:31:41: error: passing argument 1 of ‘make_deck_exclude’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+      deck_t * build = make_deck_exclude(hands);
+                                         ^
+deck.c:19:10: note: expected ‘deck_t * {aka struct deck_tag *}’ but argument is of type ‘deck_t ** {aka struct deck_tag **}’
+ deck_t * make_deck_exclude(deck_t * excluded_cards){
+          ^
+deck.c: In function ‘add_empty_card’:
+deck.c:17:1: error: control reaches end of non-void function [-Werror=return-type]
+ }       
+ ^
+cc1: all warnings being treated as errors
+Compilation of deck.c failed
+
+Overall Grade: F
