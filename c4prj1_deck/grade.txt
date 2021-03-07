@@ -1,13 +1,15 @@
-Grading at Sun Mar  7 12:40:07 UTC 2021
+Grading at Sun Mar  7 15:29:24 UTC 2021
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_empty_card’:
-deck.c:17:8: error: incompatible types when returning type ‘card_t {aka struct card_tag}’ but ‘card_t * {aka struct card_tag *}’ was expected
- return empty;
+Compiling eval.c -> eval.o
+eval.c: In function ‘get_match_counts’:
+eval.c:221:10: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+   arr[i] = count;
+          ^
+eval.c:224:8: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+ return arr;
         ^
-deck.c:18:1: error: control reaches end of non-void function [-Werror=return-type]
- }       
- ^
+eval.c:224:8: error: function returns address of local variable [-Werror=return-local-addr]
 cc1: all warnings being treated as errors
-Compilation of deck.c failed
+Compilation of eval.c failed
 
 Overall Grade: F
