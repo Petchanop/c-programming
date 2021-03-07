@@ -1,14 +1,10 @@
-Grading at Sun Mar  7 15:29:24 UTC 2021
+Grading at Sun Mar  7 15:48:31 UTC 2021
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 eval.c: In function ‘get_match_counts’:
-eval.c:221:10: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+eval.c:221:6: error: ‘arr’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
    arr[i] = count;
-          ^
-eval.c:224:8: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
- return arr;
-        ^
-eval.c:224:8: error: function returns address of local variable [-Werror=return-local-addr]
+      ^
 cc1: all warnings being treated as errors
 Compilation of eval.c failed
 
