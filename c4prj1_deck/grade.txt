@@ -1,10 +1,15 @@
-Grading at Sun Mar  7 16:56:12 UTC 2021
+Grading at Sun Mar  7 17:03:21 UTC 2021
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_card_to’:
-deck.c:9:15: error: ‘ptrc’ is used uninitialized in this function [-Werror=uninitialized]
+deck.c:9:7: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
    ptrc->value = c.value;
-               ^
-cc1: all warnings being treated as errors
+       ^
+deck.c:10:7: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
+   ptrc->suit = c.suit;
+       ^
+deck.c:11:32: error: invalid type argument of unary ‘*’ (have ‘card_t {aka struct card_tag}’)
+   deck->cards[deck->n_cards] = *ptrc;
+                                ^
 Compilation of deck.c failed
 
 Overall Grade: F
