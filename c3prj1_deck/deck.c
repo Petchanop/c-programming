@@ -35,7 +35,17 @@ return ex;
 }
         
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
-     deck_t * build = make_deck_exclude(*hands);
+  deck_t * build = = malloc(sizeof(*ex));
+  ex->cards = NULL;
+  ex->n_cards = 0;
+  for (int i = 0 ; i < 52;i++){
+    card_t add = card_from_num(i);
+    for (int j = 0 , j < n_hands ; j++){
+    if (!deck_contains(hands[j],add)){
+      add_card_to(build,add);
+    }
+  }
+  }
      return build;
 }
   
