@@ -14,7 +14,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   strcpy(copy,str);
   char * card = strtok(copy," ");
   while ( card != NULL){  
-    card_t c = card_from_letter(copy[0],copy[1]);
+    card_t c = card_from_letters(copy[0],copy[1]);
     if( c->value != "?"){
       add_card_to(fc->deck[n_decks],c);
     }
