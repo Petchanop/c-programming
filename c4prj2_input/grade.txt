@@ -1,12 +1,8 @@
-Grading at Mon Mar  8 21:04:09 UTC 2021
+Grading at Mon Mar  8 21:05:38 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:17:16: error: implicit declaration of function ‘card_from_letter’ [-Werror=implicit-function-declaration]
-     card_t c = card_from_letter(copy[0],copy[1]);
-                ^
-input.c:17:16: error: invalid initializer
 input.c:18:10: error: invalid type argument of ‘->’ (have ‘card_t {aka struct card_tag}’)
      if( c->value != "?"){
           ^
