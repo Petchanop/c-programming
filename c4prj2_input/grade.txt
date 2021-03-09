@@ -1,10 +1,10 @@
-Grading at Tue Mar  9 08:47:08 UTC 2021
+Grading at Tue Mar  9 08:49:21 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:21:30: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘deck_t * {aka struct deck_tag *}’
-       fc->decks[fc->n_decks] = ptr;
+input.c:20:30: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘deck_t ** {aka struct deck_tag **}’
+       fc->decks[fc->n_decks] = &hand;
                               ^
 Compilation of input.c failed
 
