@@ -15,12 +15,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   char * card = strtok(copy," ");
   while ( card != NULL){  
     card_t c = card_from_letters(copy[0],copy[1]);
-    if( c.value != "?"){
-      add_card_to(fc->decks[fc->n_decks],c);
+    if( assert_card_valid(c)){
+      add_card_to(fc.decks[fc->n_decks],c);
     }
     else{
      card_t * unknown = add_empty_card(hand);
-     add_future_card(fc,fc->n_decks[n_decks]->cards[deck->n_cards],unknown);
+     add_future_card(fc,fc->decks[fc->n_decks]->n_cards,unknown);
     }
     card = strtok(NULL," ");
 }
@@ -37,7 +37,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     read[i] = hand_from_string(input,fc);
     i++;
    }
-  read->n_cards = i;
+  read.n_cards = i;
    free(input);
 return read;
 }
