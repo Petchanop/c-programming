@@ -1,12 +1,19 @@
-Grading at Tue Mar  9 08:56:17 UTC 2021
+Grading at Tue Mar  9 09:01:37 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘hand_from_string’:
-input.c:19:7: error: ‘hand’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
-       add_card_to(hand,c);
-       ^
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+future.c: In function ‘add_future_card’:
+future.c:12:25: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+   fc->decks[fc->n_decks]->cards[fc->decks[fc->n_decks]->n_cards] = ptr;
+                         ^
+future.c:12:55: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+   fc->decks[fc->n_decks]->cards[fc->decks[fc->n_decks]->n_cards] = ptr;
+                                                       ^
+future.c: In function ‘future_cards_from_deck’:
+future.c:18:51: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
+      for (int j = deck->n_cards ; j > fc->decks[i]->n_cards ; j--){
+                                                   ^
+Compilation of future.c failed
 
 Overall Grade: F
