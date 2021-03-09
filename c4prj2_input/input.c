@@ -27,6 +27,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     }
     card = strtok(NULL," ");
 }
+  free(hand);
   fc->n_decks++;
   return fc->decks;
 }
