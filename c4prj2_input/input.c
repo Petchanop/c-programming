@@ -37,7 +37,9 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   size_t i = 0;
   while (getline(&input,&sz, f) >= 0) {
     read = realloc(read,(i+1)*sizeof(*read));
-    read[i] = hand_from_string(input,fc);
+    deck * t add = hand_from_string(input,fc);
+    if (add == NULL) continue;
+    read[i] = add;
     i++;
    }
    free(input);
