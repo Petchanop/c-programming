@@ -41,6 +41,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     if (add == NULL) continue;
     read[i] = add;
     i++;
+    print_hand(read[i]);
    }
    free(input);
    *n_hands = i;
