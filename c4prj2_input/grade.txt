@@ -1,11 +1,11 @@
-Grading at Tue Mar  9 08:53:13 UTC 2021
+Grading at Tue Mar  9 08:54:13 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:20:19: error: subscripted value is neither array nor pointer nor vector
-       (*fc->decks)[fc->n_decks] = &hand;
-                   ^
+input.c:20:12: error: invalid type argument of ‘->’ (have ‘future_cards_t {aka struct future_cards_tag}’)
+       (*fc)->decks[fc->n_decks] = &hand;
+            ^
 Compilation of input.c failed
 
 Overall Grade: F
