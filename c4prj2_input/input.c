@@ -8,7 +8,9 @@
 #include "future.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
-  deck_t * hand;
+  deck_t * hand = malloc(sizeof(*hand));
+  hand->cards = NULL;
+  hand->n_cards = 0;
   fc = realloc(fc,(fc->n_decks+1)*sizeof(*fc));
   char * copy = malloc(strlen(str)*sizeof(copy));
   strcpy(copy,str);
