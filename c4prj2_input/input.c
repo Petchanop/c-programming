@@ -17,7 +17,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     card_t c = card_from_letters(copy[0],copy[1]);
     if (2 <= c.value && c.value <= VALUE_ACE){
       add_card_to(hand,c);
-      (*fc)->decks[fc->n_decks] = &hand;
+     fc->decks = &hand;
     }
     else{
      card_t * unknown = add_empty_card(hand);
