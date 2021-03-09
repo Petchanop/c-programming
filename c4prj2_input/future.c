@@ -20,10 +20,10 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     return;
   }
   for ( int i = 0 ; i < fc->n_decks ; i++){
-    if(fc->decks[i].n_cards == 0 || fc->decks[i].cards == NULL) continue;
+    if(fc->decks[i].n_cards == 0 || fc->decks[i].cards == NULL){ continue;}
      for (int j = 0 ; j < fc->decks[i].n_cards ; j++){
        fc->decks[i].cards[j] = deck->cards[j];
-     }
+    }
   }
 }
 
