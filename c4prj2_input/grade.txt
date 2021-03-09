@@ -1,12 +1,13 @@
-Grading at Tue Mar  9 09:07:25 UTC 2021
+Grading at Tue Mar  9 09:10:57 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘add_future_card’:
-future.c:12:25: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   fc->decks[fc->n_decks]->cards = ptr;
-                         ^
+future.c:12:32: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   fc->decks[fc->n_decks].cards = ptr;
+                                ^
+cc1: all warnings being treated as errors
 Compilation of future.c failed
 
 Overall Grade: F
