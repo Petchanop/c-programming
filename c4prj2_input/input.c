@@ -24,8 +24,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
         add_card_to(hand,c);
         i++;
        }
-    j++;
     }
+      j++;
   }
   return hand;
 }
