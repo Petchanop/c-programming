@@ -34,11 +34,15 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     fprintf(stderr, "Null future cards");
   }
   for ( int i = 0 ; i < fc->n_decks ; i++){
+    if(fc->decks[i].n_cards > 0){
+      card_t * c = deck->cards[i];
     for (int j = 0 ; j < fc->decks[i].n_cards ; j++){
-      (*(fc->decks[i].cards[j])).value=(*(deck->cards[i])).value;
-      (*(fc->decks[i].cards[j])).suit=(*(deck->cards[i])).suit;
+      fc->decks[i].cards[j]->value = c->value;
+      fc->decks[i].cards[j]->suit = c->suit;
     }
   }
 }
+}
+
 
 
