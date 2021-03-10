@@ -15,17 +15,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   strcpy(copy,str);
   char * card = strtok(copy," ");
   while ( card != NULL){
-    printf("%s\n",card);
     card_t c = card_from_letters(card[0],card[1]);
-    print_card(c);
-    if (2 <= c.value && c.value <= VALUE_ACE){
+    //  if
+    //card_t * unknown = add_empty_card(hand);
+    //add_future_card(fc,hand->n_cards,unknown);
+    //  }
+    //else{
       add_card_to(hand,c);
-      }
-    else{
-     card_t * unknown = add_empty_card(hand);
-     add_future_card(fc,hand->n_cards,unknown);
-    }
-    print_hand(hand);
+      // }
     card = strtok(NULL," ");
 }
   free(hand);
