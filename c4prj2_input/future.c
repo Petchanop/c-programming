@@ -36,7 +36,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     if (fc->decks[i].n_cards == 0){
       continue;
     }
-    for (int j = 0 ; j < fc->decks[i]->n_cards ; j++){
+    for (int j = 0 ; j < fc->decks[i].n_cards ; j++){
       card_t * c = deck->cards[i];
       fc->decks[i].cards[j] = c;
     }
