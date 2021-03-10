@@ -1,11 +1,14 @@
-Grading at Wed Mar 10 21:58:29 UTC 2021
+Grading at Wed Mar 10 22:07:23 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:19:24: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
-     const char * ptr = card[0];
-                        ^
+input.c:15:5: error: expected ‘,’ or ‘;’ before ‘while’
+     while (j < strlen(str)){
+     ^
+input.c:14:7: error: unused variable ‘j’ [-Werror=unused-variable]
+   int j = 0
+       ^
 cc1: all warnings being treated as errors
 Compilation of input.c failed
 
