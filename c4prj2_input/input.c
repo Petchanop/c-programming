@@ -14,7 +14,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   char * copy = malloc(strlen(str)*sizeof(copy));
   strcpy(copy,str);
   char * card = strtok(copy," ");
-  while ( card != NULL){  
+  while ( card != NULL){
+    printf("%s\n",copy);
     card_t c = card_from_letters(copy[0],copy[1]);
     print_card(c);
     if (2 <= c.value && c.value <= VALUE_ACE){
