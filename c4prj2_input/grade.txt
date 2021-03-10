@@ -1,12 +1,23 @@
-Grading at Wed Mar 10 21:02:39 UTC 2021
+Grading at Wed Mar 10 21:06:39 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c: In function ‘add_future_card’:
-future.c:13:22: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘void *’
-     if (fc->decks[i] = NULL){
-                      ^
+future.c:19:17: error: ‘fc’ undeclared here (not in a function)
+    size_t add = fc->decks[index].n_cards;
+                 ^
+future.c:20:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+    fc->decks[index].cards = malloc(sizeof(card_t*));
+      ^
+future.c:21:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+    fc->decks[index].cards[add] = ptr;
+      ^
+future.c:22:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+    fc->decks[index].n_cards++;
+      ^
+future.c:23:4: error: expected identifier or ‘(’ before ‘}’ token
+    }
+    ^
 Compilation of future.c failed
 
 Overall Grade: F
