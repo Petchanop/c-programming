@@ -18,7 +18,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   while ( card != NULL){
     if (card[0] == '?' ){
      card_t * unknown = add_empty_card(hand);
-    add_future_card(fc,i,unknown);
+     add_future_card(fc,i,unknown);
       }
     else{
       card_t c = card_from_letters(card[0],card[1]);
@@ -39,10 +39,10 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     read = realloc(read,(i+1)*sizeof(deck_t*));
     deck_t * add = hand_from_string(input,fc);
     read[i] = add;
+    fc->n_decks++;
     i++;
     }
     free(input);
    *n_hands = i;
-   
-return read;
+   return read;
 }
