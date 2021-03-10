@@ -1,14 +1,18 @@
-Grading at Wed Mar 10 22:07:23 UTC 2021
+Grading at Wed Mar 10 22:10:11 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:15:5: error: expected ‘,’ or ‘;’ before ‘while’
-     while (j < strlen(str)){
+input.c:14:14: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   char * j = &str;
+              ^
+input.c:22:36: error: ‘card’ undeclared (first use in this function)
+       card_t c = card_from_letters(card[*j-2],card[*j-1]);
+                                    ^
+input.c:22:36: note: each undeclared identifier is reported only once for each function it appears in
+input.c:26:5: error: value computed is not used [-Werror=unused-value]
+     *j++;
      ^
-input.c:14:7: error: unused variable ‘j’ [-Werror=unused-variable]
-   int j = 0
-       ^
 cc1: all warnings being treated as errors
 Compilation of input.c failed
 
