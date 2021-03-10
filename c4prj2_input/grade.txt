@@ -1,12 +1,17 @@
-Grading at Wed Mar 10 09:43:47 UTC 2021
+Grading at Wed Mar 10 09:44:34 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘future_cards_from_deck’:
-future.c:41:21: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘deck’
-        print_card(fc->deck[i].cards[j]);
-                     ^
+future.c:41:19: error: incompatible type for argument 1 of ‘print_card’
+        print_card(fc->decks[i].cards[j]);
+                   ^
+In file included from deck.h:4:0,
+                 from future.c:5:
+cards.h:36:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void print_card(card_t c);
+      ^
 Compilation of future.c failed
 
 Overall Grade: F
