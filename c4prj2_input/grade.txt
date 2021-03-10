@@ -1,24 +1,19 @@
-Grading at Wed Mar 10 20:21:35 UTC 2021
+Grading at Wed Mar 10 20:25:23 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘add_future_card’:
-future.c:10:13: error: comparison between pointer and integer [-Werror]
-   if (index > fc->decks){
-             ^
+future.c:14:84: error: invalid type argument of unary ‘*’ (have ‘deck_t {aka struct deck_tag}’)
+    fc->decks[index] = realloc(fc->decks[index],(fc->decks[index].n_cards+1)*sizeof(*fc->decks[index]));
+                                                                                    ^
 future.c:14:31: error: incompatible type for argument 1 of ‘realloc’
-    fc->decks[index] = realloc(fc->decks[index],(fc->decks[index].n_cards+1)*sizeof(fc->decks[index]));
+    fc->decks[index] = realloc(fc->decks[index],(fc->decks[index].n_cards+1)*sizeof(*fc->decks[index]));
                                ^
 In file included from future.c:2:0:
 /usr/include/stdlib.h:480:14: note: expected ‘void *’ but argument is of type ‘deck_t {aka struct deck_tag}’
  extern void *realloc (void *__ptr, size_t __size)
               ^
-future.c:17:14: error: ‘n’ undeclared (first use in this function)
-    fc->decks[n].n_cards++;
-              ^
-future.c:17:14: note: each undeclared identifier is reported only once for each function it appears in
-cc1: all warnings being treated as errors
 Compilation of future.c failed
 
 Overall Grade: F
