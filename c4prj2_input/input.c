@@ -11,17 +11,19 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck_t * hand = malloc(sizeof(*hand));
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
-  int j = 0
-    while (j < strlen(str)){
-      if (str[j] == '?' ){
+  char * j = &str;
+  int i = 0;
+  while (*j != '\n'){
+      if (*j == '?' ){
      card_t * unknown = add_empty_card(hand);
      add_future_card(fc,i,unknown);
       }
-      if ( str[j] == ' '){
-      card_t c = card_from_letters(card[j-2],card[j-1]);
+      if ( *j  == ' '){
+      card_t c = card_from_letters(card[*j-2],card[*j-1]);
       add_card_to(hand,c);
+      i++;
        }
-    j++;
+    *j++;
     }
   return hand;
 }
