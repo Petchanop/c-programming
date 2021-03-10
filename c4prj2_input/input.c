@@ -8,8 +8,8 @@
 #include "future.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
-  deck_t * hand = malloc(sizeof(*hand));
-  hand->cards = NULL;
+  deck_t * hand = malloc(sizeof(deck_t));
+  hand->cards = malloc(sizeof(card_t*));
   hand->n_cards = 0;
   char  copy[strlen(str)+1];
   strcpy(copy,str);
@@ -39,7 +39,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   size_t sz = 0;
   size_t i = 0;
   while (getline(&input,&sz, f) >= 0) {
-    read = realloc(read,(i+1)*sizeof(*read));
+    read = realloc(read,(i+1)*sizeof(deck_t*));
     deck_t * add = hand_from_string(input,fc);
     if (add == NULL) continue;
     read[i] = add;
