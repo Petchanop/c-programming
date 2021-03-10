@@ -21,11 +21,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
      add_future_card(fc,i,unknown);
       }
       if ( *j  == ' '){
-      card_t c = card_from_letters(*j-2,*j-1);
+      card_t c = card_from_letters(j-2,j-1);
       add_card_to(hand,c);
       i++;
        }
-    *j++;
+    j++;
     }
   return hand;
 }
