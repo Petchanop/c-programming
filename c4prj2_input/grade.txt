@@ -1,12 +1,9 @@
-Grading at Wed Mar 10 22:11:13 UTC 2021
+Grading at Wed Mar 10 22:12:34 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:14:14: error: initialization discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
-   char * j = str;
-              ^
-input.c:26:5: error: value computed is not used [-Werror=unused-value]
+input.c:28:5: error: value computed is not used [-Werror=unused-value]
      *j++;
      ^
 cc1: all warnings being treated as errors
