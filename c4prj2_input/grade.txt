@@ -1,4 +1,4 @@
-Grading at Wed Mar 10 22:21:37 UTC 2021
+Grading at Wed Mar 10 22:25:32 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
