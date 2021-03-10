@@ -27,7 +27,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     i++;
     card = strtok(NULL," ");
 }
-  fc->n_decks++;
   return hand;
 }
 
