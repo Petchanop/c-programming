@@ -17,9 +17,9 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr){
      fc->decks[n].cards[index]= ptr;
      }
   else{
-    fc->deck[n].cards = realloc(fc->deck[n].cards,(index)*sizeof(*fc->deck[n].cards));
-   fc->deck[n].cards[index] = ptr;
-   fc->deck[n].n_cards++;
+    fc->decks[n].cards = realloc(fc->decks[n].cards,(index)*sizeof(*fc->decks[n].cards));
+   fc->decks[n].cards[index] = ptr;
+   fc->decks[n].n_cards++;
    }
  }
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
