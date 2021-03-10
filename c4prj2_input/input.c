@@ -13,7 +13,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->n_cards = 0;
   int j = 0;
   int i = 0;
-  while (str[j] != '\n'){
+  while (j < strlen(str)){
       if ( str[j]  == ' '){
 	if (str[j-2] == '?' ){
 	  card_t * unknown = add_empty_card(hand);
