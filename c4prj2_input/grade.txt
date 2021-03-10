@@ -1,14 +1,14 @@
-Grading at Wed Mar 10 09:28:51 UTC 2021
+Grading at Wed Mar 10 09:31:28 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
 future.c: In function ‘add_future_card’:
 future.c:18:22: error: passing argument 1 of ‘add_empty_card’ from incompatible pointer type [-Werror=incompatible-pointer-types]
-       add_empty_card(fc->decks[fc->n_decks].cards);
+       add_empty_card(*fc->decks[fc->n_decks].cards);
                       ^
 In file included from future.c:5:0:
-deck.h:18:10: note: expected ‘deck_t * {aka struct deck_tag *}’ but argument is of type ‘card_t ** {aka struct card_tag **}’
+deck.h:18:10: note: expected ‘deck_t * {aka struct deck_tag *}’ but argument is of type ‘card_t * {aka struct card_tag *}’
  card_t * add_empty_card(deck_t * deck);
           ^
 cc1: all warnings being treated as errors
