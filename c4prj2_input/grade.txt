@@ -1,14 +1,12 @@
-Grading at Wed Mar 10 15:57:28 UTC 2021
+Grading at Wed Mar 10 15:58:08 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:20:17: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
-     if (card[0] = "?"){ 
+input.c:20:17: error: comparison between pointer and integer [-Werror]
+     if (card[0] == "?"){ 
                  ^
-input.c:20:5: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
-     if (card[0] = "?"){ 
-     ^
+input.c:20:17: error: comparison with string literal results in unspecified behavior [-Werror=address]
 cc1: all warnings being treated as errors
 Compilation of input.c failed
 
