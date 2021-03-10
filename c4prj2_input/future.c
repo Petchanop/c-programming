@@ -17,7 +17,9 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   
   if (deck->n_cards < fc->n_decks){
     fprintf(stderr,"future_cards_from_deck");
-    return;
+   }
+  if (fc == NULL){
+    fprintf(stderr, "Null future cards");
   }
   for ( int i = 0 ; i < fc->n_decks ; i++){
     if( fc->decks[i].cards != NULL){
