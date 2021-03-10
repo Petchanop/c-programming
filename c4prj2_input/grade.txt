@@ -1,20 +1,13 @@
-Grading at Wed Mar 10 21:35:44 UTC 2021
+Grading at Wed Mar 10 21:42:59 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
 input.c:19:17: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Werror=int-conversion]
-     if (!strcmp(card[0],'?') ){
+     if (!strcmp(card[0],"?")){
                  ^
 In file included from input.c:4:0:
 /usr/include/string.h:140:12: note: expected ‘const char *’ but argument is of type ‘char’
- extern int strcmp (const char *__s1, const char *__s2)
-            ^
-input.c:19:25: error: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [-Werror=int-conversion]
-     if (!strcmp(card[0],'?') ){
-                         ^
-In file included from input.c:4:0:
-/usr/include/string.h:140:12: note: expected ‘const char *’ but argument is of type ‘int’
  extern int strcmp (const char *__s1, const char *__s2)
             ^
 cc1: all warnings being treated as errors
