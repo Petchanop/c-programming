@@ -16,7 +16,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   char * card = strtok(copy," ");
   int i = 0;
   while ( card != NULL){
-    if (!strcmp(card[0],"?")){
+    if (card[0] == '?')){
      card_t * unknown = add_empty_card(hand);
      add_future_card(fc,i,unknown);
       }
