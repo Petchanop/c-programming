@@ -11,7 +11,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck_t * hand = malloc(sizeof(*hand));
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
-  char * j = &str;
+  char * j = str;
   int i = 0;
   while (*j != '\n'){
       if (*j == '?' ){
@@ -19,7 +19,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
      add_future_card(fc,i,unknown);
       }
       if ( *j  == ' '){
-      card_t c = card_from_letters(card[*j-2],card[*j-1]);
+      card_t c = card_from_letters(*j-2,*j-1);
       add_card_to(hand,c);
       i++;
        }
