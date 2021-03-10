@@ -27,6 +27,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     i++;
     card = strtok(NULL," ");
 }
+  fc->n_decks++;
   return hand;
 }
 
@@ -39,7 +40,6 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     read = realloc(read,(i+1)*sizeof(deck_t*));
     deck_t * add = hand_from_string(input,fc);
     read[i] = add;
-    fc->n_decks++;
     i++;
     }
     free(input);
