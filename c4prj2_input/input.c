@@ -20,7 +20,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     print_card(c);
     if (2 <= c.value && c.value <= VALUE_ACE){
       add_card_to(hand,c);
-      fc 
+      fc->decks[fc->n_decks] = hand; 
      }
     else{
      card_t * unknown = add_empty_card(hand);
