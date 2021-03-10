@@ -1,15 +1,11 @@
-Grading at Wed Mar 10 15:15:30 UTC 2021
+Grading at Wed Mar 10 15:23:52 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:23:7: error: statement with no effect [-Werror=unused-value]
-       fc 
-       ^
-input.c:24:6: error: expected ‘;’ before ‘}’ token
-      }
-      ^
-cc1: all warnings being treated as errors
+input.c:23:30: error: incompatible types when assigning to type ‘deck_t {aka struct deck_tag}’ from type ‘deck_t * {aka struct deck_tag *}’
+       fc->decks[fc->n_decks] = hand; 
+                              ^
 Compilation of input.c failed
 
 Overall Grade: F
