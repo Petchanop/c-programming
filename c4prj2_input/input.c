@@ -20,8 +20,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     print_card(c);
     if (2 <= c.value && c.value <= VALUE_ACE){
       add_card_to(hand,c);
-      fc->decks[fc->n_decks] = hand; 
-     }
+      }
     else{
      card_t * unknown = add_empty_card(hand);
      add_future_card(fc,hand->n_cards,unknown);
@@ -31,7 +30,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 }
   free(hand);
   fc->n_decks++;
-  return fc->decks;
+  return hand;
 }
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
