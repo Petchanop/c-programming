@@ -11,7 +11,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck_t * hand = malloc(sizeof(*hand));
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
-  char * j = str;
+  char  copy[strlen(str)+1];
+  strcpy(copy,str);
+  char * j = copy;
   int i = 0;
   while (*j != '\n'){
       if (*j == '?' ){
