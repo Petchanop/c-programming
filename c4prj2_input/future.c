@@ -43,29 +43,4 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
       fc->decks[i].cards[j]->suit = c->suit;
     }
   }
-  int count = 0;
-  //loop through all decks in fc
-  for ( int i = 0; i < fc->n_decks; i++){
-    //if the deck isn't empty, remove that element by shifting the array elements back one (you'll have empty crap at the end)
-    if ( fc->decks[i].cards[0]->suit != NUM_SUITS){
-      for (int k = i; k < (fc->n_decks - 1); k++){
-	fc->decks[i] = fc->decks[i+1];
-      }
-      if (fc->decks[i].cards[0]->suit != NUM_SUITS){
-	i-=1;
-      }
-      fc->n_decks--;
-      count++;
-    }
-  }//end loop through decks in fc
-
-  if ( count > 0 ){
-    fc->decks = realloc(fc->decks, (fc->n_decks)*sizeof(deck_t));
-  }
-
 }
-
-
-
-
-
