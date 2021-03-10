@@ -8,17 +8,16 @@
 #include "future.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc){
-  deck_t * hand = malloc(sizeof(deck_t));
-  hand->cards = malloc(sizeof(card_t*));
+  deck_t * hand = malloc(sizeof(*hand));
+  hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
   char  copy[strlen(str)+1];
   strcpy(copy,str);
   char * card = strtok(copy," ");
   int i = 0;
   while ( card != NULL){
-     
-    if (card[0] == '?' ){ 
-    card_t * unknown = add_empty_card(hand);
+    if (card[0] == '?' ){
+     card_t * unknown = add_empty_card(hand);
     add_future_card(fc,i,unknown);
       }
     else{
@@ -28,7 +27,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     i++;
     card = strtok(NULL," ");
 }
-  free(hand);
   fc->n_decks++;
   return hand;
 }
@@ -41,7 +39,6 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   while (getline(&input,&sz, f) >= 0) {
     read = realloc(read,(i+1)*sizeof(deck_t*));
     deck_t * add = hand_from_string(input,fc);
-    if (add == NULL) continue;
     read[i] = add;
     i++;
     }
