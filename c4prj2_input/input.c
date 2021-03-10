@@ -15,21 +15,23 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   strcpy(copy,str);
   char * card = strtok(copy," ");
   while ( card != NULL){
+    printf("%s\n",card);
     card_t c = card_from_letters(card[0],card[1]);
     print_card(c);
     if (2 <= c.value && c.value <= VALUE_ACE){
       add_card_to(hand,c);
+      fc 
      }
     else{
      card_t * unknown = add_empty_card(hand);
      add_future_card(fc,hand->n_cards,unknown);
     }
+    print_hand(hand);
     card = strtok(NULL," ");
 }
-  print_hand(fc->decks[fc->n_decks]);
   free(hand);
   fc->n_decks++;
-  return fc->decks[fc->n_decks-1];
+  return fc->decks;
 }
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
