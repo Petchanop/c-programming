@@ -16,6 +16,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   char * card = strtok(copy," ");
   while ( card != NULL){  
     card_t c = card_from_letters(copy[0],copy[1]);
+    print_card(c);
     if (2 <= c.value && c.value <= VALUE_ACE){
       add_card_to(hand,c);
      }
@@ -27,6 +28,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 }
   free(hand);
   fc->n_decks++;
+  print_hand(fc->decks);
   return fc->decks;
 }
 
