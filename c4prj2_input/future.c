@@ -19,7 +19,7 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr){
     fc->decks[index].cards[fc->decks[index].n_cards]= ptr;
     fc->decks[index].n_cards++;
   }
-}
+
  
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
