@@ -13,6 +13,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
   size_t j = 0;
+  int Idx;
   while (j < strlen(str)){
     if (isspace(str[j])){
       if (isalpha(str[j-1])){
@@ -21,8 +22,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       }
     }
     if (str[j] == '?'){
+      Idx = atoi(&str[i+1]);
       card_t * c = add_empty_card(hand);
-      add_future_card(fc,hand->n_cards,c);
+      add_future_card(fc,idx,c);
     }
     j++;
   }
