@@ -13,19 +13,20 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
   size_t j = 0;
-  for(int i= 0; i < strlen(str) ; i++){
-    if (isspace(str[i])){
-          if ( str[i-2] == '?'|| str[i-3] == '?') { 
-        card_t * unknown = add_empty_card(hand);
-        add_future_card(fc,j,unknown);
-         }
-	  else{
-    	card_t x = card_from_letters(str[i-2],str[i-1]);
+  for(int i= 1; i < strlen(str) ; i++){
+      if (isspace(str[i-1])){
+	if ( str[i] == '?') {
+	  card_t * unknown = add_empty_card(hand);
+	  add_future_card(fc,j,unknown);
+	}
+	else{
+        card_t x = card_from_letters(str[i-3],str[i-2]);
     	add_card_to(hand,x);
+        }
+	j++;
+    }
      }
-    j++;
-     }
-   }
+   
   return hand;
 }
 
