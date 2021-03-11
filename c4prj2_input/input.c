@@ -17,16 +17,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       if (isspace(str[j])){
     card_t c = card_from_letters(str[j-2],str[j-1]);
     add_card_to(hand,c);
-	}
-    j++;
       }
-  size_t k = 0;
-  while (k < strlen(str)){
-    if (str[k] == '?'){
+    if (str[j] == '?'){
       card_t * c = add_empty_card(hand);
       add_future_card(fc,hand->n_cards,c);
     }
-    k++;
+    j++;
   }
   if (hand->n_cards < 5) {
     perror( "Each hand should have at least 5 cards.\n");
