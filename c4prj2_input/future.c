@@ -32,7 +32,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     perror("ERROR: not enough cards in deck to fill future cards\n");
     exit(EXIT_FAILURE);
   }
- 
+  else{ 
   for ( int i = 0 ; i < fc->n_decks ; i++){
     if (fc->decks[i].n_cards == 0){
       continue;
@@ -43,4 +43,5 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
      
     }
   }
+}
 }
