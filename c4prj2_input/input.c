@@ -12,7 +12,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
   int j = 0;
-  for(int i= 0; i<strlen(str) ; i++){
+  for(int i= 0; i < strlen(str) ; i++){
     if (str[i] == ' ' || str[i] == '\n'){
       if ( str[i-2] == '?') { 
    card_t x = card_from_letters(str[i-2],str[i-1]);
