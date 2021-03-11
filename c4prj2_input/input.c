@@ -14,21 +14,19 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->n_cards = 0;
   size_t j = 0;
   for(int i= 1; i < strlen(str) ; i++){
-      if (isspace(str[i])|| str[i] == '\0'){
-	if (!isspace(str[i-1])){
-	if (isdigit(str[i-1]) != 0) {
+      if (!isspace(str[i])|| str[i] == '\0'){
+	if (str[i] != '?'){
+	   card_t c = card_from_letters(str[i],str[i+1]);
+    	   add_card_to(hand,c);
+	   j++;
+          }
+	else{
 	  card_t * unknown = add_empty_card(hand);
 	  add_future_card(fc,j,unknown);
-	}
-	  else{
-	   card_t c = card_from_letters(str[i-2],str[i-1]);
-    	   add_card_to(hand,c);
-            }
-	j++;
+	  j++;
 	}	
     }
      }
-   
   return hand;
 }
 
