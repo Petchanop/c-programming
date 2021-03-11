@@ -20,8 +20,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 	  add_future_card(fc,j,unknown);
 	}
 	else{
-        card_t x = card_from_letters(str[i-2],str[i-1]);
-    	add_card_to(hand,x);
+        card_t c = card_from_letters(str[i-2],str[i-1]);
+    	add_card_to(hand,c);
         }
 	j++;
     }
@@ -37,7 +37,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   size_t i = 0;
   while (getline(&input,&sz, f) >= 0) {
     read = realloc(read,(i+1)*sizeof(deck_t*));
-    if (input == NULL){continue}
+    if (input == NULL){continue;}
     deck_t * add = hand_from_string(input,fc);
     read[i] = add;
     i++;
