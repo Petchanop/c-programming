@@ -1,16 +1,28 @@
-Grading at Thu Mar 11 15:56:52 UTC 2021
+Grading at Thu Mar 11 15:59:25 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘read_input’:
-input.c:42:18: error: passing argument 2 of ‘strtok’ makes pointer from integer without a cast [-Werror=int-conversion]
-     strtok(input,'\n');
-                  ^
-In file included from input.c:4:0:
-/usr/include/string.h:343:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
- extern char *strtok (char *__restrict __s, const char *__restrict __delim)
-              ^
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: F
