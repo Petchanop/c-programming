@@ -12,24 +12,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck_t * hand = malloc(sizeof(*hand));
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
-  while(str != NULL && *str != '\0') {
-    if (*str == ' ') {
-      str++;
-      continue;
-    } else {
-      char value = *str;
-      str++;
-      if(value == '?') {
-	int index = atoi(str);
-	str = strchr(str, ' ');
-	add_future_card(fc, index, add_empty_card(hand));
-      } else {
-	char suit = *str;
-	str++;
-	add_card_to(hand, card_from_letters(value, suit));
+  size_t j = 0;
+  while (!isspace(str[j])){
+    card_t c = card_from_letters(str[j],str[j+1]);
+    add_card_to(hand,c);
+    j++;
       }
-    }
-  }
   return hand;
 }
 
