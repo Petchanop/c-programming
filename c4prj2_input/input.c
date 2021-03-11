@@ -22,7 +22,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       }
     }
     if (str[j] == '?'){
-      Idx = atoi(&str[i+1]);
+      Idx = atoi(&str[j+1]);
       card_t * c = add_empty_card(hand);
       add_future_card(fc,idx,c);
     }
