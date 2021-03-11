@@ -15,7 +15,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   size_t j = 0;
   for(int i= 1; i < strlen(str) ; i++){
       if (isspace(str[i])|| str[i] == '\0'){
-	if (isdigit(str[i-1]) != 0) {
+	if (str[i-1] >= 48 && str[i-1] <= 57) {
 	  card_t * unknown = add_empty_card(hand);
 	  add_future_card(fc,j,unknown);
 	  j++;
