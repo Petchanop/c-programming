@@ -1,4 +1,4 @@
-Grading at Thu Mar 11 10:20:47 UTC 2021
+Grading at Thu Mar 11 10:26:03 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,59 +7,124 @@ Linking input.o, future.o deck.o, cards.o, and our tester
 Testing with input file with 
  o 1 hand
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Valgrind reported errors:
+==4336== Memcheck, a memory error detector
+==4336== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4336== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4336== Command: ./tester hands.txt draw.txt
+==4336== Parent PID: 4335
+==4336== 
+==4336== Invalid read of size 1
+==4336==    at 0x400B25: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==4336==    by 0x400C4A: read_input (in /graderhome/work/c4prj2_input/tester)
+==4336==    by 0x401A94: main (test-input.c:69)
+==4336==  Address 0x52042af is 1 bytes before a block of size 120 alloc'd
+==4336==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4336==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==4336==    by 0x400C84: read_input (in /graderhome/work/c4prj2_input/tester)
+==4336==    by 0x401A94: main (test-input.c:69)
+==4336== 
+==4336== 
+==4336== HEAP SUMMARY:
+==4336==     in use at exit: 0 bytes in 0 blocks
+==4336==   total heap usage: 28 allocs, 28 frees, 13,984 bytes allocated
+==4336== 
+==4336== All heap blocks were freed -- no leaks are possible
+==4336== 
+==4336== For counts of detected and suppressed errors, rerun with: -v
+==4336== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Valgrind reported errors:
+==4341== Memcheck, a memory error detector
+==4341== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4341== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4341== Command: ./tester hands.txt draw.txt
+==4341== Parent PID: 4340
+==4341== 
+==4341== Invalid read of size 1
+==4341==    at 0x400B25: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==4341==    by 0x400C4A: read_input (in /graderhome/work/c4prj2_input/tester)
+==4341==    by 0x401A94: main (test-input.c:69)
+==4341==  Address 0x52042af is 1 bytes before a block of size 120 alloc'd
+==4341==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4341==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==4341==    by 0x400C84: read_input (in /graderhome/work/c4prj2_input/tester)
+==4341==    by 0x401A94: main (test-input.c:69)
+==4341== 
+==4341== 
+==4341== HEAP SUMMARY:
+==4341==     in use at exit: 0 bytes in 0 blocks
+==4341==   total heap usage: 79 allocs, 79 frees, 14,968 bytes allocated
+==4341== 
+==4341== All heap blocks were freed -- no leaks are possible
+==4341== 
+==4341== For counts of detected and suppressed errors, rerun with: -v
+==4341== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Line_2_did_not_match
-Your file did not match the expected ouput
-Test case failed
+Valgrind reported errors:
+==4347== Memcheck, a memory error detector
+==4347== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4347== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4347== Command: ./tester h.txt d.txt
+==4347== Parent PID: 4346
+==4347== 
+==4347== Invalid read of size 1
+==4347==    at 0x400B25: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==4347==    by 0x400C4A: read_input (in /graderhome/work/c4prj2_input/tester)
+==4347==    by 0x401A94: main (test-input.c:69)
+==4347==  Address 0x52042af is 1 bytes before a block of size 120 alloc'd
+==4347==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4347==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==4347==    by 0x400C84: read_input (in /graderhome/work/c4prj2_input/tester)
+==4347==    by 0x401A94: main (test-input.c:69)
+==4347== 
+==4347== 
+==4347== HEAP SUMMARY:
+==4347==     in use at exit: 1,040 bytes in 64 blocks
+==4347==   total heap usage: 126 allocs, 62 frees, 16,048 bytes allocated
+==4347== 
+==4347== LEAK SUMMARY:
+==4347==    definitely lost: 0 bytes in 0 blocks
+==4347==    indirectly lost: 0 bytes in 0 blocks
+==4347==      possibly lost: 0 bytes in 0 blocks
+==4347==    still reachable: 1,040 bytes in 64 blocks
+==4347==         suppressed: 0 bytes in 0 blocks
+==4347== Rerun with --leak-check=full to see details of leaked memory
+==4347== 
+==4347== For counts of detected and suppressed errors, rerun with: -v
+==4347== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
-Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
-Line_6_did_not_match
-Line_7_did_not_match
-Line_9_did_not_match
-Line_10_did_not_match
-Line_11_did_not_match
-Line_12_did_not_match
-Line_13_did_not_match
-Line_14_did_not_match
-Line_16_did_not_match
-Line_17_did_not_match
-Line_18_did_not_match
-Line_19_did_not_match
-Line_20_did_not_match
-Line_21_did_not_match
-Line_23_did_not_match
-Line_24_did_not_match
-Line_25_did_not_match
-Line_26_did_not_match
-Line_27_did_not_match
-Line_28_did_not_match
-Line_30_did_not_match
-Line_31_did_not_match
-Line_32_did_not_match
-Line_33_did_not_match
-Line_34_did_not_match
-Line_35_did_not_match
-Line_37_did_not_match
-Line_38_did_not_match
-Line_39_did_not_match
-Line_40_did_not_match
-Line_41_did_not_match
-Line_42_did_not_match
-Your file did not match the expected ouput
-Test case failed
+Valgrind reported errors:
+==4353== Memcheck, a memory error detector
+==4353== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4353== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4353== Command: ./tester i1 i2
+==4353== Parent PID: 4352
+==4353== 
+==4353== Invalid read of size 1
+==4353==    at 0x400B25: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==4353==    by 0x400C4A: read_input (in /graderhome/work/c4prj2_input/tester)
+==4353==    by 0x401A94: main (test-input.c:69)
+==4353==  Address 0x52042af is 1 bytes before a block of size 120 alloc'd
+==4353==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4353==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
+==4353==    by 0x400C84: read_input (in /graderhome/work/c4prj2_input/tester)
+==4353==    by 0x401A94: main (test-input.c:69)
+==4353== 
+==4353== 
+==4353== HEAP SUMMARY:
+==4353==     in use at exit: 0 bytes in 0 blocks
+==4353==   total heap usage: 311 allocs, 311 frees, 21,824 bytes allocated
+==4353== 
+==4353== All heap blocks were freed -- no leaks are possible
+==4353== 
+==4353== For counts of detected and suppressed errors, rerun with: -v
+==4353== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
 
-Overall Grade: C
+Overall Grade: F
