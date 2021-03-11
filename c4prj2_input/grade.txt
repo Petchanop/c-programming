@@ -1,4 +1,4 @@
-Grading at Thu Mar 11 10:51:36 UTC 2021
+Grading at Thu Mar 11 11:08:04 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,13 +7,15 @@ Linking input.o, future.o deck.o, cards.o, and our tester
 Testing with input file with 
  o 1 hand
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Line_2_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Line_2_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
@@ -62,4 +64,4 @@ Line_42_did_not_match
 Your file did not match the expected ouput
 Test case failed
 
-Overall Grade: C
+Overall Grade: F
