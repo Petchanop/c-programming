@@ -14,11 +14,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   int j = 0;
   for(int i= 0; i<strlen(str) ; i++){
     if (str[i] == ' ' || str[i] == '\n'){
-      if ( str[i-2] != '?'){ 
+      if ( str[i-2] != "?"){ 
    card_t x = card_from_letters(str[i-2],str[i-1]);
    add_card_to(hand,x);
-  
-    }
+   }
       else{
 	card_t * unknown = add_empty_card(hand);
 	add_future_card(fc,j,unknown);
