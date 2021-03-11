@@ -1,4 +1,4 @@
-Grading at Thu Mar 11 11:22:15 UTC 2021
+Grading at Thu Mar 11 11:37:03 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -17,7 +17,6 @@ Test case passed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Line_2_did_not_match
 Your file did not match the expected ouput
 Test case failed
 Testing with input file with 
