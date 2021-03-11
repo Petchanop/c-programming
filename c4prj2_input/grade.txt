@@ -1,16 +1,28 @@
-Grading at Thu Mar 11 17:34:15 UTC 2021
+Grading at Thu Mar 11 17:34:56 UTC 2021
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c: In function ‘hand_from_string’:
-input.c:27:26: error: ‘idx’ undeclared (first use in this function)
-       add_future_card(fc,idx,c);
-                          ^
-input.c:27:26: note: each undeclared identifier is reported only once for each function it appears in
-input.c:16:7: error: variable ‘Idx’ set but not used [-Werror=unused-but-set-variable]
-   int Idx;
-       ^
-cc1: all warnings being treated as errors
-Compilation of input.c failed
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Your file matched the expected output
+Test case passed
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Your file matched the expected output
+Test case passed
 
-Overall Grade: F
+Overall Grade: A
