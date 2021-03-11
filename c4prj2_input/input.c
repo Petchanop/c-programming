@@ -12,8 +12,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   hand->cards = malloc(sizeof(*hand->cards));
   hand->n_cards = 0;
   int j = 0;
-  for(int i= 0; i < strlen(str)-1 ; i++){
-    if (str[i] == ' ' || str[i] == '\n'){
+  for(int i= 0; i < strlen(str) ; i++){
+    if (str[i] == ' ' || str[i] == '\n' ||str[i] == '\0'){
           if ( str[i-2] == '?') { 
         card_t * unknown = add_empty_card(hand);
         add_future_card(fc,j,unknown);
