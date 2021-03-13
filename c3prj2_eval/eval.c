@@ -125,8 +125,9 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   if (hand==NULL)
     return 0;
+  if (((hand->n_cards) - index) < 5) return 0;
 
-  if (is_n_length_straight_at(hand, index, fs, 5)==1)
+  if (is_n_length_straight_at(hand, index, fs,5)==1)
     return 1;
   else if (index==0 && hand->cards[0]->value==VALUE_ACE)
     {
@@ -244,6 +245,9 @@ void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t cou
       nextv--;
     }
     ind++;
+    if (ind == 5){
+      break;
+    }
   }
 }
 
