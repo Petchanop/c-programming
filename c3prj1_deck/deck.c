@@ -76,7 +76,7 @@ int deck_contains(deck_t * d, card_t c) {
   
 void shuffle(deck_t * d){
   card_t * temp;
-  for (int i = 0;  i < 20 ; i++) {
+  for (int i = 0;  i < 10 ; i++) {
     int num = rand()%(d->n_cards);
     temp = (d->cards)[i] ; 
     (d->cards)[i] = (d->cards)[num];
