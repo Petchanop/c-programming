@@ -51,6 +51,10 @@ int main(int argc, char ** argv) {
 	wid = i;
       }
     }
+    if (Winner == hand[n_hands-1]){
+      arr[wid]++;
+    }
+    else{
     int ti = 0;
     int istie = 0;
     while (ti < n_hands ){
@@ -64,6 +68,7 @@ int main(int argc, char ** argv) {
     }
       if (istie == 0){
     arr[wid]++;
+    }
     }
     t++;
   }
