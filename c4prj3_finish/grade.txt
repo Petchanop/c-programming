@@ -1,4 +1,4 @@
-Grading at Sat Mar 13 18:52:31 UTC 2021
+Grading at Sat Mar 13 19:06:13 UTC 2021
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -12,50 +12,58 @@ gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
 Could not find the win percent in your output
- ** Hand 1 differed from our answer by -35.35%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+You dont seem to have the right total draws.
+Yours sum to 13095 but I expected 20000
 Running a simulation with 25000 draws for 3 hands...
 Could not find the win percent in your output
- ** Hand 1 differed from our answer by -33.28%
+    Hand 1 was close enough to our answer
 Could not find the win percent in your output
-*** Test case failed ***
+You dont seem to have the right total draws.
+Yours sum to 16922 but I expected 25000
 Running a simulation with 25000 draws for 3 hands...
+    Hand 0 was close enough to our answer
 Could not find the win percent in your output
- ** Hand 1 differed from our answer by -84.02%
 Could not find the win percent in your output
-*** Test case failed ***
+You dont seem to have the right total draws.
+Yours sum to 11545 but I expected 25000
 Running a simulation with 25000 draws for 2 hands...
- ** Hand 0 differed from our answer by -33.35%
+    Hand 0 was close enough to our answer
 Could not find the win percent in your output
-*** Test case failed ***
+You dont seem to have the right total draws.
+Yours sum to 19203 but I expected 25000
 Running a simulation with 80000 draws for 4 hands...
 Could not find the win percent in your output
- ** Hand 1 differed from our answer by -45.42%
+    Hand 1 was close enough to our answer
 Could not find the win percent in your output
 Could not find the win percent in your output
-*** Test case failed ***
+You dont seem to have the right total draws.
+Yours sum to 43402 but I expected 80000
 Running a simulation with 30000 draws for 2 hands...
- ** Hand 0 differed from our answer by -58.33%
 Could not find the win percent in your output
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+You dont seem to have the right total draws.
+Yours sum to 17523 but I expected 30000
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
 Could not find the win percent in your output
- ** Hand 1 differed from our answer by -46.92%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+You dont seem to have the right total draws.
+Yours sum to 15812 but I expected 30000
 Running a simulation with 40000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
- ** Hand 2 differed from our answer by -53.30%
-*** Test case failed ***
+    Hand 2 was close enough to our answer
+You dont seem to have the right total draws.
+Yours sum to 18735 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==4024== Memcheck, a memory error detector
-==4024== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==4024== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==4024== Command: ./poker whacky.txt 100000
-==4024== Parent PID: 4023
-==4024== 
+==4635== Memcheck, a memory error detector
+==4635== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4635== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4635== Command: ./poker whacky.txt 100000
+==4635== Parent PID: 4634
+==4635== 
 
 Overall Grade: F
