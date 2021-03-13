@@ -77,64 +77,74 @@ ssize_t  find_secondary_pair(deck_t * hand,
   return -1;
 }
 
-int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
-  card_t *c1 = hand->cards[index];
-  suit_t suitAtIndex = c1->suit;
-  card_t *c2 = NULL;
-  int count = 1;
-  for (int j=index+1; j<hand->n_cards; j++)
-    {
-      c2 = hand->cards[j];
-      if (c1->value == c2->value) 
-	{
-	  if (fs == NUM_SUITS)
-	    continue;
-	  else if (c2->suit==suitAtIndex)
-	    {
-	      count++;
-	      if (count==n)
-		return 1;
-	      c1=c2;
-	    }
-	}
-      else if (c1->value == (c2->value + 1)) 
-	{
-	  if ((fs == NUM_SUITS) || (suitAtIndex == c2->suit) )
-	    {
-	      count++;
-	      if (count==n)
-		return 1;
-	    }
-	  c1 = c2; 
-	}
-      else
-	return 0;     }
-  return 0;
+int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs,int n) {
+  int len=1;
+  int nextValue=5;
+
+  for (int i=0; i<n; i++){
+
+    unsigned card_v=hand->cards[i]->value;
+    suit_t card_s=hand->cards[i]->suit;
+
+    if (fs != NUM_SUITS) {
+      if (card_v==nextValue && card_s==fs){
+	nextValue--;
+	len++;
+      }
+    }else{
+      if (card_v==nextValue){
+	nextValue--;
+	len++;
+      }
+    }
+  }
+  if (len>=5) {
+    return 1;
+  }else{
+    return 0;
+  }
 }
 
-
-int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (is_n_length_straight_at(hand, index, fs, 4)) 
-    {
+int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n) {
+  int idx_value = hand->cards[index]->value;
+  int isS = 1;
+  if ( index == 0 && idx_value == VALUE_ACE){
+    int aceLow = is_ace_low_straight_at(hand, index, fs, n);
+    if (aceLow == 1){
       return -1;
     }
-  return 0;
+  }
+  for (size_t i = index+1 ; i < n ; i++){
+    int next_value = hand->cards[i]->value;
+    suit_t s = hand->cards[i]->suit;
+    if (fs != NUM_SUITS){
+      if ((idx_value-1 == next_value) && (fs == s)){
+	  isS++;
+	  idx_value--;
+	}
+    }
+    else{
+      if (idx_value-1 == next_value){
+	isS++;
+	idx_value--;
+      }
+    }
+  }
+  if (isS == 5){
+    return 1;
+  }
+  else{
+    return 0;
+  }
 }
 
-
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (hand==NULL)
+  if ((((hand->n_cards) - index) < 5) || (fs!=NUM_SUITS && hand->cards[index]->suit!=fs)) {
     return 0;
-  if (((hand->n_cards) - index) < 5) return 0;
-
-  if (is_n_length_straight_at(hand, index, fs,5)==1)
-    return 1;
-  else if (index==0 && hand->cards[0]->value==VALUE_ACE)
-    {
-      if (hand->cards[hand->n_cards-4]->value==5)
-	return is_ace_low_straight_at(hand, hand->n_cards - 4, fs);
-    }
-  return 0;
+  }
+  int result=0;
+  result = is_n_length_straight_at(hand, index, fs, hand->n_cards);
+  return result;
 }
   
 hand_eval_t build_hand_from_match(deck_t * hand,
@@ -245,9 +255,6 @@ void copy_straight(card_t ** to, deck_t *from, size_t ind, suit_t fs, size_t cou
       nextv--;
     }
     ind++;
-    if (ind == 5){
-      break;
-    }
   }
 }
 
