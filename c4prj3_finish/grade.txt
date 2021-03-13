@@ -1,4 +1,4 @@
-Grading at Sat Mar 13 15:53:37 UTC 2021
+Grading at Sat Mar 13 17:48:48 UTC 2021
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -11,27 +11,285 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 20000
+Valgrind reported errors:
+==2596== Memcheck, a memory error detector
+==2596== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2596== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2596== Command: ./poker inp.txt 20000
+==2596== Parent PID: 2595
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EAE: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EB0: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EC0: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EC2: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EAE: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EB0: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EC0: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402EC2: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402ED2: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402ED2: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402ED4: compare_hands (eval.c:190)
+==2596==    by 0x400BA9: main (main.c:49)
+==2596== 
+==2596== Use of uninitialised value of size 8
+==2596==    at 0x402ED4: compare_hands (eval.c:190)
+==2596==    by 0x400BE8: main (main.c:58)
+==2596== 
+==2596== 
+==2596== HEAP SUMMARY:
+==2596==     in use at exit: 0 bytes in 0 blocks
+==2596==   total heap usage: 80,103 allocs, 80,103 frees, 2,258,476 bytes allocated
+==2596== 
+==2596== All heap blocks were freed -- no leaks are possible
+==2596== 
+==2596== For counts of detected and suppressed errors, rerun with: -v
+==2596== Use --track-origins=yes to see where uninitialised values come from
+==2596== ERROR SUMMARY: 284 errors from 12 contexts (suppressed: 0 from 0)
 Running a simulation with 25000 draws for 3 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Valgrind reported errors:
+==2601== Memcheck, a memory error detector
+==2601== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2601== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2601== Command: ./poker inp.txt 25000
+==2601== Parent PID: 2600
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EC0: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EC2: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402ED2: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402ED4: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EC0: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EC2: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402ED2: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402ED4: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EAE: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EB0: compare_hands (eval.c:190)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EAE: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== Use of uninitialised value of size 8
+==2601==    at 0x402EB0: compare_hands (eval.c:190)
+==2601==    by 0x400BE8: main (main.c:58)
+==2601== 
+==2601== 
+==2601== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==2601==    at 0x4E6F428: raise (raise.c:54)
+==2601==    by 0x4E71029: abort (abort.c:89)
+==2601==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==2601==    by 0x4E67C81: __assert_fail (assert.c:101)
+==2601==    by 0x40230D: find_straight (eval.c:268)
+==2601==    by 0x40239F: evaluate_hand (eval.c:296)
+==2601==    by 0x402E42: compare_hands (eval.c:177)
+==2601==    by 0x400BA9: main (main.c:49)
+==2601== 
+==2601== HEAP SUMMARY:
+==2601==     in use at exit: 1,392 bytes in 84 blocks
+==2601==   total heap usage: 16,480 allocs, 16,396 frees, 473,265 bytes allocated
+==2601== 
+==2601== LEAK SUMMARY:
+==2601==    definitely lost: 0 bytes in 0 blocks
+==2601==    indirectly lost: 0 bytes in 0 blocks
+==2601==      possibly lost: 0 bytes in 0 blocks
+==2601==    still reachable: 1,392 bytes in 84 blocks
+==2601==         suppressed: 0 bytes in 0 blocks
+==2601== Rerun with --leak-check=full to see details of leaked memory
+==2601== 
+==2601== For counts of detected and suppressed errors, rerun with: -v
+==2601== Use --track-origins=yes to see where uninitialised values come from
+==2601== ERROR SUMMARY: 104 errors from 12 contexts (suppressed: 0 from 0)
 Running a simulation with 25000 draws for 3 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Valgrind reported errors:
+==2606== Memcheck, a memory error detector
+==2606== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2606== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2606== Command: ./poker inp2.txt 25000
+==2606== Parent PID: 2605
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EC0: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402ED2: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EC0: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402ED2: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EAE: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EB0: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EC2: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EAE: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EB0: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402EC2: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402ED4: compare_hands (eval.c:190)
+==2606==    by 0x400BA9: main (main.c:49)
+==2606== 
+==2606== Use of uninitialised value of size 8
+==2606==    at 0x402ED4: compare_hands (eval.c:190)
+==2606==    by 0x400BE8: main (main.c:58)
+==2606== 
+==2606== 
+==2606== HEAP SUMMARY:
+==2606==     in use at exit: 0 bytes in 0 blocks
+==2606==   total heap usage: 200,054 allocs, 200,054 frees, 5,616,948 bytes allocated
+==2606== 
+==2606== All heap blocks were freed -- no leaks are possible
+==2606== 
+==2606== For counts of detected and suppressed errors, rerun with: -v
+==2606== Use --track-origins=yes to see where uninitialised values come from
+==2606== ERROR SUMMARY: 393 errors from 12 contexts (suppressed: 0 from 0)
 Running a simulation with 25000 draws for 2 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 25000
+Valgrind reported errors:
+==2611== Memcheck, a memory error detector
+==2611== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2611== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2611== Command: ./poker inp2.txt 25000
+==2611== Parent PID: 2610
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EC2: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EC2: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402ED2: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402ED4: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402ED4: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402ED2: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EC0: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EC0: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EAE: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EB0: compare_hands (eval.c:190)
+==2611==    by 0x400BA9: main (main.c:49)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EAE: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== Use of uninitialised value of size 8
+==2611==    at 0x402EB0: compare_hands (eval.c:190)
+==2611==    by 0x400BE8: main (main.c:58)
+==2611== 
+==2611== 
+==2611== HEAP SUMMARY:
+==2611==     in use at exit: 0 bytes in 0 blocks
+==2611==   total heap usage: 100,163 allocs, 100,163 frees, 2,820,156 bytes allocated
+==2611== 
+==2611== All heap blocks were freed -- no leaks are possible
+==2611== 
+==2611== For counts of detected and suppressed errors, rerun with: -v
+==2611== Use --track-origins=yes to see where uninitialised values come from
+==2611== ERROR SUMMARY: 1444 errors from 12 contexts (suppressed: 0 from 0)
 Running a simulation with 80000 draws for 4 hands...
 Could not find the win percent in your output
     Hand 1 was close enough to our answer
@@ -41,30 +299,148 @@ You dont seem to have the right total draws.
 Yours sum to 43402 but I expected 80000
 Running a simulation with 30000 draws for 2 hands...
 Could not find the win percent in your output
-Could not find the win percent in your output
+    Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 30000
+Yours sum to 17523 but I expected 30000
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 30000
+Valgrind reported errors:
+==2734== Memcheck, a memory error detector
+==2734== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2734== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2734== Command: ./poker inp.txt 30000
+==2734== Parent PID: 2733
+==2734== 
+==2734== Use of uninitialised value of size 8
+==2734==    at 0x402ED4: compare_hands (eval.c:190)
+==2734==    by 0x400BA9: main (main.c:49)
+==2734== 
+==2734== Use of uninitialised value of size 8
+==2734==    at 0x402ED4: compare_hands (eval.c:190)
+==2734==    by 0x400BE8: main (main.c:58)
+==2734== 
+==2734== Use of uninitialised value of size 8
+==2734==    at 0x402ED2: compare_hands (eval.c:190)
+==2734==    by 0x400BA9: main (main.c:49)
+==2734== 
+==2734== Use of uninitialised value of size 8
+==2734==    at 0x402ED2: compare_hands (eval.c:190)
+==2734==    by 0x400BE8: main (main.c:58)
+==2734== 
+==2734== 
+==2734== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==2734==    at 0x4E6F428: raise (raise.c:54)
+==2734==    by 0x4E71029: abort (abort.c:89)
+==2734==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==2734==    by 0x4E67C81: __assert_fail (assert.c:101)
+==2734==    by 0x40230D: find_straight (eval.c:268)
+==2734==    by 0x40239F: evaluate_hand (eval.c:296)
+==2734==    by 0x402E42: compare_hands (eval.c:177)
+==2734==    by 0x400BA9: main (main.c:49)
+==2734== 
+==2734== HEAP SUMMARY:
+==2734==     in use at exit: 1,244 bytes in 78 blocks
+==2734==   total heap usage: 113,871 allocs, 113,793 frees, 3,199,957 bytes allocated
+==2734== 
+==2734== LEAK SUMMARY:
+==2734==    definitely lost: 0 bytes in 0 blocks
+==2734==    indirectly lost: 0 bytes in 0 blocks
+==2734==      possibly lost: 0 bytes in 0 blocks
+==2734==    still reachable: 1,244 bytes in 78 blocks
+==2734==         suppressed: 0 bytes in 0 blocks
+==2734== Rerun with --leak-check=full to see details of leaked memory
+==2734== 
+==2734== For counts of detected and suppressed errors, rerun with: -v
+==2734== Use --track-origins=yes to see where uninitialised values come from
+==2734== ERROR SUMMARY: 8 errors from 4 contexts (suppressed: 0 from 0)
 Running a simulation with 40000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
-Could not find the win percent in your output
+    Hand 2 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 0 but I expected 40000
+Yours sum to 18736 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-Could not find the win percent in your output
-You dont seem to have the right total draws.
-Yours sum to 0 but I expected 100000
+Valgrind reported errors:
+==2798== Memcheck, a memory error detector
+==2798== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2798== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2798== Command: ./poker whacky.txt 100000
+==2798== Parent PID: 2797
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EAE: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EB0: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EC0: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EC2: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EAE: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EB0: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EC0: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402EC2: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402ED2: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402ED4: compare_hands (eval.c:190)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402ED2: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== Use of uninitialised value of size 8
+==2798==    at 0x402ED4: compare_hands (eval.c:190)
+==2798==    by 0x400BE8: main (main.c:58)
+==2798== 
+==2798== 
+==2798== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==2798==    at 0x4E6F428: raise (raise.c:54)
+==2798==    by 0x4E71029: abort (abort.c:89)
+==2798==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==2798==    by 0x4E67C81: __assert_fail (assert.c:101)
+==2798==    by 0x40230D: find_straight (eval.c:268)
+==2798==    by 0x40239F: evaluate_hand (eval.c:296)
+==2798==    by 0x402E42: compare_hands (eval.c:177)
+==2798==    by 0x400BA9: main (main.c:49)
+==2798== 
+==2798== HEAP SUMMARY:
+==2798==     in use at exit: 1,628 bytes in 98 blocks
+==2798==   total heap usage: 113,040 allocs, 112,942 frees, 3,177,209 bytes allocated
+==2798== 
+==2798== LEAK SUMMARY:
+==2798==    definitely lost: 0 bytes in 0 blocks
+==2798==    indirectly lost: 0 bytes in 0 blocks
+==2798==      possibly lost: 0 bytes in 0 blocks
+==2798==    still reachable: 1,628 bytes in 98 blocks
+==2798==         suppressed: 0 bytes in 0 blocks
+==2798== Rerun with --leak-check=full to see details of leaked memory
+==2798== 
+==2798== For counts of detected and suppressed errors, rerun with: -v
+==2798== Use --track-origins=yes to see where uninitialised values come from
+==2798== ERROR SUMMARY: 75 errors from 12 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
