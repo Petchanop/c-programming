@@ -40,8 +40,9 @@ int main(int argc, char ** argv) {
   }
   deck_t * deck = build_remaining_deck(hand,n_hands);
   deck_t * Winner;
+  shuffle(deck);
   while (t < num_trials){
-    shuffle(deck);
+    // shuffle(deck);
     future_cards_from_deck(deck,fc);
     Winner = hand[0];
     int wid = 0;
