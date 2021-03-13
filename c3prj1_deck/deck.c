@@ -43,7 +43,10 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
       add_card_to(build,*hands[j]->cards[i]);
       }
   }
-  return make_deck_exclude(build);
+  deck_t * deck_ans;
+  deck_ans = make_deck_exclude(build);
+  free_deck(build);
+  return deck_ans;
 }
   
 void free_deck(deck_t * deck){
