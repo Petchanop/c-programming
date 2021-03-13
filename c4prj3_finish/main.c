@@ -52,30 +52,34 @@ int main(int argc, char ** argv) {
       }
     }
     int ti = 0;
+    int istie = 0;
     while (ti < n_hands ){
       if (ti != wid){
       if (compare_hands(Winner,hand[ti]) == 0){
 	arr[n_hands]++;
+	istie++;
       }
     }
       ti++;
     }
-      if (arr[n_hands] == 0){
+      if (istie == 0){
     arr[wid]++;
     }
       
     t++;
     
   }
+  
   int max = arr[0];
   size_t ans = 0;
   for (size_t w = 0; w < n_hands ; w++){
+   
     if (max < arr[w]){
       max = arr[w];
       ans = w;
     }
   }
-  double pro = (max/t)*100;
+  double pro = (max/(float)t)*100;
   fprintf(stdout,"Hand %zu won %u / %u times (%.2f%%)\n",ans,max,t,pro);
   fprintf(stdout,"And there were %u ties\n",arr[n_hands]);
   free(arr);
