@@ -160,21 +160,18 @@ hand_eval_t build_hand_from_match(deck_t * hand,
  }
   i = n;
   int j = 0;
-  while (j < idx && i < 5){
+  while (i < 5){
+    if (j < idx || j > idx+n){
     ans.cards[i] = hand->cards[j];
     j++;
     i++;
   }
-  while ( i < 5){
-    if (j < idx+n){
-        j++; }
-    else{
-    ans.cards[i] = hand->cards[j];
-    j++;
-    i++;
+    if (j <= idx+n && j >= idx ){
+        j++;
+    }
   }
-  }
-return ans;}
+return ans;
+}
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
