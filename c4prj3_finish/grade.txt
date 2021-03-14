@@ -1,4 +1,4 @@
-Grading at Sat Mar 13 21:57:24 UTC 2021
+Grading at Sun Mar 14 10:44:53 UTC 2021
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -49,7 +49,7 @@ Running a simulation with 30000 draws for 2 hands...
 Could not find the win percent in your output
     Hand 1 was close enough to our answer
 You dont seem to have the right total draws.
-Yours sum to 15587 but I expected 30000
+Yours sum to 15947 but I expected 30000
 Running a simulation with 40000 draws for 3 hands...
 Could not find the win percent in your output
 Could not find the win percent in your output
@@ -59,11 +59,11 @@ Yours sum to 19002 but I expected 40000
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==748== Memcheck, a memory error detector
-==748== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==748== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==748== Command: ./poker whacky.txt 100000
-==748== Parent PID: 747
-==748== 
+==686== Memcheck, a memory error detector
+==686== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==686== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==686== Command: ./poker whacky.txt 100000
+==686== Parent PID: 685
+==686== 
 
 Overall Grade: F
