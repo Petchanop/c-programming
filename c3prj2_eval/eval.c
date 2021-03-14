@@ -25,18 +25,22 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   
 suit_t flush_suit(deck_t * hand) {
   int count = 0;
+  int j = 0;
   suit_t scount;
   for (int i = 0 ; i < hand->n_cards ; i++){
-    for (int j = 0 ; j < hand->n_cards ; j ++){
-    if (hand->cards[i]->suit == hand->cards[j]->suit && i != j ){
-        count +=1;
-	scount = hand->cards[i]->suit;
-    }
-    if (count == 4){
-      return scount;
-    }
-  }
-    count = 0;
+    scount = hand->cards[j]->suit;
+       if (scount == hand->cards[i]->suit && i != j ){
+	 count +=1;
+	 scount = hand->cards[i]->suit;
+       }
+     if (count == 4){
+       return scount;
+     }
+     if (i == hand->n_cards-1 && hand->n_cards-j > 4){
+       i = 0;
+       j++;
+       count = 0;
+     }
   }  
    return NUM_SUITS;
   }
@@ -160,14 +164,18 @@ hand_eval_t build_hand_from_match(deck_t * hand,
  }
   i = n;
   int j = 0;
-  while (i < 5){
-    if (j < idx || j > idx+n){
+  while (j < idx && i < 5){
     ans.cards[i] = hand->cards[j];
     j++;
     i++;
   }
-    if (j <= idx+n && j >= idx ){
-        j++;
+  while ( i < 5){
+    if (j < idx+n){
+      j++; }
+    else{
+      ans.cards[i] = hand->cards[j];
+      j++;
+      i++;
     }
   }
 return ans;
@@ -217,17 +225,25 @@ unsigned * get_match_counts(deck_t * hand){
 // In fact, you should not modify them!
   unsigned int * arr = malloc(hand->n_cards*sizeof(*arr));
  int  count = 1;
-for (int i = 0 ; i < hand->n_cards; i++){
-  for (int j = 0 ; j < hand->n_cards ; j++){
-    if (i != j){
-      if (hand->cards[i]->value == hand->cards[j]->value){
-	count += 1 ;
-      }
-    }
-  }
-  arr[i] = count;
-  count = 1;
- }
+ int j = 0;
+ int i = 0;
+ int val = 0;
+ while (j < hand->n_cards){
+   val = hand->cards[j]->value;
+   if (i != j){
+     if (val == hand->cards[i]->value){
+       count += 1 ;
+     }
+   }
+   if ( i == hand->n_cards-1){
+       arr[j] = count;
+       count = 1;
+       j++;
+       i = 0;
+       continue;
+        }
+     i++;
+   }
 return arr;
 }
 
