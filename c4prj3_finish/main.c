@@ -58,18 +58,12 @@ int main(int argc, char ** argv) {
     arr[wid]++;
     t++;
 	}
-  int max = arr[0];
-  size_t ans = 0;
+  
   for (size_t w = 0; w < n_hands ; w++){
-   
-    if (max < arr[w]){
-      max = arr[w];
-      ans = w;
-    }
+  double  pro = (arr[w]/(float)t)*100;
+  printf("Hand %zu won %u / %u times (%.2f%%)\n",w,arr[w],t,pro);
   }
-  double pro = (max/(float)t)*100;
-  fprintf(stdout,"Hand %zu won %u / %u times (%.2f%%)\n",ans,max,t,pro);
-  fprintf(stdout,"And there were %u ties\n",arr[n_hands]);
+  printf("And there were %u ties\n",arr[n_hands]);
   free(arr);
   free_deck(deck);
   for (int i = 0; i < n_hands; i++) {
