@@ -8,8 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-
-
 int main(int argc, char ** argv) {
   //YOUR CODE GOES HERE
   if (argc > 3){
@@ -47,15 +45,17 @@ int main(int argc, char ** argv) {
     shuffle(deck);
     future_cards_from_deck(deck,fc);
     Winner = hand[0];
+    Ties = hand[1];
     int wid = 0;
     for (int i = 1; i < n_hands ; i++){
-      if (compare_hands(Winner,hand[i]) >= 0 ){
-	Ties = hand[i];
-       }
-      else{
-	Ties = Winner;
+      int comp = compare_hands(Winner,hand[i]);
+      if (comp == -1){
+     	Ties = Winner;
 	Winner = hand[i];
 	wid = i;
+        }
+      if (comp == 0){
+	Ties = Winner;
       }
     }
     if (compare_hands(Winner,Ties) == 0){
