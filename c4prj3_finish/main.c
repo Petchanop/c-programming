@@ -38,39 +38,26 @@ int main(int argc, char ** argv) {
   }
   deck_t * deck = build_remaining_deck(hand,n_hands);
   deck_t * Winner;
-  deck_t * Ties;
   // Ties->cards = NULL;
   // Ties->n_cards = 0;
   while (t < num_trials){
     shuffle(deck);
     future_cards_from_deck(deck,fc);
     Winner = hand[0];
-    Ties = hand[1];
     int wid = 0;
     for (int i = 1; i < n_hands ; i++){
       int comp = compare_hands(Winner,hand[i]);
       if (comp == -1){
-     	Ties = Winner;
-	Winner = hand[i];
+     	Winner = hand[i];
 	wid = i;
         }
       if (comp == 0){
-	Ties = Winner;
+	 wid = n_hands;
       }
     }
-    if (compare_hands(Winner,Ties) == 0){
-      arr[n_hands]++;
-      t++;
-    }
-    else{
-	  arr[wid]++;
-	  t++;
+    arr[wid]++;
+    t++;
 	}
-      }
-
-  // free(Ties);
- 
-  
   int max = arr[0];
   size_t ans = 0;
   for (size_t w = 0; w < n_hands ; w++){
